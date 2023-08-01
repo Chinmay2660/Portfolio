@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0705278b.css",
+    "main.js": "/static/js/main.4d11a8b3.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/tindog.png": "/static/media/tindog.bb5aa10ca008f3bdf510.png",
+    "static/media/Resume_Chinmay_Bhoir.pdf": "/static/media/Resume_Chinmay_Bhoir.432b5e3f8b1e6d82527b.pdf",
+    "static/media/simongame.png": "/static/media/simongame.ff8a0e3a206e77a024b8.png",
+    "static/media/todolist.png": "/static/media/todolist.4ecf7838a18a86c67840.png",
+    "static/media/drumkit.png": "/static/media/drumkit.653cb055038901211cda.png",
+    "static/media/home-main.svg": "/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
+    "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "static/media/diceegame.png": "/static/media/diceegame.f396d277f7c01b5a17ee.png",
+    "static/media/avatar.svg": "/static/media/avatar.e4b0db871e6b9f60f675e4ec287ef105.svg",
+    "static/media/pre.svg": "/static/media/pre.cfed776495e883ee3e61.svg",
+    "index.html": "/index.html",
+    "main.0705278b.css.map": "/static/css/main.0705278b.css.map",
+    "main.4d11a8b3.js.map": "/static/js/main.4d11a8b3.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0705278b.css",
+    "static/js/main.4d11a8b3.js"
+  ]
+}
