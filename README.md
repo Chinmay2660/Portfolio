@@ -7,13 +7,7 @@ Welcome to my portfolio! This project is built using React and Tailwind CSS.
 - [Demo](#demo)
 - [Features](#features)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
 - [Usage](#usage)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Demo
 
 You can check out the live demo of the portfolio [here](#insert-live-demo-link).
@@ -26,8 +20,6 @@ You can check out the live demo of the portfolio [here](#insert-live-demo-link).
 
 ## Getting Started
 
-### Installation
-
 1. Clone the repository:
 
    ```bash
@@ -35,5 +27,19 @@ You can check out the live demo of the portfolio [here](#insert-live-demo-link).
 
 2. **Change into the project directory**:
   
-  ```bash
-  cd Portfolio
+   ```bash
+   cd Portfolio
+
+3. **Install dependencies:**
+   
+   ```bash
+   npm install
+
+## Usage
+
+1. To run the development server:
+
+   ```bash
+   npm start
+
+2. Visit http://localhost:3000 in your browser to view the application.
