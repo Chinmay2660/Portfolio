@@ -10,7 +10,7 @@ Welcome to my portfolio! This project is built using React and Tailwind CSS.
 - [Usage](#usage)
 ## Demo
 
-You can check out the live demo of the portfolio [here](chinmay2660.github.io/Portfolio/).
+You can check out the live demo of the portfolio [here](https://chinmay2660.github.io/Portfolio/).
 
 ## Features
 
