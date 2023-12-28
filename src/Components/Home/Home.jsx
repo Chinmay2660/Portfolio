@@ -16,11 +16,11 @@ const Home = () => {
             <Text fontSize="5xl" fontWeight="bold">
                 Software Development Engineer at Jio
             </Text>
-            <Text fontSize="2xl" style={{marginTop: '20px'}}>
+            <Text fontSize="2xl" style={{marginTop: '30px'}}>
                 I design and code beautifully simple things, and I love what I do.
             </Text>
             <Tilt>
-                <img src={avatar} alt="Avatar" style={{ marginTop: '20px' }} />
+                <img src={avatar} alt="Avatar" style={{ marginTop: '100px' }} />
             </Tilt>
             <img
                 src={devices}
