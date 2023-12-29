@@ -7,11 +7,12 @@ import devices from '../../Assets/hero-devices.svg';
 const Home = () => {
   return (
     <Box
+      id="home"
       display="flex"
       flexDirection="column"
       alignItems="center"
       textAlign="center"
-      marginTop={{ base: 4 + 20, md: 8 + 20, lg: 12 + 80 }}
+      paddingTop={{ base: '4rem', md: '6rem', lg: '7rem' }}
     >
       <Text fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} fontWeight="bold">
         Software Development Engineer at Jio
@@ -26,7 +27,7 @@ const Home = () => {
           style={{
             marginTop: '50px',
             width: '100%',
-            maxWidth: ['150px', '210px'], 
+            maxWidth: ['150px', '210px'],
           }}
         />
       </Tilt>

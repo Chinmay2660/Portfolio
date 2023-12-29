@@ -4,6 +4,7 @@ import { Box, Text } from '@chakra-ui/react';
 const About = () => {
   return (
     <Box
+      id="about"
       display="flex"
       textAlign="center"
       position="relative"

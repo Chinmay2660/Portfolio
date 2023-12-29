@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+  Flex,
+  Image,
   Box,
   Drawer,
   DrawerOverlay,
@@ -7,16 +9,18 @@ import {
   DrawerCloseButton,
   DrawerBody,
   useDisclosure,
-  Flex,
-  Image,
-  Tab,
-  TabList,
-  Tabs,
+  Button,
+  Stack,
 } from '@chakra-ui/react';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import logo from '../../Assets/logo192.png';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   return (
     <Flex
@@ -25,41 +29,68 @@ const Navbar = () => {
       p="1.25rem"
       bg="white"
       color="#141C3A"
-      // boxShadow="0px 4px 4px rgba(0, 0, 0, 0.05)" 
       position="sticky"
-      top="0" 
+      top="0"
       zIndex="1000"
+      direction={{ base: 'row', md: 'row' }}
     >
-      <Image src={logo} alt="Logo" boxSize="50px" />
-
-      <Tabs display={{ base: 'none', md: 'flex' }}>
-        <TabList>
-          <Tab>Home</Tab>
-          <Tab>About</Tab>
-          <Tab>Experience</Tab>
-          <Tab>Education</Tab>
-          <Tab>Projects</Tab>
-          <Tab>Contact</Tab>
-        </TabList>
-      </Tabs>
-
-      <Box display={{ base: 'block', md: 'none' }} onClick={onOpen}>
+    <Image src={logo} alt="Logo" boxSize="50px" />
+      <Box display={{ base: 'block', md: 'none' }} onClick={onOpen} cursor="pointer">
         ☰
       </Box>
+
+      <Stack direction="row" spacing={4} display={{ base: 'none', md: 'flex' }}>
+        <ScrollLink
+          to="home"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+        >
+          <Button variant="ghost">Home</Button>
+        </ScrollLink>
+        <ScrollLink
+          to="about"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+        >
+          <Button variant="ghost">About</Button>
+        </ScrollLink>
+      </Stack>
 
       <Drawer isOpen={isOpen} onClose={onClose} placement="right">
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerBody>
-            <Tabs orientation="vertical">
-              <Tab onClick={onClose}>Home</Tab>
-              <Tab onClick={onClose}>About</Tab>
-              <Tab onClick={onClose}>Experience</Tab>
-              <Tab onClick={onClose}>Education</Tab>
-              <Tab onClick={onClose}>Projects</Tab>
-              <Tab onClick={onClose}>Contact</Tab>
-            </Tabs>
+            <Stack direction="column" spacing={4}>
+              <ScrollLink
+                to="home"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={onClose}
+              >
+                <Button w="100%" variant="ghost">
+                  Home
+                </Button>
+              </ScrollLink>
+              <ScrollLink
+                to="about"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={onClose}
+              >
+                <Button w="100%" variant="ghost">
+                  About
+                </Button>
+              </ScrollLink>
+            </Stack>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
