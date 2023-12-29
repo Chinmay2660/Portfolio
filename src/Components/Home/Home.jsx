@@ -11,21 +11,29 @@ const Home = () => {
       flexDirection="column"
       alignItems="center"
       textAlign="center"
-      marginTop={{ base: 4, md: 8, lg: 12 }} 
+      marginTop={{ base: 4 + 20, md: 8 + 20, lg: 12 + 80 }}
     >
-      <Text fontSize={{ base: '3xl', md: '5xl' }} fontWeight="bold">
+      <Text fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} fontWeight="bold">
         Software Development Engineer at Jio
       </Text>
       <Text fontSize={{ base: 'xl', md: '2xl' }} marginTop={{ base: 4, md: 6 }}>
         I design and code beautifully simple things, and I love what I do.
       </Text>
       <Tilt>
-        <img src={avatar} alt="Avatar" style={{ marginTop: '100px', width: '100%', maxWidth: '210px' }} />
+        <img
+          src={avatar}
+          alt="Avatar"
+          style={{
+            marginTop: '50px',
+            width: '100%',
+            maxWidth: ['150px', '210px'], 
+          }}
+        />
       </Tilt>
       <img
         src={devices}
         alt="Devices"
-        style={{ marginTop: '100px', width: '100%', maxWidth: '860px' }}
+        style={{ marginTop: '80px', width: '100%', maxWidth: '860px' }}
       />
     </Box>
   );
