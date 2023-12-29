@@ -19,7 +19,17 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex justifyContent="space-between" alignItems="center" p="1.25rem" bg="white" color="#141C3A" boxShadow="none" mt={4} mb={4}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      p="1.25rem"
+      bg="white"
+      color="#141C3A"
+      // boxShadow="0px 4px 4px rgba(0, 0, 0, 0.05)" 
+      position="sticky"
+      top="0" 
+      zIndex="1000"
+    >
       <Image src={logo} alt="Logo" boxSize="50px" />
 
       <Tabs display={{ base: 'none', md: 'flex' }}>
@@ -43,14 +53,12 @@ const Navbar = () => {
           <DrawerCloseButton />
           <DrawerBody>
             <Tabs orientation="vertical">
-              <TabList>
-                <Tab onClick={onClose}>Home</Tab>
-                <Tab onClick={onClose}>About</Tab>
-                <Tab onClick={onClose}>Experience</Tab>
-                <Tab onClick={onClose}>Education</Tab>
-                <Tab onClick={onClose}>Projects</Tab>
-                <Tab onClick={onClose}>Contact</Tab>
-              </TabList>
+              <Tab onClick={onClose}>Home</Tab>
+              <Tab onClick={onClose}>About</Tab>
+              <Tab onClick={onClose}>Experience</Tab>
+              <Tab onClick={onClose}>Education</Tab>
+              <Tab onClick={onClose}>Projects</Tab>
+              <Tab onClick={onClose}>Contact</Tab>
             </Tabs>
           </DrawerBody>
         </DrawerContent>
