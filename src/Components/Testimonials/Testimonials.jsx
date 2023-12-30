@@ -149,9 +149,9 @@ const Arrow = ({ isLeft }) => {
 };
 
 const TestimonialDemo = () => (
-  <Flex flexDir="column">
+  <Flex flexDir="column" justifyContent="center" alignItems="center">
     <Carousel>
-      <Flex w="fit-content" pos="relative">
+      <Flex w="fit-content" pos="relative" justifyContent="center" alignItems="center">
         <CarouselItems mx={2}>
           {testimonials.map(({ name, title, bg, src, heading }, index) => (
             <CarouselItem index={index} key={name}>
@@ -169,15 +169,18 @@ const TestimonialDemo = () => (
   </Flex>
 );
 
+
 const Page = () => (
   <Box p={10} h="full" w="full" bg="white">
-    <Stack spacing={2} align={"center"}>
+    <Stack spacing={2} align="center" marginBottom="-50px" marginTop="30px">
       <Heading color="gray.900">Testimonials</Heading>
+      <Text fontSize="xl">People I've worked with have said some nice things...</Text>
     </Stack>
-    <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
+    <Container maxW="7xl" py={16} as={Stack} spacing={12} marginBottom="50px">
       <TestimonialDemo />
     </Container>
   </Box>
 );
+
 
 export default Page;
