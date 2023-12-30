@@ -64,13 +64,14 @@ const Skills = () => {
           bg="#ffffff"
           color="black"
           border="0.5px solid black"
+          borderTop="none"
           borderRadius="0 0 15px 15px"
         >
           <VStack spacing={4}>
             <Text fontSize="xl" fontWeight="bold">
               Tool Stack
             </Text>
-            <Flex align="center" flexDirection="row" > 
+            <Flex align="center" flexDirection="row" >
               {toolStack.map((tool) => (
                 <Flex key={tool.name} align="center" flexDirection="column" m={2}>
                   <Icon as={tool.icon} boxSize={8} />

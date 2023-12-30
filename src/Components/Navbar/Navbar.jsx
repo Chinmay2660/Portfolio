@@ -34,7 +34,7 @@ const Navbar = () => {
       zIndex="1000"
       direction={{ base: 'row', md: 'row' }}
     >
-    <Image src={logo} alt="Logo" boxSize="50px" />
+      <Image src={logo} alt="Logo" boxSize="50px" />
       <Box display={{ base: 'block', md: 'none' }} onClick={onOpen} cursor="pointer">
         ☰
       </Box>
@@ -66,6 +66,15 @@ const Navbar = () => {
           offset={-70}
         >
           <Button variant="ghost">Skills</Button>
+        </ScrollLink>
+        <ScrollLink
+          to="hireMe"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+        >
+          <Button variant="ghost">Hire Me</Button>
         </ScrollLink>
       </Stack>
 
@@ -109,6 +118,18 @@ const Navbar = () => {
               >
                 <Button w="100%" variant="ghost">
                   Skills
+                </Button>
+              </ScrollLink>
+              <ScrollLink
+                to="hireMe"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={onClose}
+              >
+                <Button w="100%" variant="ghost">
+                  Hire Me
                 </Button>
               </ScrollLink>
             </Stack>
