@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Avatar,
   Box,
@@ -142,7 +142,7 @@ function Arrow({ isLeft }) {
 function TestimonialDemo() {
   return (
     <Flex flexDir="column">
-      <Carousel autoPlay interval={1000}>
+      <Carousel>
         <Flex w="fit-content" pos="relative">
           <CarouselItems mx={2}>
             {testimonials.map(({ name, title, bg, src, heading }, index) => {
@@ -156,7 +156,6 @@ function TestimonialDemo() {
               );
             })}
           </CarouselItems>
-
           <Arrow isLeft />
           <Arrow isLeft={false} />
         </Flex>
@@ -165,10 +164,9 @@ function TestimonialDemo() {
   );
 }
 
-
 function Page() {
   return (
-    <Box p={10} h="full" w="full" bg="gray.200">
+    <Box p={10} h="full" w="full" bg="white">
       <Stack spacing={2} align={"center"}>
         <Heading color="gray.900">Testimonials</Heading>
       </Stack>
