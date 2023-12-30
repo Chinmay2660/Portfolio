@@ -9,6 +9,7 @@ import Testimonials from './Components/Testimonials/Testimonials';
 import HireMe from './Components/CTA/HireMe';
 import Projects from './Components/Projects/Projects';
 import GithubBox from './Components/Github/GithubBox'
+import './style.css'
 
 function App() {
   return (
