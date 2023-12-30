@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   Avatar,
   Box,
@@ -126,16 +126,6 @@ const Arrow = ({ isLeft }) => {
       onNext();
     }
   };
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      onNext();
-    }, 5000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [onNext]);
 
   const pos = isLeft ? { left: "10px" } : { right: "10px" };
 
