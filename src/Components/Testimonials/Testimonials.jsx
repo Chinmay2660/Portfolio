@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import {
   Avatar,
   Box,
@@ -54,29 +54,25 @@ const testimonials = [
   }
 ];
 
-const TestimonialHeading = ({ children }) => {
-  return (
-    <Heading as={"h3"} fontSize={"xl"}>
-      {children}
-    </Heading>
-  );
-};
+const TestimonialHeading = ({ children }) => (
+  <Heading as={"h3"} fontSize={"xl"}>
+    {children}
+  </Heading>
+);
 
-const TestimonialAvatar = ({ src, name, title }) => {
-  return (
-    <Flex align={"center"} mt={8} direction={"column"}>
-      <Avatar src={src} mb={2} />
-      <Stack spacing={-1} align={"center"}>
-        <Text fontWeight={600}>{name}</Text>
-        <Text fontSize={"sm"} color="gray.600">
-          {title}
-        </Text>
-      </Stack>
-    </Flex>
-  );
-};
+const TestimonialAvatar = ({ src, name, title }) => (
+  <Flex align={"center"} mt={8} direction={"column"}>
+    <Avatar src={src} mb={2} />
+    <Stack spacing={-1} align={"center"}>
+      <Text fontWeight={600}>{name}</Text>
+      <Text fontSize={"sm"} color="gray.600">
+        {title}
+      </Text>
+    </Stack>
+  </Flex>
+);
 
-function Testimonial({ bg, heading }) {
+const Testimonial = ({ bg, heading }) => {
   const { onClickHandler, position } = useCarouselItem();
   const isCenter = position === "center";
   return (
@@ -118,9 +114,9 @@ function Testimonial({ bg, heading }) {
       </VStack>
     </Flex>
   );
-}
+};
 
-function Arrow({ isLeft }) {
+const Arrow = ({ isLeft }) => {
   const { onNext, onPrevious } = useCarousel();
   const onClickHandler = () => {
     if (isLeft) {
@@ -137,44 +133,38 @@ function Arrow({ isLeft }) {
       </Button>
     </Flex>
   );
-}
+};
 
-function TestimonialDemo() {
-  return (
-    <Flex flexDir="column">
-      <Carousel>
-        <Flex w="fit-content" pos="relative">
-          <CarouselItems mx={2}>
-            {testimonials.map(({ name, title, bg, src, heading }, index) => {
-              return (
-                <CarouselItem index={index} key={name}>
-                  <Box p={10}>
-                    <Testimonial heading={heading} bg={bg} />
-                    <TestimonialAvatar src={src} name={name} title={title} />
-                  </Box>
-                </CarouselItem>
-              );
-            })}
-          </CarouselItems>
-          <Arrow isLeft />
-          <Arrow isLeft={false} />
-        </Flex>
-      </Carousel>
-    </Flex>
-  );
-}
+const TestimonialDemo = () => (
+  <Flex flexDir="column">
+    <Carousel>
+      <Flex w="fit-content" pos="relative">
+        <CarouselItems mx={2}>
+          {testimonials.map(({ name, title, bg, src, heading }, index) => (
+            <CarouselItem index={index} key={name}>
+              <Box p={10}>
+                <Testimonial heading={heading} bg={bg} />
+                <TestimonialAvatar src={src} name={name} title={title} />
+              </Box>
+            </CarouselItem>
+          ))}
+        </CarouselItems>
+        <Arrow isLeft />
+        <Arrow isLeft={false} />
+      </Flex>
+    </Carousel>
+  </Flex>
+);
 
-function Page() {
-  return (
-    <Box p={10} h="full" w="full" bg="white">
-      <Stack spacing={2} align={"center"}>
-        <Heading color="gray.900">Testimonials</Heading>
-      </Stack>
-      <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
-        <TestimonialDemo />
-      </Container>
-    </Box>
-  );
-}
+const Page = () => (
+  <Box p={10} h="full" w="full" bg="white">
+    <Stack spacing={2} align={"center"}>
+      <Heading color="gray.900">Testimonials</Heading>
+    </Stack>
+    <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
+      <TestimonialDemo />
+    </Container>
+  </Box>
+);
 
 export default Page;
