@@ -1,61 +1,62 @@
 import React from 'react';
-import { Box, Text, Flex, VStack, HStack, Badge, Icon } from '@chakra-ui/react';
+import { Box, Text, Flex, VStack, Icon } from '@chakra-ui/react';
 import { FaJava, FaReact, FaNodeJs, FaGithub, FaCode, FaGit, FaDatabase } from 'react-icons/fa';
-import { SiRedux,  SiTailwindcss } from 'react-icons/si';
+import { SiRedux, SiTailwindcss } from 'react-icons/si';
 
 const Skills = () => {
   return (
-    <Flex position="relative" direction="column" alignItems="center">
-      <Box
-        position="absolute"
-        width="100%"
-        maxW="400px"
-        bg="white"
-        p="4"
-        boxShadow="lg"
-        borderRadius="md"
-        marginRight={{ md: '50%' }}
-        marginTop={{ base: '4', md: '0' }}
-        // zIndex="1"
-      >
-        <Text fontSize="xl" fontWeight="bold" mb="4">
-          Tech Stack
-        </Text>
-        <VStack align="start" spacing="2">
-          {techStack.map((tech) => (
-            <HStack key={tech.name} spacing="2">
-              <Icon as={tech.icon} boxSize="5" />
-              <Badge>{tech.name}</Badge>
-            </HStack>
-          ))}
-        </VStack>
-      </Box>
+    <Box
+      id="about"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      textAlign="center"
+      position="relative"
+      height="500px"
+      zIndex={1}
+    >
+      <Flex direction="column">
+        <Box
+          p={8}
+          bg="#ffffff"
+          color="black"
+          marginTop="-80%"
+          boxShadow="0 4px 8px rgba(0,0,0,0.1)"
+        >
+          <VStack spacing={4}>
+            <Text fontSize="xl" fontWeight="bold">
+              Tech Stack
+            </Text>
+            {techStack.map((tech) => (
+              <Flex key={tech.name} align="center">
+                <Icon as={tech.icon} boxSize={6} />
+                <Text ml={2}>{tech.name}</Text>
+              </Flex>
+            ))}
+          </VStack>
+        </Box>
 
-      <Box
-        position="absolute"
-        width="100%"
-        maxW="400px"
-        bg="white"
-        p="4"
-        boxShadow="lg"
-        borderRadius="md"
-        marginLeft={{ md: '50%' }}
-        marginTop={{ base: '4', md: '0' }}
-        // zIndex="1"
-      >
-        <Text fontSize="xl" fontWeight="bold" mb="4">
-          Tool Stack
-        </Text>
-        <VStack align="start" spacing="2">
-          {toolStack.map((tool) => (
-            <HStack key={tool.name} spacing="2">
-              <Icon as={tool.icon} boxSize="5" />
-              <Badge>{tool.name}</Badge>
-            </HStack>
-          ))}
-        </VStack>
-      </Box>
-    </Flex>
+        <Box
+          p={8}
+          bg="#ffffff"
+          color="black"
+          marginTop="-80%"
+          boxShadow="0 4px 8px rgba(0,0,0,0.1)"
+        >
+          <VStack spacing={4}>
+            <Text fontSize="xl">
+              Tool Stack
+            </Text>
+            {toolStack.map((tool) => (
+              <Flex key={tool.name} align="center">
+                <Icon as={tool.icon} boxSize={6} />
+                <Text ml={2}>{tool.name}</Text>
+              </Flex>
+            ))}
+          </VStack>
+        </Box>
+      </Flex>
+    </Box>
   );
 };
 

@@ -10,7 +10,7 @@ const Footer = () => {
             justifyContent="center"
             textAlign="center"
             position="relative"
-            backgroundColor="black"
+            backgroundColor="#6e07f3"
             color="#ffffff"
             height="612px"
         >
