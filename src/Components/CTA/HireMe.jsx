@@ -11,7 +11,7 @@ const HireMe = () => {
       <Box
         zIndex={1}
         width="1000px"
-        background="white"
+        background="#141c3a"
         borderRadius="10px"
         p={20}
         boxShadow="md"
@@ -21,8 +21,9 @@ const HireMe = () => {
         height="50%"
         marginTop="-110px"
         marginBottom="-110px"
+        color="white"
       >
-        <Text fontSize="xl" fontWeight="bold" marginRight={4}>
+        <Text fontSize="xl" fontWeight="bold" marginRight={4} >
           Hiring Me?
         </Text>
         <Text flex="1" textAlign="center" marginRight={4}>

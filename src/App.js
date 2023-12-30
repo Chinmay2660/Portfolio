@@ -7,6 +7,7 @@ import Skills from './Components/About/Skills';
 import Footer from './Components/Footer/Footer';
 import Testimonials from './Components/Testimonials/Testimonials';
 import HireMe from './Components/CTA/HireMe';
+import Projects from './Components/Projects/Projects';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Home />
       <About/>
       <Skills/>
+      <Projects/>
       <Testimonials/>
       <HireMe/>
       <Footer/>
