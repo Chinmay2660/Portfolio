@@ -58,6 +58,15 @@ const Navbar = () => {
         >
           <Button variant="ghost">About</Button>
         </ScrollLink>
+        <ScrollLink
+          to="skills"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+        >
+          <Button variant="ghost">Skills</Button>
+        </ScrollLink>
       </Stack>
 
       <Drawer isOpen={isOpen} onClose={onClose} placement="right">
@@ -88,6 +97,18 @@ const Navbar = () => {
               >
                 <Button w="100%" variant="ghost">
                   About
+                </Button>
+              </ScrollLink>
+              <ScrollLink
+                to="skills"
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                onClick={onClose}
+              >
+                <Button w="100%" variant="ghost">
+                  Skills
                 </Button>
               </ScrollLink>
             </Stack>
