@@ -16,7 +16,7 @@ const Skills = () => {
         borderRadius="md"
         marginRight={{ md: '50%' }}
         marginTop={{ base: '4', md: '0' }}
-        zIndex="1"
+        // zIndex="1"
       >
         <Text fontSize="xl" fontWeight="bold" mb="4">
           Tech Stack
@@ -41,7 +41,7 @@ const Skills = () => {
         borderRadius="md"
         marginLeft={{ md: '50%' }}
         marginTop={{ base: '4', md: '0' }}
-        zIndex="1"
+        // zIndex="1"
       >
         <Text fontSize="xl" fontWeight="bold" mb="4">
           Tool Stack
