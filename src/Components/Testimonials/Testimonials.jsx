@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
   Avatar,
   Box,
@@ -118,6 +118,7 @@ const Testimonial = ({ bg, heading }) => {
 
 const Arrow = ({ isLeft }) => {
   const { onNext, onPrevious } = useCarousel();
+
   const onClickHandler = () => {
     if (isLeft) {
       onPrevious();
@@ -125,7 +126,19 @@ const Arrow = ({ isLeft }) => {
       onNext();
     }
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      onNext();
+    }, 5000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [onNext]);
+
   const pos = isLeft ? { left: "10px" } : { right: "10px" };
+
   return (
     <Flex pos="absolute" {...pos} top="35%">
       <Button size="lg" variant="solid" onClick={onClickHandler}>
