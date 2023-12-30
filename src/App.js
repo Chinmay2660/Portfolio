@@ -8,6 +8,7 @@ import Footer from './Components/Footer/Footer';
 import Testimonials from './Components/Testimonials/Testimonials';
 import HireMe from './Components/CTA/HireMe';
 import Projects from './Components/Projects/Projects';
+import GithubBox from './Components/Github/GithubBox'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Home />
       <About/>
       <Skills/>
+      <GithubBox/>
       <Projects/>
       <Testimonials/>
       <HireMe/>
