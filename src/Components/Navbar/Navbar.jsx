@@ -104,8 +104,6 @@ const Navbar = () => {
             Hire Me
           </Button>
         </ScrollLink>
-
-
       </Stack>
 
       <Modal isOpen={isOpen && isMobileMenuOpen} onClose={onClose} size="xs">
