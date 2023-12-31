@@ -4,7 +4,7 @@ import { Box, Text, Button, Flex } from '@chakra-ui/react';
 const HireMe = () => {
   return (
     <Flex
-    id="hireMe"
+      id="hireMe"
       justifyContent="center"
       alignItems="center"
     >
@@ -16,7 +16,7 @@ const HireMe = () => {
         p={20}
         boxShadow="md"
         display="flex"
-        flexDirection="row" 
+        flexDirection="row"
         alignItems="center"
         height="50%"
         marginTop="-110px"

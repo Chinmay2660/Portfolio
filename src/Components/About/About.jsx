@@ -1,20 +1,33 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, Button } from '@chakra-ui/react';
+import ResumePDF from '../../Assets/Resume_Chinmay_Bhoir.pdf';
 
 const About = () => {
+    const handleDownloadResume = () => {
+        window.open(ResumePDF, '_blank');
+    };
+
     return (
         <Box
             id="about"
             display="flex"
+            flexDirection="column"
             alignItems="center"
             justifyContent="center"
             textAlign="center"
             position="relative"
             backgroundColor="#6e07f3"
             color="#ffffff"
-            height="612px"
+            height="700px"
         >
-            <Box width="820px" height="200px" display="flex" flexDirection="column" justifyContent="center" marginBottom="70px">
+            <Box
+                width="820px"
+                height="200px"
+                display="flex"
+                flexDirection="column"
+                justifyContent="center"
+                marginBottom="70px"
+            >
                 <Text
                     fontSize="3xl"
                     fontWeight="bold"
@@ -35,6 +48,9 @@ const About = () => {
                     This experience now guides my path as a Software Development Engineer, where I'm committed to crafting intuitive and efficient solutions that truly resonate with users.
                 </Text>
             </Box>
+            <Button colorScheme="teal" onClick={handleDownloadResume}>
+                Download Resume
+            </Button>
         </Box>
     );
 };
