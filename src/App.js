@@ -9,6 +9,7 @@ import Testimonials from './Components/Testimonials/Testimonials';
 import HireMe from './Components/CTA/HireMe';
 import Projects from './Components/Projects/Projects';
 import GithubBox from './Components/Github/GithubBox'
+import Contact from './Components/CTA/Contact';
 import './style.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Skills/>
       <GithubBox/>
       <Projects/>
+      <Contact/>
       <Testimonials/>
       <HireMe/>
       <Footer/>
