@@ -90,8 +90,22 @@ const Navbar = () => {
           duration={500}
           offset={-70}
         >
-          <Button variant="ghost">Hire Me</Button>
+          <Button
+            variant="ghost"
+            borderColor="#6e07f3"
+            borderWidth="2px"
+            borderRadius="20px"
+            color="#6e07f3"
+            _hover={{
+              bg: "#6e07f3",
+              color: "white",
+            }}
+          >
+            Hire Me
+          </Button>
         </ScrollLink>
+
+
       </Stack>
 
       <Modal isOpen={isOpen && isMobileMenuOpen} onClose={onClose} size="xs">
