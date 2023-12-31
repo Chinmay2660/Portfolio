@@ -11,6 +11,7 @@ import Projects from './Components/Projects/Projects';
 import GithubBox from './Components/Github/GithubBox'
 import Contact from './Components/CTA/Contact';
 import './style.css'
+import ProjectCards from './Components/Projects/ProjectCards';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Skills/>
       <GithubBox/>
       <Projects/>
+      <ProjectCards/>
       <Contact/>
       <Testimonials/>
       <HireMe/>
