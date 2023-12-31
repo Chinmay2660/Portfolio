@@ -38,7 +38,6 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
     );
 };
 
-
 const ProjectCards = () => {
     const projects = [
         {
@@ -93,21 +92,21 @@ const ProjectCards = () => {
 
     return (
         <Flex
-          id="projects"
-          flexWrap="wrap"
-          justifyContent="center"
-          alignItems="center"
-          minHeight="100vh"
-          backgroundColor="transparent"
-          position="relative" 
-          zIndex="0"
-          marginTop="-200px"
+            id="projects"
+            flexWrap="wrap"
+            justifyContent="center"
+            alignItems="center"
+            minHeight="100vh"
+            backgroundColor="transparent"
+            position="relative"
+            zIndex="0"
+            marginTop="-200px"
         >
-          {projects.map((project) => (
-            <ProjectCard key={project.id} {...project} />
-          ))}
+            {projects.map((project) => (
+                <ProjectCard key={project.id} {...project} />
+            ))}
         </Flex>
-      );
-    };
-    
-    export default ProjectCards;
+    );
+};
+
+export default ProjectCards;

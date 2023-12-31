@@ -5,7 +5,6 @@ import GitHubCalendar from 'react-github-calendar';
 const GithubBox = () => {
   return (
     <Box
-      id="projects"
       display="flex"
       alignItems="center"
       justifyContent="center"
