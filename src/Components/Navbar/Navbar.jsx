@@ -1,25 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Flex,
   Image,
   Box,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerBody,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
   useDisclosure,
   Button,
   Stack,
 } from '@chakra-ui/react';
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 import logo from '../../Assets/logo192.png';
+import Hamburger from 'hamburger-react';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const scrollToTop = () => {
-    scroll.scrollToTop();
+  const handleMobileMenuToggle = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+    if (!isMobileMenuOpen) {
+      onOpen();
+    } else {
+      onClose();
+    }
   };
 
   return (
@@ -35,8 +41,9 @@ const Navbar = () => {
       direction={{ base: 'row', md: 'row' }}
     >
       <Image src={logo} alt="Logo" boxSize="50px" />
-      <Box display={{ base: 'block', md: 'none' }} onClick={onOpen} cursor="pointer">
-        ☰
+
+      <Box display={{ base: 'block', md: 'none' }} onClick={handleMobileMenuToggle} cursor="pointer">
+        <Hamburger toggled={isMobileMenuOpen} size={30} />
       </Box>
 
       <Stack direction="row" spacing={4} display={{ base: 'none', md: 'flex' }}>
@@ -87,11 +94,10 @@ const Navbar = () => {
         </ScrollLink>
       </Stack>
 
-      <Drawer isOpen={isOpen} onClose={onClose} placement="right">
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerBody>
+      <Modal isOpen={isOpen && isMobileMenuOpen} onClose={onClose} size="xs">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalBody>
             <Stack direction="column" spacing={4}>
               <ScrollLink
                 to="home"
@@ -154,9 +160,9 @@ const Navbar = () => {
                 </Button>
               </ScrollLink>
             </Stack>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Flex>
   );
 };
