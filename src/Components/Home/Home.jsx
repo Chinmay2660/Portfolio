@@ -14,7 +14,7 @@ const Home = () => {
       paddingTop={{ base: '4rem', md: '6rem', lg: '7rem' }}
     >
       <Text fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} fontWeight="bold">
-        Software Development Engineer at Jio
+        Software Development Engineer
       </Text>
       <Text
         fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
