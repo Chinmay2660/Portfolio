@@ -1,24 +1,32 @@
-import React from 'react';
-import { Box, Text, Flex, VStack, Icon } from '@chakra-ui/react';
-import { FaJava, FaReact, FaNodeJs, FaGithub, FaCode, FaGit, FaDatabase } from 'react-icons/fa';
-import { SiRedux, SiTailwindcss } from 'react-icons/si';
+import React from "react";
+import { Box, Text, Flex, VStack, Icon } from "@chakra-ui/react";
+import {
+  FaJava,
+  FaReact,
+  FaNodeJs,
+  FaGithub,
+  FaCode,
+  FaGit,
+  FaDatabase,
+} from "react-icons/fa";
+import { SiRedux, SiTailwindcss } from "react-icons/si";
 
 const techStack = [
-  { name: 'Java', icon: FaJava },
-  { name: 'JavaScript', icon: FaReact },
-  { name: 'React.js', icon: FaReact },
-  { name: 'Node.js', icon: FaNodeJs },
-  { name: 'Express.js', icon: FaNodeJs },
-  { name: 'Redux', icon: SiRedux },
-  { name: 'MongoDB', icon: FaDatabase },
-  { name: 'Tailwind CSS', icon: SiTailwindcss },
+  { name: "Java", icon: FaJava },
+  { name: "JavaScript", icon: FaReact },
+  { name: "React.js", icon: FaReact },
+  { name: "Node.js", icon: FaNodeJs },
+  { name: "Express.js", icon: FaNodeJs },
+  { name: "Redux", icon: SiRedux },
+  { name: "MongoDB", icon: FaDatabase },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
 ];
 
 const toolStack = [
-  { name: 'VS Code', icon: FaCode },
-  { name: 'Git', icon: FaGit },
-  { name: 'GitHub', icon: FaGithub },
-  { name: 'Postman', icon: FaCode },
+  { name: "VS Code", icon: FaCode },
+  { name: "Git", icon: FaGit },
+  { name: "GitHub", icon: FaGithub },
+  { name: "Postman", icon: FaCode },
 ];
 
 const Skills = () => {
@@ -35,6 +43,7 @@ const Skills = () => {
       bg="transparent"
       marginTop="-200px"
       paddingBottom={20}
+      m={2}
     >
       <Flex direction="column">
         <Box
@@ -48,9 +57,19 @@ const Skills = () => {
             <Text fontSize="xl" fontWeight="bold">
               Tech Stack
             </Text>
-            <Flex align="center" flexDirection="row">
+            <Flex
+              align="center"
+              flexDirection="row"
+              flexWrap="wrap"
+              justifyContent="space-around"
+            >
               {techStack.map((tech) => (
-                <Flex key={tech.name} align="center" flexDirection="column" m={2}>
+                <Flex
+                  key={tech.name}
+                  align="center"
+                  flexDirection="column"
+                  m={2}
+                >
                   <Icon as={tech.icon} boxSize={8} />
                   <Text mt={2}>{tech.name}</Text>
                 </Flex>
@@ -71,9 +90,14 @@ const Skills = () => {
             <Text fontSize="xl" fontWeight="bold">
               Tool Stack
             </Text>
-            <Flex align="center" flexDirection="row" >
+            <Flex align="center" flexDirection="row">
               {toolStack.map((tool) => (
-                <Flex key={tool.name} align="center" flexDirection="column" m={2}>
+                <Flex
+                  key={tool.name}
+                  align="center"
+                  flexDirection="column"
+                  m={2}
+                >
                   <Icon as={tool.icon} boxSize={8} />
                   <Text mt={2}>{tool.name}</Text>
                 </Flex>

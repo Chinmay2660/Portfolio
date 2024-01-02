@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
-import GitHubCalendar from 'react-github-calendar';
+import React from "react";
+import { Box, Text } from "@chakra-ui/react";
+import GitHubCalendar from "react-github-calendar";
 
 const GithubBox = () => {
   return (
@@ -15,8 +15,20 @@ const GithubBox = () => {
       height="500px"
       borderTop="1px"
       borderColor="gray.300"
+      border="0.5px solid black"
+      borderRadius="15px"
+      p={4}
+      m={2}
     >
-      <Box height="400px" display="flex" flexDirection="column" alignItems="center" justifyContent="center">
+      <Box
+        height="400px"
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        maxWidth="100%"
+        overflow="scroll"
+      >
         <Text fontSize="4xl" mb={12}>
           Days I Code
         </Text>

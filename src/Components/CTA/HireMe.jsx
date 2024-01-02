@@ -1,13 +1,9 @@
-import React from 'react';
-import { Box, Text, Button, Flex } from '@chakra-ui/react';
+import React from "react";
+import { Box, Text, Button, Flex } from "@chakra-ui/react";
 
 const HireMe = () => {
   return (
-    <Flex
-      id="hireMe"
-      justifyContent="center"
-      alignItems="center"
-    >
+    <Flex id="hireMe" justifyContent="center" alignItems="center">
       <Box
         zIndex={1}
         width="1000px"
@@ -16,22 +12,26 @@ const HireMe = () => {
         p={20}
         boxShadow="md"
         display="flex"
-        flexDirection="row"
+        gap="5"
+        flexDirection={{ base: "column", md: "row", lg: "row" }}
         alignItems="center"
         height="50%"
         marginTop="-110px"
         marginBottom="-110px"
         color="white"
       >
-        <Text fontSize="xl" fontWeight="bold" marginRight={4} >
+        <Text fontSize="xl" fontWeight="bold" marginRight={4}>
           Hiring Me?
         </Text>
         <Text flex="1" textAlign="center" marginRight={4}>
-          Interested in working together? We should queue up a time to chat. I’ll buy the coffee.
+          Interested in working together? We should queue up a time to chat.
+          I’ll buy the coffee.
         </Text>
         <Button
           colorScheme="teal"
-          onClick={() => window.location.href = 'mailto:bhoirchinmay2014@gmail.com'}
+          onClick={() =>
+            (window.location.href = "mailto:bhoirchinmay2014@gmail.com")
+          }
         >
           Contact Me
         </Button>

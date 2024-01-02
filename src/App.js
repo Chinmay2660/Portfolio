@@ -24,7 +24,7 @@ function App() {
       <Projects/>
       <ProjectCards/>
       <Contact/>
-      <Testimonials/>
+      {/* <Testimonials/> */}
       <HireMe/>
       <Footer/>
     </div>

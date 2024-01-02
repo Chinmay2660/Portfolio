@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Flex,
   Image,
@@ -10,10 +10,10 @@ import {
   useDisclosure,
   Button,
   Stack,
-} from '@chakra-ui/react';
-import { Link as ScrollLink } from 'react-scroll';
-import logo from '../../Assets/logo192.png';
-import Hamburger from 'hamburger-react';
+} from "@chakra-ui/react";
+import { Link as ScrollLink } from "react-scroll";
+import logo from "../../Assets/logo192.png";
+import Hamburger from "hamburger-react";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -38,15 +38,19 @@ const Navbar = () => {
       position="sticky"
       top="0"
       zIndex="1000"
-      direction={{ base: 'row', md: 'row' }}
+      direction={{ base: "row", md: "row" }}
     >
       <Image src={logo} alt="Logo" boxSize="50px" />
 
-      <Box display={{ base: 'block', md: 'none' }} onClick={handleMobileMenuToggle} cursor="pointer">
+      <Box
+        display={{ base: "block", md: "none" }}
+        onClick={handleMobileMenuToggle}
+        cursor="pointer"
+      >
         <Hamburger toggled={isMobileMenuOpen} size={30} />
       </Box>
 
-      <Stack direction="row" spacing={4} display={{ base: 'none', md: 'flex' }}>
+      <Stack direction="row" spacing={4} display={{ base: "none", md: "flex" }}>
         <ScrollLink
           to="home"
           spy={true}
@@ -106,7 +110,12 @@ const Navbar = () => {
         </ScrollLink>
       </Stack>
 
-      <Modal isOpen={isOpen && isMobileMenuOpen} onClose={onClose} size="xs">
+      <Modal
+        isOpen={isOpen && isMobileMenuOpen}
+        onClose={onClose}
+        onCloseComplete={() => setMobileMenuOpen(!isMobileMenuOpen)}
+        size="xs"
+      >
         <ModalOverlay />
         <ModalContent>
           <ModalBody>
