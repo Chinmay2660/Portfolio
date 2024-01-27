@@ -1,10 +1,11 @@
 import React from 'react';
 import avatar from '../../Assets/avatar.svg';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, useBreakpointValue } from '@chakra-ui/react';
 import Tilt from 'react-parallax-tilt';
 import devices from '../../Assets/hero-devices.svg';
 
 const Home = () => {
+  const avatarMaxWidth = useBreakpointValue({ base: '150px', md: '180px', lg: '210px' });
   return (
     <Box
       id="home"
@@ -31,7 +32,7 @@ const Home = () => {
           style={{
             marginTop: '50px',
             width: '100%',
-            maxWidth: ['120px', '150px', '210px'],
+            maxWidth: avatarMaxWidth,
           }}
         />
       </Tilt>
