@@ -17,8 +17,8 @@ const About = () => {
             textAlign="center"
             backgroundColor="#6e07f3"
             color="#ffffff"
-            height={{ base: '90vh', md: '90vh', lg: '90vh', xl: '100vh' }}
-            padding={{ base: '1rem 1rem 1rem', md: '2rem 2rem 2rem', lg: '3rem 3rem 3rem', xl: '5rem' }}
+            height={{ base: '90vh', md: '90vh', lg: '100vh', xl: '110vh' }}
+            padding={{ base: '1rem', md: '2rem', lg: '1rem 3rem', xl: '3rem 4rem' }}
         >
             <Box
                 width="100%"
@@ -40,9 +40,9 @@ const About = () => {
                 </Text>
             </Box>
             <Button
-                 size="lg"
-                paddingX="5" 
-                paddingY="3" 
+                size="lg"
+                paddingX="5"
+                paddingY="3"
                 onClick={handleDownloadResume}
                 variant="ghost"
                 borderColor="white"
