@@ -4,7 +4,6 @@ import { Box, Text } from '@chakra-ui/react';
 const Footer = () => {
     return (
         <Box
-            id="about"
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -16,7 +15,7 @@ const Footer = () => {
         >
             <Box width="820px" height="500px" display="flex" flexDirection="column" justifyContent="center" marginTop="100px">
                 <Text fontSize="3xl" paddingY="2" lineHeight="1.2" >
-                    Living, Learning, & leveling up <br /> one day at a time.
+                    Living, learning, & leveling up <br /> one day at a time.
                 </Text>
                 <Text fontSize="xl" paddingY="2" marginTop="250px">
                     Created by Chinmay @ 2023
