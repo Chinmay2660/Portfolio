@@ -29,11 +29,8 @@ const Skills = () => {
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      position="relative"
       height="600px"
-      zIndex={1}
       bg="transparent"
-      marginTop="-200px"
       paddingBottom={20}
     >
       <Flex direction="column">
