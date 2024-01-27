@@ -48,7 +48,7 @@ const Footer = () => {
                     <a href="https://auth.geeksforgeeks.org/user/chinmay2660" target="_blank" rel="noopener noreferrer" style={iconStyle}><SiGeeksforgeeks /></a>
                     <a href="https://www.hackerrank.com/profile/Chinmay2660" target="_blank" rel="noopener noreferrer" style={iconStyle}><SiHackerrank /></a>
                 </Box>
-                <Text fontSize={{ base: '2xl', md: '3xl' }} paddingY="2" marginTop="1rem">
+                <Text fontSize="xl" paddingY="2" marginTop="1rem">
                     Created by Chinmay @ 2023
                 </Text>
             </Box>
