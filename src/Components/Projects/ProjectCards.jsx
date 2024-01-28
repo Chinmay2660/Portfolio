@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Box, Flex, Image, Text, Button, useBreakpointValue } from '@chakra-ui/react';
 import Tilt from 'react-parallax-tilt';
 import { FiExternalLink } from "react-icons/fi";
+import { FaArrowDown } from "react-icons/fa6";
 
 const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [isHovered, setIsHovered] = React.useState(false);
     const cardWidth = useBreakpointValue({ base: "350px", md: "400px", lg: "500px", xl: "500px" });
     const cardHeight = useBreakpointValue({ base: "350px", md: "400px", lg: "500px", xl: "500px" });
 
@@ -103,6 +104,8 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
 };
 
 const ProjectCards = () => {
+    const [showAllProjects, setShowAllProjects] = useState(false);
+
     const projects = [
         {
             id: 1,
@@ -152,7 +155,33 @@ const ProjectCards = () => {
             githubLink: 'https://github.com/example/project3',
             viewLink: 'https://example.com/project3',
         },
+        {
+            id: 7,
+            image: 'https://placekitten.com/300/200',
+            title: 'Project 1',
+            description: 'Description for Project 1.',
+            githubLink: 'https://github.com/example/project1',
+            viewLink: 'https://example.com/project1',
+        },
+        {
+            id: 8,
+            image: 'https://placekitten.com/300/201',
+            title: 'Project 2',
+            description: 'Description for Project 2.',
+            githubLink: 'https://github.com/example/project2',
+            viewLink: 'https://example.com/project2',
+        },
+        {
+            id: 9,
+            image: 'https://placekitten.com/300/202',
+            title: 'Project 3',
+            description: 'Description for Project 3.',
+            githubLink: 'https://github.com/example/project3',
+            viewLink: 'https://example.com/project3',
+        },
     ];
+
+    const visibleProjects = showAllProjects ? projects : projects.slice(0, 6);
 
     return (
         <Flex
@@ -163,9 +192,32 @@ const ProjectCards = () => {
             marginTop="70px"
             marginBottom="70px"
         >
-            {projects.map((project) => (
+            {visibleProjects.map((project) => (
                 <ProjectCard key={project.id} {...project} />
             ))}
+            {!showAllProjects && (
+                <Button
+                    onClick={() => setShowAllProjects(true)}
+                    size="lg"
+                    paddingX="5"
+                    paddingY="3"
+                    variant="ghost"
+                    borderColor="#6e07f3"
+                    borderWidth="2px"
+                    borderRadius="20px"
+                    bg='white'
+                    color="#6e07f3"
+                    marginTop='5'
+                    marginBottom='5'
+                    _hover={{
+                        bg: "#6e07f3",
+                        color: "white",
+                    }}
+                >
+                    See more projects
+                    <FaArrowDown style={{ marginLeft: '0.5rem', marginTop: '3px', marginBottom: '3px' }} size="20px" />
+                </Button>
+            )}
         </Flex>
     );
 };
