@@ -39,7 +39,7 @@ const HireMe = () => {
           borderRadius="20px"
           bg='#141c3a'
           color="white"
-          onClick={() => window.location.href = 'mailto:bhoirchinmay2014@gmail.com'}
+          onClick={() => window.open('https://mail.google.com/', '_blank')}
           _hover={{
             bg: "#5be9b9",
             color: "#141c3a",
