@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Flex, Image, Text, Button, Tooltip, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Flex, Image, Text, Button, useBreakpointValue } from '@chakra-ui/react';
+import Tilt from 'react-parallax-tilt';
 
 const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -7,39 +8,43 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
     const cardHeight = useBreakpointValue({ base: "350px", md: "400px", lg: "500px", xl: "500px" });
 
     return (
-        <Box
-            maxW={cardWidth}
-            maxH={cardHeight}
-            borderWidth="1px"
-            borderRadius="lg"
-            overflow="hidden"
-            m="4"
-            _hover={{
-                boxShadow: 'md',
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            position="relative"
+        <Tilt
+            tiltMaxAngleX={5}
+            tiltMaxAngleY={5}
         >
-            <Box position="relative" >
-                <Image src={image} alt={title} h="250px" objectFit="cover" />
-                <Box
-                    position="absolute"
-                    top="0"
-                    left="0"
-                    right="0"
-                    bottom="0"
-                    display={isHovered ? 'flex' : 'none'}
-                    justifyContent="center"
-                    alignItems="center"
-                    bg="#141c3a"
-                    color="white"
-                >
-                    <Box textAlign="center">
-                        <Text fontWeight="bold" fontSize="xl" mb="2">
-                            {title}
-                        </Text>
-                        <Text>{description}</Text>
+            <Box
+                maxW={cardWidth}
+                maxH={cardHeight}
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+                m="4"
+                _hover={{
+                    boxShadow: 'md',
+                }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                position="relative"
+            >
+                <Box position="relative">
+                    <Image src={image} alt={title} h="250px" objectFit="cover" />
+                    <Box
+                        position="absolute"
+                        top="0"
+                        left="0"
+                        right="0"
+                        bottom="0"
+                        display={isHovered ? 'flex' : 'none'}
+                        justifyContent="center"
+                        alignItems="center"
+                        bg="#141c3a"
+                        color="white"
+                    >
+                        <Box textAlign="center">
+                            <Text fontWeight="bold" fontSize="xl" mb="2">
+                                {title}
+                            </Text>
+                            <Text>{description}</Text>
                             <Button
                                 as="a" href={githubLink}
                                 target="_blank"
@@ -86,10 +91,11 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                             >
                                 View
                             </Button>
+                        </Box>
                     </Box>
                 </Box>
             </Box>
-        </Box>
+        </Tilt>
     );
 };
 
