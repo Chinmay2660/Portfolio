@@ -1,7 +1,9 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, useBreakpointValue } from '@chakra-ui/react';
 
 const Projects = () => {
+  const height = useBreakpointValue({ base: "60vh", md: "30vh", lg: "30vh", xl: "70vh" });
+
   return (
     <Box
       id="projects"
@@ -12,15 +14,16 @@ const Projects = () => {
       position="relative"
       backgroundColor="#6e07f3"
       color="#ffffff"
-      height="612px"
+      height={height}
     >
       <Box
         width="820px"
-        height="200px"
+        height="180px"
         display="flex"
         flexDirection="column"
         justifyContent="center"
-        marginBottom="70px">
+        marginBottom="50px"
+        marginTop="50px">
         <Text
           fontSize="3xl"
           fontWeight="bold"

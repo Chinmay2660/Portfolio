@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Text, Button } from '@chakra-ui/react';
 import ResumePDF from '../../Assets/Resume_Chinmay_Bhoir.pdf';
+import { FaArrowRight } from "react-icons/fa6";
 
 const About = () => {
     const handleDownloadResume = () => {
@@ -17,7 +18,7 @@ const About = () => {
             textAlign="center"
             backgroundColor="#6e07f3"
             color="#ffffff"
-            height={{ base: '90vh', md: '90vh', lg: '100vh', xl: '110vh' }}
+            height={{ base: '90vh', md: '50vh', lg: '70vh', xl: '110vh' }}
             padding={{ base: '1rem', md: '2rem', lg: '1rem 3rem', xl: '3rem 4rem' }}
         >
             <Box
@@ -56,6 +57,7 @@ const About = () => {
                 }}
             >
                 Download Resume
+                <FaArrowRight style={{ marginLeft: '0.5rem', marginTop: '3px', marginBottom: '3px' }} size="20px" />
             </Button>
         </Box>
     );

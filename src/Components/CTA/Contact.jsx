@@ -5,7 +5,7 @@ import { TbMessage } from "react-icons/tb";
 const Contact = () => {
     return (
         <Flex
-            id="contact"
+            id="hireMe"
             direction="column"
             align="center"
             justify="center"
@@ -16,9 +16,11 @@ const Contact = () => {
             height={{ base: "auto", md: "612px" }}
             borderBottom="1px"
             borderColor="gray.300"
-            padding={{ base: "20px", md: "40px" }}
+            padding={{ base: "20px", md: "40px", lg: '20px', xl: '20px' }}
+            paddingBottom={{ base: '20px', md: '-500px' }}
+            marginBottom={{ md: '-250' }}
         >
-            <Box width={{ base: "90%", md: "820px" }} marginTop={{ base: "50px", md: "200px" }}> {/* Adjusted width and marginTop for responsiveness */}
+            <Box width={{ base: "90%", md: "90%" }} marginTop={{ base: "-10", md: "-350px" }} marginBottom={{ base: "0", md: "20px" }}>
                 <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" padding="2" zIndex="1">
                     Interested in collaborating with me?
                 </Text>

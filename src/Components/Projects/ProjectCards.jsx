@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Box, Flex, Image, Text, Button, Tooltip, useBreakpointValue } from '@chakra-ui/react';
 
 const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
@@ -8,7 +8,7 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
 
     return (
         <Box
-            maxW={cardWidth} 
+            maxW={cardWidth}
             maxH={cardHeight}
             borderWidth="1px"
             borderRadius="lg"
@@ -21,8 +21,8 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
             onMouseLeave={() => setIsHovered(false)}
             position="relative"
         >
-            <Box position="relative">
-                <Image src={image} alt={title} h="250px" objectFit="cover" /> 
+            <Box position="relative" >
+                <Image src={image} alt={title} h="250px" objectFit="cover" />
                 <Box
                     position="absolute"
                     top="0"
@@ -42,8 +42,8 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                         <Text>{description}</Text>
                         <Tooltip label="GitHub" hasArrow>
                             <Button
-                                as="a" href={githubLink} 
-                                target="_blank" 
+                                as="a" href={githubLink}
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 size="lg"
                                 paddingX="5"
@@ -56,6 +56,7 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                                 color="white"
                                 marginTop='5'
                                 marginBottom='5'
+                                marginRight='2'
                                 _hover={{
                                     bg: "#6e07f3",
                                     color: "white",
@@ -66,8 +67,8 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                         </Tooltip>
                         <Tooltip label="View" hasArrow>
                             <Button
-                                as="a" href={viewLink} 
-                                target="_blank" 
+                                as="a" href={viewLink}
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 size="lg"
                                 paddingX="5"
@@ -80,6 +81,7 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                                 color="white"
                                 marginTop='5'
                                 marginBottom='5'
+                                marginLeft='2'
                                 _hover={{
                                     bg: "#6e07f3",
                                     color: "white",
@@ -153,8 +155,8 @@ const ProjectCards = () => {
             flexWrap="wrap"
             justifyContent="center"
             alignItems="center"
-            minHeight="100vh"
-            backgroundColor="transparent"
+            marginTop="70px"
+            marginBottom="70px"
         >
             {projects.map((project) => (
                 <ProjectCard key={project.id} {...project} />

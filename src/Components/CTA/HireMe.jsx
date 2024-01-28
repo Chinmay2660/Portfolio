@@ -4,7 +4,7 @@ import { Box, Text, Button, Flex } from '@chakra-ui/react';
 const HireMe = () => {
   return (
     <Flex
-      id="hireMe"
+      // id="hireMe"
       justifyContent="center"
       alignItems="center"
     >
