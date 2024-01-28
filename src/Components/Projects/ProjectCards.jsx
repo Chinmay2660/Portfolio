@@ -40,7 +40,6 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                             {title}
                         </Text>
                         <Text>{description}</Text>
-                        <Tooltip label="GitHub" hasArrow>
                             <Button
                                 as="a" href={githubLink}
                                 target="_blank"
@@ -64,8 +63,6 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                             >
                                 Github
                             </Button>
-                        </Tooltip>
-                        <Tooltip label="View" hasArrow>
                             <Button
                                 as="a" href={viewLink}
                                 target="_blank"
@@ -89,7 +86,6 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                             >
                                 View
                             </Button>
-                        </Tooltip>
                     </Box>
                 </Box>
             </Box>
