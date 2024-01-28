@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <Home />
       <About/>
-      <Skills/>
+      {/* <Skills/> */}
       {/* <GithubBox/> */}
       <Projects/>
       <ProjectCards/>

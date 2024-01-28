@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Flex, Image, Text, Button, useBreakpointValue } from '@chakra-ui/react';
 import Tilt from 'react-parallax-tilt';
+import { FiExternalLink } from "react-icons/fi";
 
 const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -67,6 +68,7 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                                 }}
                             >
                                 Github
+                                <FiExternalLink style={{ marginLeft: '0.5rem', marginTop: '3px', marginBottom: '3px' }} size="20px" />
                             </Button>
                             <Button
                                 as="a" href={viewLink}
@@ -90,6 +92,7 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                                 }}
                             >
                                 View
+                                <FiExternalLink style={{ marginLeft: '0.5rem', marginTop: '3px', marginBottom: '3px' }} size="20px" />
                             </Button>
                         </Box>
                     </Box>
