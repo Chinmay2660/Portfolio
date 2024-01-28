@@ -1,12 +1,15 @@
 import React from 'react';
-import { Box, Flex, Image, Text, Button, Tooltip } from '@chakra-ui/react';
+import { Box, Flex, Image, Text, Button, Tooltip, useBreakpointValue } from '@chakra-ui/react';
 
 const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
     const [isHovered, setIsHovered] = React.useState(false);
+    const cardWidth = useBreakpointValue({ base: "350px", md: "400px", lg: "500px", xl: "500px" });
+    const cardHeight = useBreakpointValue({ base: "350px", md: "400px", lg: "500px", xl: "500px" });
 
     return (
         <Box
-            maxW="300px"
+            maxW={cardWidth} 
+            maxH={cardHeight}
             borderWidth="1px"
             borderRadius="lg"
             overflow="hidden"
@@ -19,8 +22,7 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
             position="relative"
         >
             <Box position="relative">
-                <Image src={image} alt={title} h="200px" objectFit="cover" />
-
+                <Image src={image} alt={title} h="250px" objectFit="cover" /> 
                 <Box
                     position="absolute"
                     top="0"
@@ -30,7 +32,7 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                     display={isHovered ? 'flex' : 'none'}
                     justifyContent="center"
                     alignItems="center"
-                    bg="rgba(0,0,0,0.5)"
+                    bg="#141c3a"
                     color="white"
                 >
                     <Box textAlign="center">
@@ -39,15 +41,53 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                         </Text>
                         <Text>{description}</Text>
                         <Tooltip label="GitHub" hasArrow>
-                        <Button as="a" href={githubLink} target="_blank" rel="noopener noreferrer" colorScheme="teal">
-                            GitHub
-                        </Button>
-                    </Tooltip>
-                    <Tooltip label="View" hasArrow>
-                        <Button as="a" href={viewLink} target="_blank" rel="noopener noreferrer" colorScheme="blue">
-                            View
-                        </Button>
-                    </Tooltip>
+                            <Button
+                                as="a" href={githubLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                size="lg"
+                                paddingX="5"
+                                paddingY="3"
+                                variant="ghost"
+                                borderColor="#6e07f3"
+                                borderWidth="2px"
+                                borderRadius="20px"
+                                bg='#141c3a'
+                                color="white"
+                                marginTop='5'
+                                marginBottom='5'
+                                _hover={{
+                                    bg: "#6e07f3",
+                                    color: "white",
+                                }}
+                            >
+                                Github
+                            </Button>
+                        </Tooltip>
+                        <Tooltip label="View" hasArrow>
+                            <Button
+                                as="a" href={viewLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                size="lg"
+                                paddingX="5"
+                                paddingY="3"
+                                variant="ghost"
+                                borderColor="#6e07f3"
+                                borderWidth="2px"
+                                borderRadius="20px"
+                                bg='#141c3a'
+                                color="white"
+                                marginTop='5'
+                                marginBottom='5'
+                                _hover={{
+                                    bg: "#6e07f3",
+                                    color: "white",
+                                }}
+                            >
+                                View
+                            </Button>
+                        </Tooltip>
                     </Box>
                 </Box>
             </Box>
