@@ -1,10 +1,12 @@
 import React from 'react';
 import { Box, Text, Button } from '@chakra-ui/react';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaTwitter, FaInstagramSquare } from 'react-icons/fa';
 import { SiGeeksforgeeks, SiHackerrank, SiLeetcode } from "react-icons/si";
 
 const iconData = [
     { link: "https://www.linkedin.com/in/chinmay2660/", icon: FaLinkedin },
+    { link: "https://twitter.com/ChinmayBhoir14", icon: FaTwitter },
+    { link: "https://www.instagram.com/chinmay__bhoir/", icon: FaInstagramSquare },
     { link: "https://github.com/Chinmay2660", icon: FaGithub },
     { link: "mailto:bhoirchinmay2014@gmail.com", icon: FaEnvelope },
     { link: "https://leetcode.com/Chinmay2660/", icon: SiLeetcode },
@@ -47,7 +49,8 @@ const Footer = () => {
                             backgroundColor="#6e07f3"
                             border="2px solid white"
                             color="white"
-                            fontSize="24px"
+                            fontSize="50px" 
+                            padding='3'
                             transition="background-color 0.3s ease, color 0.3s ease"
                             textDecoration="none"
                             _hover={{

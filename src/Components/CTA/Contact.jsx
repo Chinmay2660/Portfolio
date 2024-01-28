@@ -19,6 +19,7 @@ const Contact = () => {
             padding={{ base: "20px", md: "40px", lg: '20px', xl: '20px' }}
             paddingBottom={{ base: '20px', md: '-500px' }}
             marginBottom={{ md: '-250' }}
+            marginTop={{ md: '-50' }}
         >
             <Box width={{ base: "90%", md: "90%" }} marginTop={{ base: "-10", md: "-350px" }} marginBottom={{ base: "0", md: "20px" }}>
                 <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" padding="2" zIndex="1">
