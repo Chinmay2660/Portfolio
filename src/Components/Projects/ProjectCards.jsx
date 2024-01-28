@@ -2,6 +2,8 @@ import React from 'react';
 import { Box, Flex, Image, Text, Button, Tooltip } from '@chakra-ui/react';
 
 const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
+    const [isHovered, setIsHovered] = React.useState(false);
+
     return (
         <Box
             maxW="300px"
@@ -12,28 +14,43 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
             _hover={{
                 boxShadow: 'md',
             }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            position="relative"
         >
-            <Image src={image} alt={title} h="200px" objectFit="cover" />
+            <Box position="relative">
+                <Image src={image} alt={title} h="200px" objectFit="cover" />
 
-            <Box p="4">
-                <Text fontWeight="bold" fontSize="xl" mb="2">
-                    {title}
-                </Text>
-                <Text color="gray.600">{description}</Text>
+                <Box
+                    position="absolute"
+                    top="0"
+                    left="0"
+                    right="0"
+                    bottom="0"
+                    display={isHovered ? 'flex' : 'none'}
+                    justifyContent="center"
+                    alignItems="center"
+                    bg="rgba(0,0,0,0.5)"
+                    color="white"
+                >
+                    <Box textAlign="center">
+                        <Text fontWeight="bold" fontSize="xl" mb="2">
+                            {title}
+                        </Text>
+                        <Text>{description}</Text>
+                        <Tooltip label="GitHub" hasArrow>
+                        <Button as="a" href={githubLink} target="_blank" rel="noopener noreferrer" colorScheme="teal">
+                            GitHub
+                        </Button>
+                    </Tooltip>
+                    <Tooltip label="View" hasArrow>
+                        <Button as="a" href={viewLink} target="_blank" rel="noopener noreferrer" colorScheme="blue">
+                            View
+                        </Button>
+                    </Tooltip>
+                    </Box>
+                </Box>
             </Box>
-
-            <Flex justify="space-between" p="4">
-                <Tooltip label="GitHub" hasArrow>
-                    <Button as="a" href={githubLink} target="_blank" rel="noopener noreferrer" colorScheme="teal">
-                        GitHub
-                    </Button>
-                </Tooltip>
-                <Tooltip label="View" hasArrow>
-                    <Button as="a" href={viewLink} target="_blank" rel="noopener noreferrer" colorScheme="blue">
-                        View
-                    </Button>
-                </Tooltip>
-            </Flex>
         </Box>
     );
 };
