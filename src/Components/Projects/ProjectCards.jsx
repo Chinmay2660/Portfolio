@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Box, Flex, Image, Text, Button, Tooltip, useBreakpointValue } from '@chakra-ui/react';
 
 const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
-    const [isHovered, setIsHovered] = React.useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const cardWidth = useBreakpointValue({ base: "350px", md: "400px", lg: "500px", xl: "500px" });
     const cardHeight = useBreakpointValue({ base: "350px", md: "400px", lg: "500px", xl: "500px" });
 
@@ -155,9 +155,6 @@ const ProjectCards = () => {
             alignItems="center"
             minHeight="100vh"
             backgroundColor="transparent"
-            position="relative"
-            zIndex="0"
-            marginTop="-200px"
         >
             {projects.map((project) => (
                 <ProjectCard key={project.id} {...project} />
