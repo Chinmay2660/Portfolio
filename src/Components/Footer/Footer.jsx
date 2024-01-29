@@ -9,9 +9,9 @@ const iconData = [
     { link: "https://www.instagram.com/chinmay__bhoir/", icon: FaInstagramSquare },
     { link: "https://github.com/Chinmay2660", icon: FaGithub },
     { link: "mailto:bhoirchinmay2014@gmail.com", icon: FaEnvelope },
-    { link: "https://leetcode.com/Chinmay2660/", icon: SiLeetcode },
-    { link: "https://auth.geeksforgeeks.org/user/chinmay2660", icon: SiGeeksforgeeks },
-    { link: "https://www.hackerrank.com/profile/Chinmay2660", icon: SiHackerrank }
+    // { link: "https://leetcode.com/Chinmay2660/", icon: SiLeetcode },
+    // { link: "https://auth.geeksforgeeks.org/user/chinmay2660", icon: SiGeeksforgeeks },
+    // { link: "https://www.hackerrank.com/profile/Chinmay2660", icon: SiHackerrank }
 ];
 
 const Footer = () => {
