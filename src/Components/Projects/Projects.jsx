@@ -36,7 +36,10 @@ const Projects = () => {
           fontSize="xl"
           padding="2"
           position="relative"
-          zIndex="1">
+          zIndex="1"
+          marginRight={{ base: "30px", md: "0" }}
+          marginLeft={{ base: "30px", md: "0" }}
+        >
           I'm a bit of a digital product junky. Over the years, I've used hundreds of web and mobile apps in different industries and verticals. Eventually, I decided that it would be a fun challenge to try designing and building my own.
         </Text>
       </Box>
