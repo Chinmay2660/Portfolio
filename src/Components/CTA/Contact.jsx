@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Text, Button, Flex } from '@chakra-ui/react';
 import { TbMessage } from "react-icons/tb";
+import ContactForm from './ContactForm'; 
 
 const Contact = () => {
+    const [isContactFormOpen, setIsContactFormOpen] = useState(false); 
+
+    const handleOpenContactForm = () => {
+        setIsContactFormOpen(true);
+    };
+
+    const handleCloseContactForm = () => {
+        setIsContactFormOpen(false);
+    };
+
     return (
         <Flex
             id="hireMe"
@@ -45,10 +56,13 @@ const Contact = () => {
                     bg: "#6e07f3",
                     color: "white",
                 }}
+                onClick={handleOpenContactForm}
             >
                 <TbMessage style={{ marginRight: '0.5rem', marginTop: '4.5px' }} size="22px" />
                 Start a conversation
             </Button>
+
+            {isContactFormOpen && <ContactForm isOpen={isContactFormOpen} onClose={handleCloseContactForm} />}
         </Flex>
     );
 };
