@@ -27,7 +27,7 @@ const Footer = () => {
             minHeight={{ base: 'auto', md: '612px' }}
             padding={{ base: '2rem', md: '0' }}
         >
-            <Box width="100%" maxWidth="820px" padding="0 1rem">
+            <Box width="100%" maxWidth="820px" padding="0 1rem" marginTop={{ base: 40, md: 0 }}>
                 <Text fontSize={{ base: '2xl', md: '3xl' }} paddingY="2" lineHeight="1.2" >
                     Living, learning, & leveling up <br /> one day at a time.
                 </Text>
