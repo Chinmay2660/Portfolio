@@ -6,7 +6,7 @@ import { FaArrowDown } from "react-icons/fa6";
 import { FaCode } from "react-icons/fa";
 
 const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
-    const [isHovered, setIsHovered] = React.useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const cardWidth = useBreakpointValue({ base: "350px", md: "400px", lg: "500px", xl: "500px" });
     const cardHeight = useBreakpointValue({ base: "350px", md: "400px", lg: "500px", xl: "500px" });
 
@@ -70,7 +70,7 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                                 }}
                             >
                                 Github
-                                <FaCode style={{ marginLeft: '0.5rem', marginTop: '3px'}} size="20px" />
+                                <FaCode style={{ marginLeft: '0.5rem', marginTop: '3px' }} size="20px" />
                             </Button>
                             <Button
                                 as="a" href={viewLink}
