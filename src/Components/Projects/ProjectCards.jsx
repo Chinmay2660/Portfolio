@@ -70,7 +70,7 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                                 }}
                             >
                                 Github
-                                <FaCode style={{ marginLeft: '0.5rem', marginTop: '3px', marginBottom: '3px' }} size="20px" />
+                                <FaCode style={{ marginLeft: '0.5rem', marginTop: '3px'}} size="20px" />
                             </Button>
                             <Button
                                 as="a" href={viewLink}

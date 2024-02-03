@@ -33,10 +33,10 @@ const Skills = () => {
   const boxSize = "120px";
 
   return (
-    <Flex id="skills" alignItems="center" justifyContent="center" textAlign="center" bg="transparent" paddingBottom={20}>
+    <Flex id="skills" alignItems="center" justifyContent="center" textAlign="center" bg="transparent" paddingBottom={20} paddingTop={20}>
       <VStack spacing={8}>
         <Flex direction="column" alignItems="center" justifyContent="center">
-          <Text fontSize="xl" fontWeight="bold">Tech Stack</Text>
+          <Text fontSize="3xl" fontWeight="bold" marginBottom={10}>Tech Stack</Text>
           <Grid templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(6, 1fr)", xl: "repeat(8, 1fr)" }} gap={4} justifyContent="center">
             {techStack.map((tech, index) => (
               <Box
@@ -62,7 +62,7 @@ const Skills = () => {
         </Flex>
 
         <Flex direction="column" alignItems="center" justifyContent="center">
-          <Text fontSize="xl" fontWeight="bold">Tool Stack</Text>
+          <Text fontSize="3xl" fontWeight="bold" marginBottom={10}>Tool Stack</Text>
           <Grid templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(6, 1fr)", xl: "repeat(8, 1fr)" }} gap={4} justifyContent="center">
             {toolStack.map((tool, index) => (
               <Box

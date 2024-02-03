@@ -74,7 +74,7 @@ const Navbar = () => {
         >
           <Button variant="ghost">Skills</Button>
         </ScrollLink>
-        <ScrollLink
+        {/* <ScrollLink
           to="work"
           spy={true}
           smooth={true}
@@ -82,7 +82,7 @@ const Navbar = () => {
           offset={-70}
         >
           <Button variant="ghost">Work</Button>
-        </ScrollLink>
+        </ScrollLink> */}
         <ScrollLink
           to="projects"
           spy={true}
@@ -156,7 +156,7 @@ const Navbar = () => {
                   Skills
                 </Button>
               </ScrollLink>
-              <ScrollLink
+              {/* <ScrollLink
                 to="work"
                 spy={true}
                 smooth={true}
@@ -167,7 +167,7 @@ const Navbar = () => {
                 <Button w="100%" variant="ghost">
                   Work
                 </Button>
-              </ScrollLink>
+              </ScrollLink> */}
               <ScrollLink
                 to="projects"
                 spy={true}
