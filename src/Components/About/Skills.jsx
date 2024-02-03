@@ -1,24 +1,32 @@
 import React from 'react';
 import { Box, Text, Flex, VStack, Icon } from '@chakra-ui/react';
-import { FaJava, FaReact, FaNodeJs, FaGithub, FaCode, FaGit, FaDatabase } from 'react-icons/fa';
-import { SiRedux, SiTailwindcss } from 'react-icons/si';
+import { FaJava, FaReact, FaNodeJs, FaGithub, FaGit, FaBootstrap } from 'react-icons/fa';
+import { SiRedux, SiTailwindcss, SiVisualstudiocode, SiMongodb, SiPostman, SiMui, SiChakraui, SiExpress, SiAzuredevops, SiNetlify } from 'react-icons/si';
+import { TbBrandCpp } from "react-icons/tb";
+import { IoLogoJavascript } from "react-icons/io5";
 
 const techStack = [
+  { name: 'C++', icon: TbBrandCpp },
   { name: 'Java', icon: FaJava },
-  { name: 'JavaScript', icon: FaReact },
+  { name: 'JavaScript', icon: IoLogoJavascript },
   { name: 'React.js', icon: FaReact },
   { name: 'Node.js', icon: FaNodeJs },
-  { name: 'Express.js', icon: FaNodeJs },
+  { name: 'Express.js', icon: SiExpress },
   { name: 'Redux', icon: SiRedux },
-  { name: 'MongoDB', icon: FaDatabase },
+  { name: 'MongoDB', icon: SiMongodb },
+  { name: 'Material UI', icon: SiMui },
+  { name: 'Chakra UI', icon: SiChakraui },
   { name: 'Tailwind CSS', icon: SiTailwindcss },
+  { name: 'Bootstrap', icon: FaBootstrap },
 ];
 
 const toolStack = [
-  { name: 'VS Code', icon: FaCode },
   { name: 'Git', icon: FaGit },
+  { name: 'Postman', icon: SiPostman },
+  { name: 'VS Code', icon: SiVisualstudiocode },
+  { name: 'Azure Devops', icon: SiAzuredevops },
   { name: 'GitHub', icon: FaGithub },
-  { name: 'Postman', icon: FaCode },
+  { name: 'Netlify', icon: SiNetlify },
 ];
 
 const Skills = () => {
