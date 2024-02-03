@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Text, Button, Flex } from '@chakra-ui/react';
 import { TbMessage } from "react-icons/tb";
-import ContactForm from './ContactForm'; 
+import ContactForm from './ContactForm';
 
 const Contact = () => {
-    const [isContactFormOpen, setIsContactFormOpen] = useState(false); 
+    const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
     const handleOpenContactForm = () => {
         setIsContactFormOpen(true);
@@ -25,7 +25,6 @@ const Contact = () => {
             backgroundColor="transparent"
             color="black"
             height={{ base: "auto", md: "612px" }}
-            borderBottom="1px"
             borderColor="gray.300"
             padding={{ base: "20px", md: "40px", lg: '20px', xl: '20px' }}
             paddingBottom={{ base: '20px', md: '-500px' }}
