@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, Flex, VStack, Icon } from '@chakra-ui/react';
+import { Flex, VStack, Icon, Text, Box } from '@chakra-ui/react';
 import { FaJava, FaReact, FaNodeJs, FaGithub, FaGit, FaBootstrap } from 'react-icons/fa';
 import { SiRedux, SiTailwindcss, SiVisualstudiocode, SiMongodb, SiPostman, SiMui, SiChakraui, SiExpress, SiAzuredevops, SiNetlify } from 'react-icons/si';
 import { TbBrandCpp } from "react-icons/tb";
@@ -30,64 +30,36 @@ const toolStack = [
 ];
 
 const Skills = () => {
-  return (
-    <Box
-      id="skills"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      textAlign="center"
-      height="600px"
-      bg="transparent"
-      paddingBottom={20}
-    >
-      <Flex direction="column">
-        <Box
-          p={8}
-          bg="#ffffff"
-          color="black"
-          border="0.5px solid black"
-          borderRadius="15px 15px 0 0"
-        >
-          <VStack spacing={4}>
-            <Text fontSize="xl" fontWeight="bold">
-              Tech Stack
-            </Text>
-            <Flex align="center" flexDirection="row">
-              {techStack.map((tech) => (
-                <Flex key={tech.name} align="center" flexDirection="column" m={2}>
-                  <Icon as={tech.icon} boxSize={8} />
-                  <Text mt={2}>{tech.name}</Text>
-                </Flex>
-              ))}
-            </Flex>
-          </VStack>
-        </Box>
+  const boxSize = "120px"; // Adjust the size as needed
 
-        <Box
-          p={8}
-          bg="#ffffff"
-          color="black"
-          border="0.5px solid black"
-          borderTop="none"
-          borderRadius="0 0 15px 15px"
-        >
-          <VStack spacing={4}>
-            <Text fontSize="xl" fontWeight="bold">
-              Tool Stack
-            </Text>
-            <Flex align="center" flexDirection="row" >
-              {toolStack.map((tool) => (
-                <Flex key={tool.name} align="center" flexDirection="column" m={2}>
-                  <Icon as={tool.icon} boxSize={8} />
-                  <Text mt={2}>{tool.name}</Text>
-                </Flex>
-              ))}
-            </Flex>
-          </VStack>
-        </Box>
-      </Flex>
-    </Box>
+  return (
+    <Flex id="skills" alignItems="center" justifyContent="center" textAlign="center" height="600px" bg="transparent" paddingBottom={20}>
+      <VStack spacing={8}>
+        <Flex direction="column" alignItems="center">
+          <Text fontSize="xl" fontWeight="bold">Tech Stack</Text>
+          <Flex align="center" flexDirection="row" >
+            {techStack.map((tech) => (
+              <Box key={tech.name} m={2} p={4} bg="#ffffff" color="black" borderRadius="15px" textAlign="center" border="1px solid #6e07f3" height={boxSize} width={boxSize}>
+                <Icon as={tech.icon} boxSize={8} />
+                <Text mt={2}>{tech.name}</Text>
+              </Box>
+            ))}
+          </Flex>
+        </Flex>
+
+        <Flex direction="column" alignItems="center">
+          <Text fontSize="xl" fontWeight="bold">Tool Stack</Text>
+          <Flex align="center" flexDirection="row" >
+            {toolStack.map((tool) => (
+              <Box key={tool.name} m={2} p={4} bg="#ffffff" color="black" borderRadius="15px" textAlign="center" border="1px solid #6e07f3" height={boxSize} width={boxSize}>
+                <Icon as={tool.icon} boxSize={8} />
+                <Text mt={2}>{tool.name}</Text>
+              </Box>
+            ))}
+          </Flex>
+        </Flex>
+      </VStack>
+    </Flex>
   );
 };
 
