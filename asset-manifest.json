@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.109d135b.css",
-    "main.js": "/Portfolio/static/js/main.1738ecc1.js",
+    "main.js": "/Portfolio/static/js/main.09361559.js",
     "static/js/787.7da95b79.chunk.js": "/Portfolio/static/js/787.7da95b79.chunk.js",
     "static/media/Resume_Chinmay_Bhoir.pdf": "/Portfolio/static/media/Resume_Chinmay_Bhoir.432b5e3f8b1e6d82527b.pdf",
     "static/media/hero-devices.svg": "/Portfolio/static/media/hero-devices.09431a49b158b1905523f18d9abe3290.svg",
     "static/media/avatar.svg": "/Portfolio/static/media/avatar.3e660f2fd34e8e55516657679c17ee77.svg",
     "index.html": "/Portfolio/index.html",
     "main.109d135b.css.map": "/Portfolio/static/css/main.109d135b.css.map",
-    "main.1738ecc1.js.map": "/Portfolio/static/js/main.1738ecc1.js.map",
+    "main.09361559.js.map": "/Portfolio/static/js/main.09361559.js.map",
     "787.7da95b79.chunk.js.map": "/Portfolio/static/js/787.7da95b79.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.109d135b.css",
-    "static/js/main.1738ecc1.js"
+    "static/js/main.09361559.js"
   ]
 }
