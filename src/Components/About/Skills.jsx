@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, VStack, Icon, Text, Box } from '@chakra-ui/react';
+import { Flex, VStack, Icon, Text, Box, Grid } from '@chakra-ui/react';
 import { FaJava, FaReact, FaNodeJs, FaGithub, FaGit, FaBootstrap } from 'react-icons/fa';
 import { SiRedux, SiTailwindcss, SiVisualstudiocode, SiMongodb, SiPostman, SiMui, SiChakraui, SiExpress, SiAzuredevops, SiNetlify } from 'react-icons/si';
 import { TbBrandCpp } from "react-icons/tb";
@@ -30,33 +30,61 @@ const toolStack = [
 ];
 
 const Skills = () => {
-  const boxSize = "120px"; // Adjust the size as needed
+  const boxSize = "120px";
 
   return (
-    <Flex id="skills" alignItems="center" justifyContent="center" textAlign="center" height="600px" bg="transparent" paddingBottom={20}>
+    <Flex id="skills" alignItems="center" justifyContent="center" textAlign="center" bg="transparent" paddingBottom={20}>
       <VStack spacing={8}>
-        <Flex direction="column" alignItems="center">
+        <Flex direction="column" alignItems="center" justifyContent="center">
           <Text fontSize="xl" fontWeight="bold">Tech Stack</Text>
-          <Flex align="center" flexDirection="row" >
-            {techStack.map((tech) => (
-              <Box key={tech.name} m={2} p={4} bg="#ffffff" color="black" borderRadius="15px" textAlign="center" border="1px solid #6e07f3" height={boxSize} width={boxSize}>
+          <Grid templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(6, 1fr)", xl: "repeat(8, 1fr)" }} gap={4} justifyContent="center">
+            {techStack.map((tech, index) => (
+              <Box
+                key={tech.name}
+                m={2}
+                p={4}
+                bg="#ffffff"
+                color="black"
+                borderRadius="15px"
+                textAlign="center"
+                border="2px solid #6e07f3"
+                height={boxSize}
+                width={boxSize}
+                boxShadow={`0 0 20px rgba(0, 0, 0, 0.2)`}
+                transition="box-shadow 0.3s"
+                _hover={{ boxShadow: `0 0 30px rgba(0, 0, 0, 0.5)` }}
+              >
                 <Icon as={tech.icon} boxSize={8} />
                 <Text mt={2}>{tech.name}</Text>
               </Box>
             ))}
-          </Flex>
+          </Grid>
         </Flex>
 
-        <Flex direction="column" alignItems="center">
+        <Flex direction="column" alignItems="center" justifyContent="center">
           <Text fontSize="xl" fontWeight="bold">Tool Stack</Text>
-          <Flex align="center" flexDirection="row" >
-            {toolStack.map((tool) => (
-              <Box key={tool.name} m={2} p={4} bg="#ffffff" color="black" borderRadius="15px" textAlign="center" border="1px solid #6e07f3" height={boxSize} width={boxSize}>
+          <Grid templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)", lg: "repeat(6, 1fr)", xl: "repeat(8, 1fr)" }} gap={4} justifyContent="center">
+            {toolStack.map((tool, index) => (
+              <Box
+                key={tool.name}
+                m={2}
+                p={4}
+                bg="#ffffff"
+                color="black"
+                borderRadius="15px"
+                textAlign="center"
+                border="2px solid #6e07f3"
+                height={boxSize}
+                width={boxSize}
+                boxShadow={`0 0 20px rgba(0, 0, 0, 0.2)`}
+                transition="box-shadow 0.3s"
+                _hover={{ boxShadow: `0 0 30px rgba(0, 0, 0, 0.5)` }}
+              >
                 <Icon as={tool.icon} boxSize={8} />
                 <Text mt={2}>{tool.name}</Text>
               </Box>
             ))}
-          </Flex>
+          </Grid>
         </Flex>
       </VStack>
     </Flex>
