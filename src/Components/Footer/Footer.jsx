@@ -31,7 +31,7 @@ const Footer = () => {
                 <Text fontSize={{ base: '2xl', md: '3xl' }} paddingY="2" lineHeight="1.2" >
                     Living, learning, & leveling up <br /> one day at a time.
                 </Text>
-                <Box fontSize="xl" paddingY="2" marginTop="50px" display="flex" justifyContent="center">
+                <Box fontSize="xl" paddingY="2" marginTop="50px" display="flex" justifyContent="center" flexWrap="wrap">
                     {iconData.map((item, index) => (
                         <Button
                             as="a"
@@ -46,11 +46,12 @@ const Footer = () => {
                             height="50px"
                             borderRadius="50%"
                             marginRight="1rem"
+                            marginBottom="1rem"
                             backgroundColor="#6e07f3"
                             border="2px solid white"
                             color="white"
-                            fontSize="50px" 
-                            padding='3'
+                            fontSize="24px"
+                            padding='0'
                             transition="background-color 0.3s ease, color 0.3s ease"
                             textDecoration="none"
                             _hover={{
