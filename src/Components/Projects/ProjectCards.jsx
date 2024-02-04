@@ -191,7 +191,7 @@ const ProjectCards = () => {
                 flexWrap="wrap"
                 justifyContent="center"
                 alignItems="center"
-                marginTop="70px"
+                marginTop="40px"
                 marginBottom="70px"
             >
                 {visibleProjects.map((project) => (
