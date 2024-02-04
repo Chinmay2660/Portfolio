@@ -30,7 +30,10 @@ const toolStack = [
 ];
 
 const SkillCard = ({ name, icon }) => (
-  <Box
+  <Flex
+    flexDirection="column"
+    justifyContent="center"
+    alignItems="center"
     m={2}
     p={4}
     bg="#ffffff"
@@ -46,7 +49,7 @@ const SkillCard = ({ name, icon }) => (
   >
     <Icon as={icon} boxSize={8} />
     <Text mt={2}>{name}</Text>
-  </Box>
+  </Flex>
 );
 
 const Skills = () => {
