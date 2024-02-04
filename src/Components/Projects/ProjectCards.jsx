@@ -4,6 +4,17 @@ import Tilt from 'react-parallax-tilt';
 import { FiExternalLink } from "react-icons/fi";
 import { FaArrowDown } from "react-icons/fa6";
 import { FaCode } from "react-icons/fa";
+import Dicee_game_img from '../../Assets/Projects/dicee_game.jpeg'
+import Drum_kit_img from '../../Assets/Projects/drum_kit.jpeg'
+import Form_img from '../../Assets/Projects/form.jpeg'
+import Github_viewer_img from '../../Assets/Projects/github_viewer.jpeg'
+import Gpt_img from '../../Assets/Projects/gpt.jpeg'
+import Keeper_app_img from '../../Assets/Projects/keeper_app.jpeg'
+import Recipee_app_img from '../../Assets/Projects/recipee_app.jpeg'
+import Simon_game_img from '../../Assets/Projects/simon_game.jpeg'
+import Tindog_img from '../../Assets/Projects/tindog.jpeg'
+import Todolist_img from '../../Assets/Projects/todolist.jpeg'
+import Tournament_app from '../../Assets/Projects/tournament app.jpeg'
 
 const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -110,7 +121,7 @@ const ProjectCards = () => {
     const projects = [
         {
             id: 1,
-            image: 'https://placekitten.com/300/200',
+            image: Gpt_img,
             title: 'Project 1',
             description: 'Description for Project 1.',
             githubLink: 'https://github.com/example/project1',
@@ -118,7 +129,7 @@ const ProjectCards = () => {
         },
         {
             id: 2,
-            image: 'https://placekitten.com/300/201',
+            image: Keeper_app_img,
             title: 'Project 2',
             description: 'Description for Project 2.',
             githubLink: 'https://github.com/example/project2',
@@ -126,7 +137,7 @@ const ProjectCards = () => {
         },
         {
             id: 3,
-            image: 'https://placekitten.com/300/202',
+            image: Tindog_img,
             title: 'Project 3',
             description: 'Description for Project 3.',
             githubLink: 'https://github.com/example/project3',
@@ -134,7 +145,7 @@ const ProjectCards = () => {
         },
         {
             id: 4,
-            image: 'https://placekitten.com/300/200',
+            image: Tournament_app,
             title: 'Project 1',
             description: 'Description for Project 1.',
             githubLink: 'https://github.com/example/project1',
@@ -142,7 +153,7 @@ const ProjectCards = () => {
         },
         {
             id: 5,
-            image: 'https://placekitten.com/300/201',
+            image: Todolist_img,
             title: 'Project 2',
             description: 'Description for Project 2.',
             githubLink: 'https://github.com/example/project2',
@@ -150,7 +161,7 @@ const ProjectCards = () => {
         },
         {
             id: 6,
-            image: 'https://placekitten.com/300/202',
+            image: Recipee_app_img,
             title: 'Project 3',
             description: 'Description for Project 3.',
             githubLink: 'https://github.com/example/project3',
@@ -158,7 +169,7 @@ const ProjectCards = () => {
         },
         {
             id: 7,
-            image: 'https://placekitten.com/300/200',
+            image: Form_img,
             title: 'Project 1',
             description: 'Description for Project 1.',
             githubLink: 'https://github.com/example/project1',
@@ -166,7 +177,7 @@ const ProjectCards = () => {
         },
         {
             id: 8,
-            image: 'https://placekitten.com/300/201',
+            image: Dicee_game_img,
             title: 'Project 2',
             description: 'Description for Project 2.',
             githubLink: 'https://github.com/example/project2',
@@ -174,7 +185,23 @@ const ProjectCards = () => {
         },
         {
             id: 9,
-            image: 'https://placekitten.com/300/202',
+            image: Drum_kit_img,
+            title: 'Project 3',
+            description: 'Description for Project 3.',
+            githubLink: 'https://github.com/example/project3',
+            viewLink: 'https://example.com/project3',
+        },
+        {
+            id: 10,
+            image: Simon_game_img,
+            title: 'Project 3',
+            description: 'Description for Project 3.',
+            githubLink: 'https://github.com/example/project3',
+            viewLink: 'https://example.com/project3',
+        },
+        {
+            id: 11,
+            image: Github_viewer_img,
             title: 'Project 3',
             description: 'Description for Project 3.',
             githubLink: 'https://github.com/example/project3',
