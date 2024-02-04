@@ -1,32 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Flex,
   Image,
   Box,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-  useDisclosure,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerBody,
   Button,
   Stack,
+  useDisclosure,
+  IconButton
 } from '@chakra-ui/react';
 import { Link as ScrollLink } from 'react-scroll';
 import logo from '../../Assets/logo192.png';
+import { CloseIcon } from '@chakra-ui/icons';
 import Hamburger from 'hamburger-react';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handleMobileMenuToggle = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-    if (!isMobileMenuOpen) {
-      onOpen();
-    } else {
-      onClose();
-    }
-  };
 
   return (
     <Flex
@@ -42,8 +34,8 @@ const Navbar = () => {
     >
       <Image src={logo} alt="Logo" boxSize="50px" />
 
-      <Box display={{ base: 'block', md: 'none' }} onClick={handleMobileMenuToggle} cursor="pointer">
-        <Hamburger toggled={isMobileMenuOpen} size={30} />
+      <Box display={{ base: 'block', md: 'none' }}>
+        <Hamburger toggled={isOpen} toggle={onOpen} />
       </Box>
 
       <Stack direction="row" spacing={4} display={{ base: 'none', md: 'flex' }}>
@@ -115,10 +107,18 @@ const Navbar = () => {
         </ScrollLink>
       </Stack>
 
-      <Modal isOpen={isOpen && isMobileMenuOpen} onClose={onClose} size="xs">
-        <ModalOverlay />
-        <ModalContent>
-          <ModalBody>
+      <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
+        <DrawerOverlay />
+        <DrawerContent >
+          <DrawerBody>
+            <IconButton
+              icon={<CloseIcon />}
+              aria-label="Close"
+              onClick={onClose}
+              position="absolute"
+              top="1rem"
+              right="1rem"
+            />
             <Stack direction="column" spacing={4}>
               <ScrollLink
                 to="home"
@@ -128,9 +128,7 @@ const Navbar = () => {
                 offset={-70}
                 onClick={onClose}
               >
-                <Button w="100%" variant="ghost">
-                  Home
-                </Button>
+                <Button variant="ghost">Home</Button>
               </ScrollLink>
               <ScrollLink
                 to="about"
@@ -140,9 +138,7 @@ const Navbar = () => {
                 offset={-70}
                 onClick={onClose}
               >
-                <Button w="100%" variant="ghost">
-                  About
-                </Button>
+                <Button variant="ghost">About</Button>
               </ScrollLink>
               <ScrollLink
                 to="skills"
@@ -152,9 +148,7 @@ const Navbar = () => {
                 offset={-70}
                 onClick={onClose}
               >
-                <Button w="100%" variant="ghost">
-                  Skills
-                </Button>
+                <Button variant="ghost">Skills</Button>
               </ScrollLink>
               {/* <ScrollLink
                 to="work"
@@ -162,11 +156,9 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-70}
-                onClick={onClose}
+                onClick={onClose} 
               >
-                <Button w="100%" variant="ghost">
-                  Work
-                </Button>
+                <Button variant="ghost">Work</Button>
               </ScrollLink> */}
               <ScrollLink
                 to="projects"
@@ -176,9 +168,7 @@ const Navbar = () => {
                 offset={-70}
                 onClick={onClose}
               >
-                <Button w="100%" variant="ghost">
-                  Projects
-                </Button>
+                <Button variant="ghost">Projects</Button>
               </ScrollLink>
               <ScrollLink
                 to="hireMe"
@@ -188,14 +178,25 @@ const Navbar = () => {
                 offset={-70}
                 onClick={onClose}
               >
-                <Button w="100%" variant="ghost">
+                <Button
+                  variant="ghost"
+                  borderColor="#6e07f3"
+                  borderWidth="2px"
+                  borderRadius="20px"
+                  color="#6e07f3"
+                  _hover={{
+                    bg: '#6e07f3',
+                    color: 'white',
+                  }}
+                >
                   Hire Me
                 </Button>
               </ScrollLink>
             </Stack>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+
     </Flex>
   );
 };
