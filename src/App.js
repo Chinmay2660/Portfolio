@@ -7,22 +7,22 @@ import Skills from './Components/About/Skills';
 import Footer from './Components/Footer/Footer';
 import HireMe from './Components/CTA/HireMe';
 import Projects from './Components/Projects/Projects';
+import ProjectList from './Components/Projects/ProjectList';
 import Contact from './Components/CTA/Contact';
 import './style.css'
-import ProjectCards from './Components/Projects/ProjectCards';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Home />
-      <About/>
-      <Skills/>
-      <Projects/>
-      <ProjectCards/>
-      <Contact/>
-      <HireMe/>
-      <Footer/>
+      <About />
+      <Skills />
+      <Projects />
+      <ProjectList />
+      <Contact />
+      <HireMe />
+      <Footer />
     </div>
   );
 }
