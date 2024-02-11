@@ -1,15 +1,13 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.109d135b.css",
-    "main.js": "/Portfolio/static/js/main.161ea9b7.js",
+    "main.js": "/Portfolio/static/js/main.4153cdba.js",
     "static/js/787.7da95b79.chunk.js": "/Portfolio/static/js/787.7da95b79.chunk.js",
     "static/media/gpt.jpeg": "/Portfolio/static/media/gpt.d379a5b2319062511026.jpeg",
-    "static/media/recipee_app.jpeg": "/Portfolio/static/media/recipee_app.7008f51bd16d9c49aeb7.jpeg",
     "static/media/todolist.jpeg": "/Portfolio/static/media/todolist.88e36d4b72be56c79c9f.jpeg",
     "static/media/tindog.jpeg": "/Portfolio/static/media/tindog.8c35fc659c1a98e5251c.jpeg",
     "static/media/tournament app.jpeg": "/Portfolio/static/media/tournament app.5d465e2cab65200816bd.jpeg",
     "static/media/drum_kit.jpeg": "/Portfolio/static/media/drum_kit.9cf244fc3e12420ad1ef.jpeg",
-    "static/media/form.jpeg": "/Portfolio/static/media/form.dedeeb78dace915dcc05.jpeg",
     "static/media/dicee_game.jpeg": "/Portfolio/static/media/dicee_game.864fcd98b5a91de304fa.jpeg",
     "static/media/simon_game.jpeg": "/Portfolio/static/media/simon_game.973fc2832597438647ba.jpeg",
     "static/media/keeper_app.jpeg": "/Portfolio/static/media/keeper_app.daca07b6b5b2560660ec.jpeg",
@@ -19,11 +17,11 @@
     "static/media/avatar.svg": "/Portfolio/static/media/avatar.3e660f2fd34e8e55516657679c17ee77.svg",
     "index.html": "/Portfolio/index.html",
     "main.109d135b.css.map": "/Portfolio/static/css/main.109d135b.css.map",
-    "main.161ea9b7.js.map": "/Portfolio/static/js/main.161ea9b7.js.map",
+    "main.4153cdba.js.map": "/Portfolio/static/js/main.4153cdba.js.map",
     "787.7da95b79.chunk.js.map": "/Portfolio/static/js/787.7da95b79.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.109d135b.css",
-    "static/js/main.161ea9b7.js"
+    "static/js/main.4153cdba.js"
   ]
 }
