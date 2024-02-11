@@ -59,54 +59,58 @@ const ProjectCard = ({ image, title, description, githubLink, viewLink }) => {
                                 {title}
                             </Text>
                             <Text>{description}</Text>
-                            <Button
-                                as="a" href={githubLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                size="lg"
-                                paddingX="5"
-                                paddingY="3"
-                                variant="ghost"
-                                borderColor="#6e07f3"
-                                borderWidth="2px"
-                                borderRadius="20px"
-                                bg='#141c3a'
-                                color="white"
-                                marginTop='5'
-                                marginBottom='5'
-                                marginRight='2'
-                                _hover={{
-                                    bg: "#6e07f3",
-                                    color: "white",
-                                }}
-                            >
-                                Github
-                                <FaCode style={{ marginLeft: '0.5rem', marginTop: '3px' }} size="20px" />
-                            </Button>
-                            <Button
-                                as="a" href={viewLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                size="lg"
-                                paddingX="5"
-                                paddingY="3"
-                                variant="ghost"
-                                borderColor="#6e07f3"
-                                borderWidth="2px"
-                                borderRadius="20px"
-                                bg='#141c3a'
-                                color="white"
-                                marginTop='5'
-                                marginBottom='5'
-                                marginLeft='2'
-                                _hover={{
-                                    bg: "#6e07f3",
-                                    color: "white",
-                                }}
-                            >
-                                View
-                                <FiExternalLink style={{ marginLeft: '0.5rem', marginTop: '3px', marginBottom: '3px' }} size="20px" />
-                            </Button>
+                            {githubLink && (
+                                <Button
+                                    as="a" href={githubLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    size="lg"
+                                    paddingX="5"
+                                    paddingY="3"
+                                    variant="ghost"
+                                    borderColor="#6e07f3"
+                                    borderWidth="2px"
+                                    borderRadius="20px"
+                                    bg='#141c3a'
+                                    color="white"
+                                    marginTop='5'
+                                    marginBottom='5'
+                                    marginRight='2'
+                                    _hover={{
+                                        bg: "#6e07f3",
+                                        color: "white",
+                                    }}
+                                >
+                                    Github
+                                    <FaCode style={{ marginLeft: '0.5rem', marginTop: '3px' }} size="20px" />
+                                </Button>
+                            )}
+                            {viewLink && (
+                                <Button
+                                    as="a" href={viewLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    size="lg"
+                                    paddingX="5"
+                                    paddingY="3"
+                                    variant="ghost"
+                                    borderColor="#6e07f3"
+                                    borderWidth="2px"
+                                    borderRadius="20px"
+                                    bg='#141c3a'
+                                    color="white"
+                                    marginTop='5'
+                                    marginBottom='5'
+                                    marginLeft='2'
+                                    _hover={{
+                                        bg: "#6e07f3",
+                                        color: "white",
+                                    }}
+                                >
+                                    View
+                                    <FiExternalLink style={{ marginLeft: '0.5rem', marginTop: '3px', marginBottom: '3px' }} size="20px" />
+                                </Button>
+                            )}
                         </Box>
                     </Box>
                 </Box>
@@ -125,7 +129,6 @@ const ProjectCards = () => {
             title: 'Project 1',
             description: 'Description for Project 1.',
             githubLink: 'https://github.com/example/project1',
-            viewLink: 'https://example.com/project1',
         },
         {
             id: 2,
