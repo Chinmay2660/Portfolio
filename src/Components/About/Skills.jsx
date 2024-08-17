@@ -1,22 +1,24 @@
 import React from 'react';
-import { VStack, Icon, Text, Box, Flex } from '@chakra-ui/react';
+import { Icon, Text, Box, Flex } from '@chakra-ui/react';
 import { FaJava, FaReact, FaNodeJs, FaGithub, FaGit, FaBootstrap } from 'react-icons/fa';
 import { SiRedux, SiTailwindcss, SiVisualstudiocode, SiMongodb, SiPostman, SiMui, SiChakraui, SiExpress, SiAzuredevops, SiNetlify } from 'react-icons/si';
 import { TbBrandCpp } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
+import { RiNextjsFill } from "react-icons/ri";
 
 const techStack = [
   { name: 'C++', icon: TbBrandCpp },
-  { name: 'Java', icon: FaJava },
   { name: 'JavaScript', icon: IoLogoJavascript },
   { name: 'React.js', icon: FaReact },
+  { name: 'Nextjs', icon: RiNextjsFill },
+  { name: 'Redux', icon: SiRedux },
   { name: 'Node.js', icon: FaNodeJs },
   { name: 'Express.js', icon: SiExpress },
-  { name: 'Redux', icon: SiRedux },
   { name: 'MongoDB', icon: SiMongodb },
   { name: 'Material UI', icon: SiMui },
   { name: 'Chakra UI', icon: SiChakraui },
   { name: 'Tailwind CSS', icon: SiTailwindcss },
+  { name: 'Java', icon: FaJava },
   { name: 'Bootstrap', icon: FaBootstrap },
 ];
 
