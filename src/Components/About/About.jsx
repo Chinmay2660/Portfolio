@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text, Button } from '@chakra-ui/react';
-import ResumePDF from '../../Assets/Resume_Chinmay_Bhoir.pdf';
+import ResumePDF from '../../Assets/Resume Chinmay Bhoir.pdf';
 import { FaArrowRight } from "react-icons/fa6";
 
 const About = () => {
