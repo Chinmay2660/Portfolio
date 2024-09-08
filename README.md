@@ -2,12 +2,6 @@
 
 Welcome to my portfolio! This project is built using React and Tailwind CSS.
 
-## Table of Contents
-
-- [Demo](#demo)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
 ## Demo
 
 You can check out the live demo of the portfolio [here](https://chinmay2660.github.io/Portfolio/).
@@ -16,7 +10,7 @@ You can check out the live demo of the portfolio [here](https://chinmay2660.gith
 
 - Responsive design
 - React components
-- Tailwind CSS for styling
+- Chakra UI
 
 ## Getting Started
 
