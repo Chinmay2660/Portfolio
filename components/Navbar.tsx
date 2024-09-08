@@ -45,6 +45,13 @@ const Navbar = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/work", label: "Work" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
     <motion.nav
       initial={{ y: 0 }}
@@ -64,34 +71,18 @@ const Navbar = () => {
           </div>
 
           <div className="flex space-x-6 items-center">
-            <Link
-              href="/"
-              className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300"
-            >
-              About
-            </Link>
-            <Link
-              href="/work"
-              className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300"
-            >
-              Work
-            </Link>
-            <Link
-              href="/contact"
-              className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300"
-            >
-              Contact
-            </Link>
-
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300"
+              >
+                {link.label}
+              </Link>
+            ))}
             <button
               onClick={toggleTheme}
-              className="p-2  dark:text-gray-300 transition-colors duration-300 "
+              className="p-2 dark:text-gray-300 transition-colors duration-300"
             >
               <i
                 className={`${
