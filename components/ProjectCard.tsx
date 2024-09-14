@@ -31,6 +31,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
     ReduxToolkit: "bg-red-400",
     MaterialUI: "bg-purple-400",
     Context: "bg-blue-400",
+    FramerMotion: "bg-yellow-400",
     default: "bg-gray-500",
   };
 
