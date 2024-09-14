@@ -15,7 +15,9 @@ const Hero = () => {
         </p>
         <div className="flex justify-start space-x-4">
           <a
-            href="https://www.linkedin.com/in/your-profile"
+            href="https://www.linkedin.com/in/chinmay2660/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors duration-300"
           >
             <i className="fab fa-linkedin mr-2"></i>
@@ -23,7 +25,9 @@ const Hero = () => {
           </a>
 
           <a
-            href="https://github.com/your-profile"
+            href="https://github.com/Chinmay2660"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center px-4 py-2 text-white bg-gray-800 hover:bg-gray-700 rounded-md transition-colors duration-300"
           >
             <i className="fab fa-github mr-2"></i>
@@ -31,7 +35,9 @@ const Hero = () => {
           </a>
 
           <a
-            href="https://twitter.com/your-profile"
+            href="https://x.com/ChinmayBhoir14"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center px-4 py-2 text-white bg-blue-400 hover:bg-blue-500 rounded-md transition-colors duration-300"
           >
             <i className="fab fa-twitter mr-2"></i>

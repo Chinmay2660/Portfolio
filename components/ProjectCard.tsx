@@ -21,7 +21,6 @@ const ProjectCard: React.FC<ProjectProps> = ({
   const languageColors: { [key: string]: string } = {
     JavaScript: "bg-yellow-400",
     TypeScript: "bg-blue-500",
-    Python: "bg-green-500",
     HTML: "bg-orange-500",
     CSS: "bg-blue-300",
     default: "bg-gray-500",
