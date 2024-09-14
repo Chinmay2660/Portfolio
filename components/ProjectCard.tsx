@@ -29,22 +29,31 @@ const ProjectCard: React.FC<ProjectProps> = ({
 
   return (
     <motion.div
-      className="p-4 bg-primary rounded-lg shadow-lg border border-gray-700 hover:border-gray-600 transition-colors duration-300"
+      className="p-4 bg-primary rounded-lg shadow-lg border border-gray-700 hover:border-gray-600 transition-colors duration-300 flex flex-col justify-between"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="flex justify-between items-center">
-        <h3 className="text-xl font-bold text-white">{title}</h3>
-        <div className="flex space-x-2">
-          <span className="flex items-center text-sm text-white">
-            <i className="fas fa-star mr-1"></i> {stars}
-          </span>
-          <span className="flex items-center text-sm text-white">
-            <i className="fas fa-code-branch mr-1"></i> {forks}
-          </span>
+      <div className="flex flex-col flex-grow">
+        <div className="flex justify-between items-center">
+          <a
+            href={link}
+            target="_blank"
+            className="text-xl font-bold text-blue-500 hover:underline"
+            rel="noopener noreferrer"
+          >
+            {title}
+          </a>
+          <div className="flex space-x-2">
+            <span className="flex items-center text-sm text-white">
+              <i className="fas fa-star mr-1"></i> {stars}
+            </span>
+            <span className="flex items-center text-sm text-white">
+              <i className="fas fa-code-branch mr-1"></i> {forks}
+            </span>
+          </div>
         </div>
+        <p className="mt-2 text-white text-sm line-clamp-3">{description}</p>
       </div>
-      <p className="mt-2 text-white">{description}</p>
       <div className="flex items-center mt-4">
         <span
           className={`inline-block w-3 h-3 rounded-full mr-2 ${
@@ -53,14 +62,6 @@ const ProjectCard: React.FC<ProjectProps> = ({
         ></span>
         <span className="text-sm text-white">{language}</span>
       </div>
-      <a
-        href={link}
-        target="_blank"
-        className="mt-4 inline-block text-blue-500 hover:underline"
-        rel="noopener noreferrer"
-      >
-        View Project
-      </a>
     </motion.div>
   );
 };
