@@ -1,5 +1,57 @@
 "use client";
 
+const buttons = [
+  {
+    href: "https://www.linkedin.com/in/chinmay2660/",
+    bgColor: "bg-blue-600",
+    hoverColor: "hover:bg-blue-700",
+    iconClass: "fab fa-linkedin",
+    text: "LinkedIn",
+  },
+  {
+    href: "https://github.com/Chinmay2660",
+    bgColor: "bg-gray-800",
+    hoverColor: "hover:bg-gray-700",
+    iconClass: "fab fa-github",
+    text: "GitHub",
+  },
+  {
+    href: "https://x.com/ChinmayBhoir14",
+    bgColor: "bg-blue-400",
+    hoverColor: "hover:bg-blue-500",
+    iconClass: "fab fa-twitter",
+    text: "Twitter",
+  },
+  {
+    href: "https://www.instagram.com/your-profile/",
+    bgColor: "bg-pink-500",
+    hoverColor: "hover:bg-pink-600",
+    iconClass: "fab fa-instagram",
+    text: "Instagram",
+  },
+  {
+    href: "https://leetcode.com/your-profile/",
+    bgColor: "bg-orange-400",
+    hoverColor: "hover:bg-orange-500",
+    iconClass: "fab fa-leetcode",
+    text: "LeetCode",
+  },
+  {
+    href: "https://www.geeksforgeeks.org/user/your-profile/",
+    bgColor: "bg-teal-500",
+    hoverColor: "hover:bg-teal-600",
+    iconClass: "fab fa-geeksforgeeks",
+    text: "GeeksforGeeks",
+  },
+  {
+    href: "https://www.hackerrank.com/your-profile",
+    bgColor: "bg-green-500",
+    hoverColor: "hover:bg-green-600",
+    iconClass: "fab fa-hackerrank",
+    text: "HackerRank",
+  },
+];
+
 const Hero = () => {
   return (
     <section className="max-w-7xl mx-auto flex items-center pt-32 pb-16 px-4 md:px-8 border border-gray-700 rounded-lg bg-primary text-gray-200 shadow-lg">
@@ -23,75 +75,18 @@ const Hero = () => {
             applications and ensuring code quality in Agile environments.
           </p>
           <div className="flex flex-wrap gap-4 mt-0">
-            <a
-              href="https://www.linkedin.com/in/chinmay2660/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors duration-300"
-            >
-              <i className="fab fa-linkedin mr-2"></i>
-              LinkedIn
-            </a>
-
-            <a
-              href="https://github.com/Chinmay2660"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-4 py-2 text-white bg-gray-800 hover:bg-gray-700 rounded-md transition-colors duration-300"
-            >
-              <i className="fab fa-github mr-2"></i>
-              GitHub
-            </a>
-
-            <a
-              href="https://x.com/ChinmayBhoir14"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-4 py-2 text-white bg-blue-400 hover:bg-blue-500 rounded-md transition-colors duration-300"
-            >
-              <i className="fab fa-twitter mr-2"></i>
-              Twitter
-            </a>
-
-            <a
-              href="https://www.instagram.com/your-profile/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-4 py-2 text-white bg-pink-500 hover:bg-pink-600 rounded-md transition-colors duration-300"
-            >
-              <i className="fab fa-instagram mr-2"></i>
-              Instagram
-            </a>
-
-            <a
-              href="https://leetcode.com/your-profile/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-4 py-2 text-white bg-orange-400 hover:bg-orange-500 rounded-md transition-colors duration-300"
-            >
-              <i className="fab fa-leetcode mr-2"></i>
-              LeetCode
-            </a>
-
-            <a
-              href="https://www.geeksforgeeks.org/user/your-profile/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-4 py-2 text-white bg-teal-500 hover:bg-teal-600 rounded-md transition-colors duration-300"
-            >
-              <i className="fab fa-geeksforgeeks mr-2"></i>
-              GeeksforGeeks
-            </a>
-
-            <a
-              href="https://www.hackerrank.com/your-profile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-4 py-2 text-white bg-green-500 hover:bg-green-600 rounded-md transition-colors duration-300"
-            >
-              <i className="fab fa-hackerrank mr-2"></i>
-              HackerRank
-            </a>
+            {buttons.map((button, index) => (
+              <a
+                key={index}
+                href={button.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center px-4 py-2 text-white ${button.bgColor} ${button.hoverColor} rounded-md transition-colors duration-300`}
+              >
+                <i className={`${button.iconClass} mr-2`}></i>
+                {button.text}
+              </a>
+            ))}
           </div>
         </div>
       </div>
