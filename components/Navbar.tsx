@@ -1,14 +1,20 @@
+/* eslint-disable */
+/* eslint-disable no-use-before-define, @typescript-eslint/no-unused-vars */
+
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+// Define types for scroll direction and theme
+type ScrollDirection = "up" | "down" | "top";
+type Theme = "light" | "dark";
+
 const Navbar = () => {
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | "top">(
-    "top"
-  );
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [lastScrollY, setLastScrollY] = useState<number>(0);
+  const [scrollDirection, setScrollDirection] =
+    useState<ScrollDirection>("top");
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +48,7 @@ const Navbar = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
 
   const navLinks = [

@@ -1,25 +1,62 @@
 "use client";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 interface ProjectProps {
   title: string;
   description: string;
   link: string;
+  language: string;
+  stars: number;
+  forks: number;
 }
 
-const ProjectCard: React.FC<ProjectProps> = ({ title, description, link }) => {
+const ProjectCard: React.FC<ProjectProps> = ({
+  title,
+  description,
+  link,
+  language,
+  stars,
+  forks,
+}) => {
+  const languageColors: { [key: string]: string } = {
+    JavaScript: "bg-yellow-400",
+    TypeScript: "bg-blue-500",
+    Python: "bg-green-500",
+    HTML: "bg-orange-500",
+    CSS: "bg-blue-300",
+    default: "bg-gray-500",
+  };
+
   return (
     <motion.div
-      className="p-4 bg-white rounded-lg shadow-lg"
+      className="p-4 bg-primary rounded-lg shadow-lg border border-gray-700 hover:border-gray-600 transition-colors duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <h3 className="text-2xl font-bold">{title}</h3>
-      <p className="mt-2 text-gray-600">{description}</p>
+      <div className="flex justify-between items-center">
+        <h3 className="text-xl font-bold text-white">{title}</h3>
+        <div className="flex space-x-2">
+          <span className="flex items-center text-sm text-white">
+            <i className="fas fa-star mr-1"></i> {stars}
+          </span>
+          <span className="flex items-center text-sm text-white">
+            <i className="fas fa-code-branch mr-1"></i> {forks}
+          </span>
+        </div>
+      </div>
+      <p className="mt-2 text-white">{description}</p>
+      <div className="flex items-center mt-4">
+        <span
+          className={`inline-block w-3 h-3 rounded-full mr-2 ${
+            languageColors[language] || languageColors.default
+          }`}
+        ></span>
+        <span className="text-sm text-white">{language}</span>
+      </div>
       <a
         href={link}
         target="_blank"
-        className="mt-4 inline-block text-blue-500"
+        className="mt-4 inline-block text-blue-500 hover:underline"
         rel="noopener noreferrer"
       >
         View Project
