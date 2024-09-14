@@ -1,12 +1,8 @@
-/* eslint-disable */
-/* eslint-disable no-use-before-define, @typescript-eslint/no-unused-vars */
-
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-// Define types for scroll direction and theme
 type ScrollDirection = "up" | "down" | "top";
 type Theme = "light" | "dark";
 
