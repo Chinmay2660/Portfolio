@@ -34,7 +34,7 @@ const JourneySection = () => {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto mt-10 p-8 bg-primary border border-gray-700 rounded-lg text-gray-200 shadow-lg">
+    <section className="max-w-7xl mx-auto p-8 bg-primary  text-gray-200 shadow-lg">
       <h2 className="text-3xl font-bold mb-6 text-left">My Journey</h2>
       <div className="relative border-l border-gray-700">
         {journey.map((item, index) => (

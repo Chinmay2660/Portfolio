@@ -8,7 +8,7 @@ const StackSection = () => {
   const toolStack = ["Git", "Docker", "Jenkins", "VS Code", "Postman"];
 
   return (
-    <section className="max-w-7xl mx-auto mt-10 border border-gray-700 rounded-lg bg-primary text-gray-200 p-8 shadow-lg">
+    <section className="max-w-7xl mx-auto bg-primary text-gray-200 p-8 shadow-lg">
       <div className="flex justify-start space-x-4 mb-6 border-b border-gray-700">
         <button
           onClick={() => setActiveTab("tech")}
