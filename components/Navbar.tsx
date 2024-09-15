@@ -62,13 +62,13 @@ const Navbar = () => {
         opacity: scrollDirection === "top" ? 1 : 0.95,
       }}
       transition={{ type: "tween", duration: 0.2 }}
-      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-gray-900 bg-opacity-60 shadow-lg py-3 transition-all duration-200 dark:bg-gray-800 ${
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-primary shadow-lg py-3 transition-all duration-200 ${
         scrollDirection === "top" ? "bg-opacity-60" : "bg-opacity-40"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-2 border border-gray-700 rounded-lg shadow-lg">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold text-white dark:text-gray-300">
+          <div className="text-2xl mx-6 font-bold text-white dark:text-gray-300">
             <Link href="/">My Portfolio</Link>
           </div>
 
