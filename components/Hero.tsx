@@ -59,7 +59,7 @@ const Hero = () => {
   return (
     <section className="max-w-7xl mx-auto flex flex-col items-center mt-28 pt-16 pb-16 px-4 md:px-8 border border-gray-700 rounded-lg bg-primary text-gray-200 shadow-lg">
       <div className="flex flex-col md:flex-row items-center w-full">
-        <div className="flex-shrink-0 mb-8 md:mb-0 md:mr-8">
+        <div className="flex-shrink-0 mb-8 md:mb-0 md:mr-8 ml-10">
           <img
             src="https://github.com/Chinmay2660.png"
             alt="Chinmay Bhoir"
@@ -67,7 +67,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="flex flex-col justify-center md:max-w-xl">
+        <div className="flex flex-col justify-center md:max-w-xl ml-10">
           <h1 className="text-4xl font-bold mb-4">Chinmay Bhoir</h1>
           <p className="text-xl mb-4">Software Development Engineer</p>
           <p className="text-lg mb-6">

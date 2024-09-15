@@ -4,8 +4,32 @@ import { useState } from "react";
 const StackSection = () => {
   const [activeTab, setActiveTab] = useState<"tech" | "tools">("tech");
 
-  const techStack = ["React", "TypeScript", "Node.js", "GraphQL", "Next.js"];
-  const toolStack = ["Git", "Docker", "Jenkins", "VS Code", "Postman"];
+  const techStack = [
+    "React.js",
+    "Redux Toolkit",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "Material UI",
+    "Tailwind CSS",
+    "Chakra UI",
+    "Bootstrap",
+    "Node.js",
+    "RESTFul API",
+    "Express.js",
+    "MongoDB",
+    "PostgreSQL",
+  ];
+  const toolStack = [
+    "Git",
+    "Github",
+    "Azure DevOps",
+    "VS Code",
+    "Postman",
+    "Netlify",
+    "Vercel",
+    "Drizzle"
+  ];
 
   return (
     <section className="max-w-7xl mx-auto bg-primary text-gray-200 p-8 shadow-lg">
