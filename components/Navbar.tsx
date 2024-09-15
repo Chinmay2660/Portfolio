@@ -67,7 +67,7 @@ const Navbar = () => {
         scrollDirection === "top" ? "bg-opacity-60" : "bg-opacity-40"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-2 border border-gray-700 rounded-lg shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 md:mx-10 py-2 border border-gray-700 rounded-lg shadow-lg lg:px-8">
         <div className="flex justify-between items-center">
           <div className="text-2xl mx-6 font-bold text-white dark:text-gray-300">
             <Link href="/">My Portfolio</Link>
