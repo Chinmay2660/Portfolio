@@ -1,4 +1,6 @@
 "use client";
+import Skills from "./Skills";
+import JourneySection from "./Journey";
 
 const buttons = [
   {
@@ -54,7 +56,7 @@ const buttons = [
 
 const Hero = () => {
   return (
-    <section className="max-w-7xl mx-auto flex items-center pt-32 pb-16 px-4 md:px-8 border border-gray-700 rounded-lg bg-primary text-gray-200 shadow-lg">
+    <section className="max-w-7xl mx-auto flex items-center mt-28 pt-16 pb-16 px-4 md:px-8 border border-gray-700 rounded-lg bg-primary text-gray-200 shadow-lg">
       <div className="flex flex-col md:flex-row items-center w-full ml-10">
         <div className="flex-shrink-0 mb-8 md:mb-0 md:mr-8">
           <img
@@ -90,6 +92,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <Skills/>
+      <JourneySection/>
     </section>
   );
 };
