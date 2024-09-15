@@ -30,7 +30,7 @@ const Contact: FC = () => {
 
           <a
             href="/path-to-your-resume.pdf"
-            download="Chinmay_Bhoir_Resume.pdf"
+            download="Chinmay_Bhoir_SDE.pdf"
             className="text-lg text-gray-200 bg-transparent  shadow-lg border border-gray-700 hover:border-gray-600 px-6 py-3 rounded-lg flex items-center hover:bg-gray-700 hover:text-white transition-all duration-300"
           >
             <i className="fas fa-download text-lg"></i>
