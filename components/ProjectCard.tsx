@@ -1,22 +1,19 @@
 "use client";
-import { motion } from "framer-motion";
 
 interface ProjectProps {
   title: string;
   description: string;
-  link: string;
+  repoLink: string;
+  liveLink?: string;
   languages: string[];
-  stars: number;
-  forks: number;
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({
   title,
   description,
-  link,
+  repoLink,
+  liveLink,
   languages,
-  stars,
-  forks,
 }) => {
   const languageColors: { [key: string]: string } = {
     JavaScript: "bg-yellow-400",
@@ -36,32 +33,29 @@ const ProjectCard: React.FC<ProjectProps> = ({
   };
 
   return (
-    <motion.div
-      className="p-4 bg-primary rounded-lg shadow-lg border border-gray-700 hover:border-gray-600 transition-colors duration-300 flex flex-col justify-between"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <div className="flex flex-col flex-grow">
-        <div className="flex justify-between items-center">
+    <div className="p-4 bg-primary rounded-lg shadow-lg border border-gray-700 hover:border-gray-600 transition-colors duration-300 flex flex-col justify-between">
+      <div className="flex justify-between items-center">
+        <a
+          href={repoLink}
+          target="_blank"
+          className="text-xl font-bold text-blue-500 hover:underline"
+          rel="noopener noreferrer"
+        >
+          {title}
+        </a>
+        {liveLink && (
           <a
-            href={link}
+            href={liveLink}
             target="_blank"
-            className="text-xl font-bold text-blue-500 hover:underline"
+            className="text-lg font-bold text-blue-500 hover:underline"
             rel="noopener noreferrer"
           >
-            {title}
+            Live Demo
           </a>
-          <div className="flex space-x-2">
-            <span className="flex items-center text-sm text-white">
-              <i className="fas fa-star mr-1"></i> {stars}
-            </span>
-            <span className="flex items-center text-sm text-white">
-              <i className="fas fa-code-branch mr-1"></i> {forks}
-            </span>
-          </div>
-        </div>
-        <p className="mt-2 text-white text-sm line-clamp-3">{description}</p>
+        )}
       </div>
+      <p className="mt-2 text-white text-sm line-clamp-3">{description}</p>
+
       <div className="flex flex-wrap mt-4 space-x-2">
         {languages.map((language, index) => (
           <div key={index} className="flex items-center">
@@ -74,7 +68,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

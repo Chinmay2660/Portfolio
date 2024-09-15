@@ -4,34 +4,30 @@ const projects = [
   {
     title: "Portfolio",
     description: "A cool project using React and TypeScript.",
-    link: "https://github.com/Chinmay2660/Portfolio",
-    languages: ["TypeScript", "Nextjs", 'Tailwind', "FramerMotion"],
-    stars: 120,
-    forks: 30,
+    repoLink: "https://github.com/Chinmay2660/Portfolio",
+    liveLink: "https://chinmay2660.github.io/Portfolio/",
+    languages: ["TypeScript", "Nextjs", "Tailwind", "FramerMotion"],
   },
   {
     title: "MovieSphere",
     description: "An awesome project with Next.js and JavaScript.",
-    link: "https://github.com/Chinmay2660/MovieSphere",
+    repoLink: "https://github.com/Chinmay2660/MovieSphere",
+    liveLink: "https://moviesphere2660.vercel.app/",
     languages: ["Reactjs", "Tailwind", "FramerMotion"],
-    stars: 200,
-    forks: 50,
   },
   {
     title: "MintMind",
     description: "A beautiful project with Tailwind CSS.",
-    link: "https://github.com/Chinmay2660/Mintmind",
+    repoLink: "https://github.com/Chinmay2660/Mintmind",
+    liveLink: "https://mintmind.vercel.app/",
     languages: ["Nextjs", "Tailwind", "ReduxToolkit"],
-    stars: 90,
-    forks: 20,
   },
   {
     title: "GPT-3",
     description: "A beautiful project with Tailwind CSS.",
-    link: "https://github.com/Chinmay2660/gpt",
+    repoLink: "https://github.com/Chinmay2660/gpt",
+    liveLink: "https://chinmay2660-gpt3.netlify.app/",
     languages: ["Reactjs", "Tailwind"],
-    stars: 90,
-    forks: 20,
   },
 ];
 
@@ -44,10 +40,9 @@ const ProjectSection = () => {
             key={index}
             title={project.title}
             description={project.description}
-            link={project.link}
+            repoLink={project.repoLink}
+            liveLink={project.liveLink}
             languages={project.languages}
-            stars={project.stars}
-            forks={project.forks}
           />
         ))}
       </div>
