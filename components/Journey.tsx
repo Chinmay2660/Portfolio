@@ -7,6 +7,11 @@ const JourneySection = () => {
       institution: "Jio Platforms Limited",
       startDate: "November 2022",
       endDate: "Present",
+      description: [
+        "Developed scalable React.js applications.",
+        "Worked on Agile development processes.",
+        "Optimized software performance and code quality.",
+      ],
     },
     {
       title: "Electronics Engineering",
@@ -21,7 +26,7 @@ const JourneySection = () => {
       endDate: "March 2018",
     },
     {
-      title: "10th Grade",
+      title: "10th",
       institution: "Little Flower High School",
       startDate: "June 2015",
       endDate: "March 2016",
@@ -41,6 +46,16 @@ const JourneySection = () => {
               <p className="text-lg text-gray-400">
                 {item.startDate} - {item.endDate}
               </p>
+
+              {item.description && (
+                <ul className="list-disc list-inside text-gray-400 mt-4">
+                  {item.description.map((point, idx) => (
+                    <li key={idx} className="text-lg">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         ))}
