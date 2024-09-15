@@ -11,6 +11,7 @@ const Navbar = () => {
   const [scrollDirection, setScrollDirection] =
     useState<ScrollDirection>("top");
   const [theme, setTheme] = useState<Theme>("light");
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,24 +73,36 @@ const Navbar = () => {
             <Link href="/">My Portfolio</Link>
           </div>
 
-          <div className="flex space-x-6 items-center">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white dark:text-gray-300 lg:hidden"
+          >
+            <i className="fas fa-bars text-xl"></i>
+          </button>
+
+          <div
+            className={`flex flex-col lg:flex-row lg:items-center lg:space-x-6 transition-transform duration-300 lg:translate-x-0 ${
+              isMenuOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"
+            } absolute top-16 left-0 w-full bg-primary border border-gray-700 rounded-lg lg:static lg:w-auto lg:bg-transparent lg:border-none`}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300"
+                className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300 lg:px-4 lg:py-2"
               >
                 {link.label}
               </Link>
             ))}
             <button
               onClick={toggleTheme}
-              className="p-2 dark:text-gray-300 transition-colors duration-300"
+              className="p-2 text-white dark:text-gray-300 lg:ml-4"
             >
               <i
                 className={`${
                   theme === "dark" ? "fas fa-sun" : "fas fa-moon"
                 } text-xl`}
+                style={{ width: "24px", height: "24px" }}
               ></i>
             </button>
           </div>
