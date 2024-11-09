@@ -52,17 +52,16 @@ const ProjectSection = () => {
       </div>
 
       <div className="mt-10 flex justify-center">
-      <a
-        href="https://github.com/Chinmay2660"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-lg text-gray-200 bg-transparent  shadow-lg border border-gray-700 hover:border-gray-600 px-6 py-3 rounded-lg flex items-center hover:bg-gray-700 hover:text-white transition-all duration-300"
-      >
-        See more projects
-        <i className="fas fa-arrow-right ml-2"></i>
-      </a>
-    </div>
-    
+        <a
+          href="https://github.com/Chinmay2660"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lg text-gray-200 bg-transparent  shadow-lg border border-gray-700 hover:border-gray-600 px-6 py-3 rounded-lg flex items-center hover:bg-gray-700 hover:text-white transition-all duration-300"
+        >
+          See more projects
+          <i className="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
     </section>
   );
 };

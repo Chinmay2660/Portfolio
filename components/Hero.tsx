@@ -120,13 +120,11 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className={`flex items-center px-4 py-2 text-white ${button.bgColor} ${button.hoverColor} rounded-md transition-colors duration-300`}
               >
-                <div className="mr-2 mt-0">
-                  {button.customIcon ? (
-                    button.customIcon
-                  ) : (
-                    <i className={`${button.iconClass}`}></i>
-                  )}
-                </div>
+                {button.customIcon ? (
+                  button.customIcon
+                ) : (
+                  <i className={`${button.iconClass}`}></i>
+                )}
                 {button.text}
               </a>
             ))}

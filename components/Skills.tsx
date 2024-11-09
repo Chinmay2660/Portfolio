@@ -28,7 +28,7 @@ const StackSection = () => {
     "Postman",
     "Netlify",
     "Vercel",
-    "Drizzle"
+    "Drizzle",
   ];
 
   return (
