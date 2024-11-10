@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
-import { techStack, toolStack } from "./../utils/utils";
+import { arrayCheck, techStack, toolStack } from "./../utils/utils";
 
 const StackSection = () => {
   const [activeTab, setActiveTab] = useState<"tech" | "tools">("tech");
 
   return (
-    <section className="max-w-7xl mx-auto bg-primary text-gray-200 p-8 shadow-lg">
+    <section className="max-w-7xl mx-auto bg-primary text-gray-200 shadow-lg">
       <div className="flex justify-start space-x-4 mb-6 border-b border-gray-700">
         <button
           onClick={() => setActiveTab("tech")}
@@ -32,6 +32,7 @@ const StackSection = () => {
 
       <div className="flex flex-wrap gap-4 justify-start">
         {activeTab === "tech" &&
+          arrayCheck(techStack) &&
           techStack.map((tech, index) => (
             <span
               key={index}
@@ -41,6 +42,7 @@ const StackSection = () => {
             </span>
           ))}
         {activeTab === "tools" &&
+          arrayCheck(toolStack) &&
           toolStack.map((tool, index) => (
             <span
               key={index}
