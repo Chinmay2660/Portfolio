@@ -6,7 +6,7 @@ const StackSection = () => {
   const [activeTab, setActiveTab] = useState<"tech" | "tools">("tech");
 
   return (
-    <section className="max-w-7xl mx-auto bg-primary text-gray-200 p-8 shadow-lg">
+    <section className="max-w-7xl mx-auto bg-primary text-gray-200 shadow-lg">
       <div className="flex justify-start space-x-4 mb-6 border-b border-gray-700">
         <button
           onClick={() => setActiveTab("tech")}

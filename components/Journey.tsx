@@ -2,7 +2,7 @@ import { arrayCheck, journey } from "./../utils/utils";
 
 const JourneySection = () => {
   return (
-    <section className="max-w-7xl mx-auto p-8 pb-0 bg-primary  text-gray-200 shadow-lg">
+    <section className="max-w-7xl mx-auto mt-10 pb-0 bg-primary  text-gray-200 shadow-lg">
       <h2 className="text-3xl font-bold mb-6 text-left">My Journey</h2>
       <div className="relative border-l border-gray-700">
         {arrayCheck(journey) &&
