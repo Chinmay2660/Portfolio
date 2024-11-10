@@ -37,7 +37,7 @@ const Hero = () => {
                   {button.customIcon ? (
                     button.customIcon
                   ) : (
-                    <i className={`${button.iconClass}`}></i>
+                    <i className={`${button.iconClass} mr-2`}></i>
                   )}
                   {button.text}
                 </a>

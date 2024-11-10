@@ -18,7 +18,7 @@ const JourneySection = () => {
 
                 {item.description && (
                   <ul className="list-disc list-inside text-gray-400 mt-4">
-                    {item.description.map((point, idx) => (
+                    {arrayCheck(item?.description) && item?.description.map((point, idx) => (
                       <li key={idx} className="text-lg">
                         {point}
                       </li>
