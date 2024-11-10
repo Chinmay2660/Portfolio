@@ -1,5 +1,3 @@
-"use client";
-
 import Skills from "./Skills";
 import JourneySection from "./Journey";
 
