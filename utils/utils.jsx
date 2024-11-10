@@ -166,6 +166,7 @@ export const projects = [
     },
 ];
 
+
 export const techStack = [
     "React.js",
     "Redux Toolkit",
