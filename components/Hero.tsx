@@ -1,6 +1,6 @@
 import Skills from "./Skills";
 import JourneySection from "./Journey";
-import { arrayCheck, buttons } from "./../utils/utils";
+import { arrayCheck, buttons } from "../utils/utils";
 
 const Hero = () => {
   return (
@@ -20,8 +20,9 @@ const Hero = () => {
             Software Development Engineer
           </p>
           <p className="text-lg mb-6">
-            👋 Hello! I’m a passionate Software Development Engineer
-            specializing in high-quality, scalable software solutions.
+            👋 Hello! I’m SDE - 1 with 2+ years of
+            experience in building high-quality, scalable
+            front-end solutions.
             <br />
             🚀 Currently, I’m focused on developing complex React.js
             applications and ensuring code quality in Agile environments.

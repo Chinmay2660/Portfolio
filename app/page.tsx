@@ -5,7 +5,9 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <section id="home">
+        <Hero />
+      </section>
       <section id="projects">
         <ProjectSection />
       </section>

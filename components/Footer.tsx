@@ -1,4 +1,4 @@
-import { arrayCheck, socialLinks } from "./../utils/utils";
+import { arrayCheck, socialLinks } from "../utils/utils";
 
 const Footer = () => {
   return (
@@ -19,7 +19,9 @@ const Footer = () => {
               </a>
             ))}
         </div>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} My Portfolio. All rights reserved.
+        </p>
       </div>
     </footer>
   );
