@@ -120,7 +120,7 @@ export const journey = [
         ],
     },
     {
-        title: "Electronics Engineering",
+        title: "Bachelor of Engineering in Electronics",
         institution: "Terna Engineering College",
         startDate: "August 2018",
         endDate: "May 2022",
