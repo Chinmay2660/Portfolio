@@ -88,6 +88,7 @@ const Navbar = () => {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
                   className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300 lg:px-4 lg:py-2 p-4"
                 >
                   {link.label}
