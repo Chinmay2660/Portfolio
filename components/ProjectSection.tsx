@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import { arrayCheck, projects } from "./../utils/utils";
+import { arrayCheck, projects } from "../utils/utils";
 
 const ProjectSection = () => {
   return (

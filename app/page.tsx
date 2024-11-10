@@ -5,9 +5,15 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <ProjectSection />
-      <Contact />
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="projects">
+        <ProjectSection />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
     </>
   );
 }

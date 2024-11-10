@@ -1,4 +1,4 @@
-import { arrayCheck, journey } from "./../utils/utils";
+import { arrayCheck, journey } from "../utils/utils";
 
 const JourneySection = () => {
   return (
@@ -18,11 +18,12 @@ const JourneySection = () => {
 
                 {item.description && (
                   <ul className="list-disc list-inside text-gray-400 mt-4">
-                    {arrayCheck(item?.description) && item?.description.map((point, idx) => (
-                      <li key={idx} className="text-lg">
-                        {point}
-                      </li>
-                    ))}
+                    {arrayCheck(item?.description) &&
+                      item?.description.map((point, idx) => (
+                        <li key={idx} className="text-lg">
+                          {point}
+                        </li>
+                      ))}
                   </ul>
                 )}
               </div>

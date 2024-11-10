@@ -23,12 +23,12 @@ const ProjectCard: React.FC<ProjectProps> = ({
     Reactjs: "bg-cyan-400",
     Nextjs: "bg-purple-400",
     ChakraUI: "bg-pink-400",
-    Tailwind: "bg-teal-400",
+    "Tailwind CSS": "bg-teal-400",
     Redux: "bg-red-400",
-    ReduxToolkit: "bg-red-400",
+    "Redux Toolkit": "bg-red-400",
     MaterialUI: "bg-purple-400",
     Context: "bg-blue-400",
-    FramerMotion: "bg-yellow-400",
+    "Framer Motion": "bg-yellow-400",
     default: "bg-gray-500",
   };
 

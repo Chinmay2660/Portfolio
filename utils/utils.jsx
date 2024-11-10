@@ -114,13 +114,16 @@ export const journey = [
         startDate: "November 2022",
         endDate: "Present",
         description: [
-            "Developed scalable React.js applications.",
-            "Worked on Agile development processes.",
-            "Optimized software performance and code quality.",
+            "Led the development of React.js and Redux - Saga B2B e-commerce using Cordova, contributing to over 50% of the codebase.",
+            "Built an E2E Admin dashboard using React.js, Redux Toolkit and MUI, streamlining backend management with CRUD operations.",
+            "Revamped the UI and modernized 3,000+ lines of legacy code to ES6 standards, implemented optimization techniques, achieving a 30% improvement in Lighthouse scores.",
+            "Integrated Jio payment gateway with reusable components and custom hooks, enhancing user experience and code efficiency",
+            "Optimized page load times and integrated RESTful APIs for real-time data, enhancing overall app performance.",
+            "Developed a scanning functionality for SIM card packets using barcode, which extracts ICCID and serial numbers, reducing manual transmission by 60% compared to the previous paper-based system.",
         ],
     },
     {
-        title: "Electronics Engineering",
+        title: "Bachelor of Engineering in Electronics",
         institution: "Terna Engineering College",
         startDate: "August 2018",
         endDate: "May 2022",
@@ -142,35 +145,34 @@ export const journey = [
 
 export const projects = [
     {
-        title: "Portfolio",
-        description: "A cool project using React and TypeScript.",
-        repoLink: "https://github.com/Chinmay2660/Portfolio",
-        liveLink: "https://chinmay2660.github.io/Portfolio/",
-        languages: ["TypeScript", "Nextjs", "Tailwind", "FramerMotion"],
-    },
-    {
         title: "MovieSphere",
-        description: "An awesome project with Next.js and JavaScript.",
+        description: "Platform for browsing and searching movies and TV shows. Users can explore popular films and view detailed information.",
         repoLink: "https://github.com/Chinmay2660/MovieSphere",
         liveLink: "https://moviesphere2660.vercel.app/",
-        languages: ["Reactjs", "Tailwind", "FramerMotion"],
+        languages: ["Reactjs", "Tailwind CSS", "Framer Motion"],
     },
     {
         title: "MintMind",
-        description: "A beautiful project with Tailwind CSS.",
+        description: "An expense tracker that helps users monitor their income and spending. Provides visual insights into financial data and supports expense categorization and budgeting.",
         repoLink: "https://github.com/Chinmay2660/Mintmind",
         liveLink: "https://mintmind.vercel.app/",
-        languages: ["Nextjs", "Tailwind", "ReduxToolkit"],
+        languages: ["Nextjs", "Tailwind CSS", "Redux Toolkit"],
     },
     {
         title: "GPT-3",
-        description: "A beautiful project with Tailwind CSS.",
+        description: "A static app that explains GPT-3, its capabilities, and its potential applications in fields like AI-driven text generation, conversations, and more.",
         repoLink: "https://github.com/Chinmay2660/gpt",
         liveLink: "https://chinmay2660-gpt3.netlify.app/",
-        languages: ["Reactjs", "Tailwind"],
+        languages: ["Reactjs", "Tailwind CSS"],
+    },
+    {
+        title: "Portfolio",
+        description: "Personal portfolio showcasing skills, projects, and smooth transitions for an engaging user experience.",
+        repoLink: "https://github.com/Chinmay2660/Portfolio",
+        liveLink: "https://chinmaybhoir.vercel.app/",
+        languages: ["TypeScript", "Nextjs", "Tailwind CSS", "Framer Motion"],
     },
 ];
-
 
 export const techStack = [
     "React.js",

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { arrayCheck, techStack, toolStack } from "./../utils/utils";
+import { arrayCheck, techStack, toolStack } from "../utils/utils";
 
 const StackSection = () => {
   const [activeTab, setActiveTab] = useState<"tech" | "tools">("tech");
