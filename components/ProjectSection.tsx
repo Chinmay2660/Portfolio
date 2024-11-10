@@ -1,35 +1,5 @@
 import ProjectCard from "./ProjectCard";
-
-const projects = [
-  {
-    title: "Portfolio",
-    description: "A cool project using React and TypeScript.",
-    repoLink: "https://github.com/Chinmay2660/Portfolio",
-    liveLink: "https://chinmay2660.github.io/Portfolio/",
-    languages: ["TypeScript", "Nextjs", "Tailwind", "FramerMotion"],
-  },
-  {
-    title: "MovieSphere",
-    description: "An awesome project with Next.js and JavaScript.",
-    repoLink: "https://github.com/Chinmay2660/MovieSphere",
-    liveLink: "https://moviesphere2660.vercel.app/",
-    languages: ["Reactjs", "Tailwind", "FramerMotion"],
-  },
-  {
-    title: "MintMind",
-    description: "A beautiful project with Tailwind CSS.",
-    repoLink: "https://github.com/Chinmay2660/Mintmind",
-    liveLink: "https://mintmind.vercel.app/",
-    languages: ["Nextjs", "Tailwind", "ReduxToolkit"],
-  },
-  {
-    title: "GPT-3",
-    description: "A beautiful project with Tailwind CSS.",
-    repoLink: "https://github.com/Chinmay2660/gpt",
-    liveLink: "https://chinmay2660-gpt3.netlify.app/",
-    languages: ["Reactjs", "Tailwind"],
-  },
-];
+import { projects } from "./../utils/utils";
 
 const ProjectSection = () => {
   return (

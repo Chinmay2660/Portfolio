@@ -1,36 +1,6 @@
-const JourneySection = () => {
-  const journey = [
-    {
-      title: "Software Development Engineer - 1",
-      institution: "Jio Platforms Limited",
-      startDate: "November 2022",
-      endDate: "Present",
-      description: [
-        "Developed scalable React.js applications.",
-        "Worked on Agile development processes.",
-        "Optimized software performance and code quality.",
-      ],
-    },
-    {
-      title: "Electronics Engineering",
-      institution: "Terna Engineering College",
-      startDate: "August 2018",
-      endDate: "May 2022",
-    },
-    {
-      title: "12th",
-      institution: "PEST's New English Junior College, Thane",
-      startDate: "June 2017",
-      endDate: "March 2018",
-    },
-    {
-      title: "10th",
-      institution: "Little Flower High School",
-      startDate: "June 2015",
-      endDate: "March 2016",
-    },
-  ];
+import { journey } from "./../utils/utils";
 
+const JourneySection = () => {
   return (
     <section className="max-w-7xl mx-auto p-8 pb-0 bg-primary  text-gray-200 shadow-lg">
       <h2 className="text-3xl font-bold mb-6 text-left">My Journey</h2>

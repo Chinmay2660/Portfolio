@@ -1,35 +1,9 @@
 "use client";
 import { useState } from "react";
+import { techStack, toolStack } from "./../utils/utils";
 
 const StackSection = () => {
   const [activeTab, setActiveTab] = useState<"tech" | "tools">("tech");
-
-  const techStack = [
-    "React.js",
-    "Redux Toolkit",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "Material UI",
-    "Tailwind CSS",
-    "Chakra UI",
-    "Bootstrap",
-    "Node.js",
-    "RESTFul API",
-    "Express.js",
-    "MongoDB",
-    "PostgreSQL",
-  ];
-  const toolStack = [
-    "Git",
-    "Github",
-    "Azure DevOps",
-    "VS Code",
-    "Postman",
-    "Netlify",
-    "Vercel",
-    "Drizzle",
-  ];
 
   return (
     <section className="max-w-7xl mx-auto bg-primary text-gray-200 p-8 shadow-lg">

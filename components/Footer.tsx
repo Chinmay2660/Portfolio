@@ -1,24 +1,6 @@
-
+import { socialLinks } from "./../utils/utils";
 
 const Footer = () => {
-  const socialLinks = [
-    {
-      name: "Github",
-      link: "https://github.com/chinmay2660",
-      icon: "fa-brands fa-github",
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/chinmay2660/",
-      icon: "fa-brands fa-linkedin",
-    },
-    {
-      name: "Twitter",
-      link: "https://twitter.com/ChinmayBhoir14",
-      icon: "fa-brands fa-twitter",
-    },
-  ];
-
   return (
     <footer className="max-w-7xl mx-auto bg-primary text-white py-10">
       <div className="container mx-auto text-center space-y-6">
