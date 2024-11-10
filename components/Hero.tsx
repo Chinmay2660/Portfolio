@@ -1,6 +1,6 @@
 import Skills from "./Skills";
 import JourneySection from "./Journey";
-import { buttons } from "./../utils/utils";
+import { arrayCheck, buttons } from "./../utils/utils";
 
 const Hero = () => {
   return (
@@ -25,22 +25,23 @@ const Hero = () => {
             applications and ensuring code quality in Agile environments.
           </p>
           <div className="flex flex-wrap gap-4">
-            {buttons.map((button, index) => (
-              <a
-                key={index}
-                href={button.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center px-4 py-2 text-white ${button.bgColor} ${button.hoverColor} rounded-md transition-colors duration-300`}
-              >
-                {button.customIcon ? (
-                  button.customIcon
-                ) : (
-                  <i className={`${button.iconClass}`}></i>
-                )}
-                {button.text}
-              </a>
-            ))}
+            {arrayCheck(buttons) &&
+              buttons.map((button, index) => (
+                <a
+                  key={index}
+                  href={button.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center px-4 py-2 text-white ${button.bgColor} ${button.hoverColor} rounded-md transition-colors duration-300`}
+                >
+                  {button.customIcon ? (
+                    button.customIcon
+                  ) : (
+                    <i className={`${button.iconClass}`}></i>
+                  )}
+                  {button.text}
+                </a>
+              ))}
           </div>
         </div>
       </div>

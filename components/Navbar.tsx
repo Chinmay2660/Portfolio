@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { arrayCheck } from "@/utils/utils";
 
 type ScrollDirection = "up" | "down" | "top";
 type Theme = "light" | "dark";
@@ -82,15 +83,16 @@ const Navbar = () => {
               isMenuOpen ? "translate-x-0 mr-4" : "translate-x-full"
             } flex flex-col justify-center items-center lg:flex-row lg:items-center lg:space-x-6 absolute top-16 right-0 min-w-[200px] bg-primary border border-gray-700 rounded-lg lg:static lg:w-auto lg:bg-transparent lg:border-none transform transition-transform duration-300 lg:translate-x-0`}
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300 lg:px-4 lg:py-2 p-4"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {arrayCheck(navLinks) &&
+              navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300 lg:px-4 lg:py-2 p-4"
+                >
+                  {link.label}
+                </Link>
+              ))}
             <button
               onClick={toggleTheme}
               className="p-2 text-white dark:text-gray-300 lg:ml-4"

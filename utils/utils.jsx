@@ -100,7 +100,7 @@ export const buttons = [
         iconClass: "fab fa-hackerrank",
         text: "HackerRank",
     },
-  ];
+];
 
 export const journey = [
     {
@@ -169,10 +169,12 @@ export const projects = [
 
 export const techStack = [
     "React.js",
-    "Redux Toolkit",
     "Next.js",
     "TypeScript",
     "JavaScript",
+    "Redux Toolkit",
+    "Redux Saga",
+    "Redux Thunk",
     "Material UI",
     "Tailwind CSS",
     "Chakra UI",
@@ -182,15 +184,20 @@ export const techStack = [
     "Express.js",
     "MongoDB",
     "PostgreSQL",
-  ];
-  
-  export const toolStack = [
+];
+
+export const toolStack = [
     "Git",
     "Github",
-    "Azure DevOps",
-    "VS Code",
+    "Microsoft Azure DevOps",
     "Postman",
+    "Docker",
+    "Kubernetes",
     "Netlify",
     "Vercel",
     "Drizzle",
-  ];
+];
+
+export const arrayCheck = (array) => {
+    return array && array?.length > 0
+}

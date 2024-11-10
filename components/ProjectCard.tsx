@@ -1,3 +1,5 @@
+import { arrayCheck } from "@/utils/utils";
+
 interface ProjectProps {
   title: string;
   description: string;
@@ -55,16 +57,17 @@ const ProjectCard: React.FC<ProjectProps> = ({
       <p className="mt-2 text-white text-sm line-clamp-3">{description}</p>
 
       <div className="flex flex-wrap mt-4 space-x-2">
-        {languages.map((language, index) => (
-          <div key={index} className="flex items-center">
-            <span
-              className={`inline-block w-3 h-3 rounded-full mr-2 ${
-                languageColors[language] || languageColors.default
-              }`}
-            ></span>
-            <span className="text-sm text-white">{language}</span>
-          </div>
-        ))}
+        {arrayCheck(languages) &&
+          languages.map((language, index) => (
+            <div key={index} className="flex items-center">
+              <span
+                className={`inline-block w-3 h-3 rounded-full mr-2 ${
+                  languageColors[language] || languageColors.default
+                }`}
+              ></span>
+              <span className="text-sm text-white">{language}</span>
+            </div>
+          ))}
       </div>
     </div>
   );
