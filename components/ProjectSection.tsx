@@ -3,7 +3,7 @@ import { projects } from "./../utils/utils";
 
 const ProjectSection = () => {
   return (
-    <section className="max-w-7xl mx-auto py-12 bg-primary">
+    <section className="max-w-7xl mx-4 md:mx-4 lg:mx-auto py-12 bg-primary">
       <h2 className="text-3xl font-bold text-gray-200 text-left mb-10">
         Pinned Projects
       </h2>

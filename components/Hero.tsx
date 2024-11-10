@@ -4,7 +4,7 @@ import { buttons } from "./../utils/utils";
 
 const Hero = () => {
   return (
-    <section className="max-w-7xl mx-auto flex flex-col items-center mt-28 pt-16 pb-0 px-4 md:px-8 border border-gray-700 rounded-lg bg-primary text-gray-200 shadow-lg">
+    <section className="max-w-7xl flex flex-col items-center mt-28 pt-16 pb-0 px-4 mx-4 md:mx-4 lg:mx-auto md:px-8 border border-gray-700 rounded-lg bg-primary text-gray-200 shadow-lg">
       <div className="flex flex-col md:flex-row items-center w-full">
         <div className="flex-shrink-0 mb-8 md:mb-0 md:mr-8 ml-10">
           <img
