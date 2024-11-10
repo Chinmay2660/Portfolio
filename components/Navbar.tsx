@@ -47,11 +47,19 @@ const Navbar = () => {
   };
 
   const navLinks: { href: string; label: string }[] = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/work", label: "Work" },
-    { href: "/contact", label: "Contact" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" },
   ];
+
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    const targetElement = document.querySelector(href);
+    targetElement?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <motion.nav
@@ -85,14 +93,14 @@ const Navbar = () => {
           >
             {arrayCheck(navLinks) &&
               navLinks.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
                   className="text-white hover:text-gray-300 transition-colors duration-300 dark:text-gray-300 lg:px-4 lg:py-2 p-4"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             <button
               onClick={toggleTheme}
