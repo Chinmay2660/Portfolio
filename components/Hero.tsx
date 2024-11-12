@@ -1,6 +1,51 @@
 import Skills from "./Skills";
 import JourneySection from "./Journey";
-import { arrayCheck, buttons } from "../utils/utils";
+import { arrayCheck, leetcodeIcon, gfgIcon } from "../utils/utils";
+
+const buttons = [
+  {
+    href: "https://www.linkedin.com/in/chinmay2660/",
+    className: "bg-blue-600 hover:bg-blue-700",
+    iconClass: "fab fa-linkedin",
+    text: "LinkedIn",
+  },
+  {
+    href: "https://github.com/Chinmay2660",
+    className: "bg-gray-500 hover:bg-gray-700",
+    iconClass: "fab fa-github",
+    text: "GitHub",
+  },
+  {
+    href: "https://x.com/ChinmayBhoir14",
+    className: "bg-blue-500 hover:bg-blue-700",
+    iconClass: "fab fa-twitter",
+    text: "Twitter",
+  },
+  {
+    href: "https://www.instagram.com/chinmay__bhoir",
+    className: "bg-pink-500 hover:bg-pink-700",
+    iconClass: "fab fa-instagram",
+    text: "Instagram",
+  },
+  {
+    href: "https://leetcode.com/u/Chinmay2660/",
+    className: "bg-yellow-500 hover:bg-yellow-600",
+    customIcon: leetcodeIcon,
+    text: "LeetCode",
+  },
+  {
+    href: "https://www.geeksforgeeks.org/user/chinmay2660/",
+    className: "bg-green-500 hover:bg-green-700",
+    customIcon: gfgIcon,
+    text: "GeeksforGeeks",
+  },
+  {
+    href: "https://www.hackerrank.com/profile/Chinmay2660",
+    className: "bg-green-500 hover:bg-green-700",
+    iconClass: "fab fa-hackerrank",
+    text: "HackerRank",
+  },
+];
 
 const Hero = () => {
   return (
@@ -20,9 +65,8 @@ const Hero = () => {
             Software Development Engineer
           </p>
           <p className="text-lg mb-6">
-            👋 Hello! I’m SDE - 1 with 2+ years of
-            experience in building high-quality, scalable
-            front-end solutions.
+            👋 Hello! I’m SDE - 1 with 2+ years of experience in building
+            high-quality, scalable front-end solutions.
             <br />
             🚀 Currently, I’m focused on developing complex React.js
             applications and ensuring code quality in Agile environments.
@@ -35,7 +79,7 @@ const Hero = () => {
                   href={button.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center px-4 py-2 text-white ${button.bgColor} ${button.hoverColor} rounded-md transition-colors duration-300`}
+                  className={`flex items-center px-4 py-2 text-white  ${button.className}  rounded-md transition-colors duration-300`}
                 >
                   {button.customIcon ? (
                     button.customIcon
