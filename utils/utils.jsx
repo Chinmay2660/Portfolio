@@ -54,59 +54,6 @@ export const gfgIcon = (
     </div>
 );
 
-
-export const buttons = [
-    {
-        href: "https://www.linkedin.com/in/chinmay2660/",
-        bgColor: "bg-blue-500",
-        hoverColor: "hover:bg-blue-700",
-        iconClass: "fab fa-linkedin",
-        text: "LinkedIn",
-    },
-    {
-        href: "https://github.com/Chinmay2660",
-        bgColor: "bg-gray-500",
-        hoverColor: "hover:bg-gray-700",
-        iconClass: "fab fa-github",
-        text: "GitHub",
-    },
-    {
-        href: "https://x.com/ChinmayBhoir14",
-        bgColor: "bg-blue-500",
-        hoverColor: "hover:bg-blue-700",
-        iconClass: "fab fa-twitter",
-        text: "Twitter",
-    },
-    {
-        href: "https://www.instagram.com/chinmay__bhoir",
-        bgColor: "bg-pink-500",
-        hoverColor: "hover:bg-pink-700",
-        iconClass: "fab fa-instagram",
-        text: "Instagram",
-    },
-    {
-        href: "https://leetcode.com/u/Chinmay2660/",
-        bgColor: "bg-orange-500",
-        hoverColor: "hover:bg-orange-700",
-        customIcon: leetcodeIcon,
-        text: "LeetCode",
-    },
-    {
-        href: "https://www.geeksforgeeks.org/user/chinmay2660/",
-        bgColor: "bg-teal-500",
-        hoverColor: "hover:bg-teal-700",
-        customIcon: gfgIcon,
-        text: "GeeksforGeeks",
-    },
-    {
-        href: "https://www.hackerrank.com/profile/Chinmay2660",
-        bgColor: "bg-green-500",
-        hoverColor: "hover:bg-green-700",
-        iconClass: "fab fa-hackerrank",
-        text: "HackerRank",
-    },
-];
-
 export const journey = [
     {
         title: "Software Development Engineer - 1",
