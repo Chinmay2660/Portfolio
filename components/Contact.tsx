@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FC } from "react";
 
 const Contact: FC = () => {
@@ -19,18 +20,19 @@ const Contact: FC = () => {
         </a>
 
         <div className="flex flex-row items-center justify-between gap-4">
-          <a
-            // href="/path-to-your-resume.pdf"
+          <Link
+            href="/Chinmay_Bhoir_SDE_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            locale={false} 
             className="text-lg text-gray-200 bg-transparent shadow-lg border border-gray-700 hover:border-gray-600 px-6 py-3 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:text-white transition-all duration-300"
           >
             View Resume
-          </a>
+          </Link>
 
           <a
-            // href="/path-to-your-resume.pdf"
-            download="Chinmay_Bhoir_SDE.pdf"
+            href="/Chinmay_Bhoir_SDE_Resume.pdf"
+            download
             className="text-lg text-gray-200 bg-transparent shadow-lg border border-gray-700 hover:border-gray-600 px-6 py-3 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:text-white transition-all duration-300"
           >
             <i className="fas fa-download text-lg"></i>

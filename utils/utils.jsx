@@ -170,7 +170,7 @@ export const projects = [
         description: "Personal portfolio showcasing skills, projects, and smooth transitions for an engaging user experience.",
         repoLink: "https://github.com/Chinmay2660/Portfolio",
         liveLink: "https://chinmaybhoir.vercel.app/",
-        languages: ["TypeScript", "Nextjs", "Tailwind CSS", "Framer Motion"],
+        languages: ["TypeScript", "Nextjs", "Tailwind CSS"],
     },
 ];
 
