@@ -66,7 +66,7 @@ export const journey = [
             "Revamped the UI and modernized 3,000+ lines of legacy code to ES6 standards, implemented optimization techniques, achieving a 30% improvement in Lighthouse scores.",
             "Integrated Jio payment gateway with reusable components and custom hooks, enhancing user experience and code efficiency",
             "Optimized page load times and integrated RESTful APIs for real-time data, enhancing overall app performance.",
-            "Developed a scanning functionality for SIM card packets using barcode, which extracts ICCID and serial numbers, reducing manual transmission by 60% compared to the previous paper-based system.",
+            // "Developed a scanning functionality for SIM card packets using barcode, which extracts ICCID and serial numbers, reducing manual transmission by 60% compared to the previous paper-based system.",
         ],
     },
     {
