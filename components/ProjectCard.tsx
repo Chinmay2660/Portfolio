@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             className="text-lg font-bold text-blue-500 hover:underline"
             rel="noopener noreferrer"
           >
-            Live Demo
+            Live
           </a>
         )}
       </div>
