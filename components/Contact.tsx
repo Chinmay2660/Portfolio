@@ -24,7 +24,7 @@ const Contact: FC = () => {
             href="/Chinmay_Bhoir_3_YOE_Frontend_Developer_Reactjs_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            locale={false} 
+            locale={false}
             className="text-lg text-gray-200 bg-transparent shadow-lg border border-gray-700 hover:border-gray-600 px-6 py-3 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:text-white transition-all duration-300"
           >
             View Resume
