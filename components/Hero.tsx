@@ -65,7 +65,7 @@ const Hero = () => {
             Software Development Engineer
           </p>
           <p className="text-lg mb-6">
-            👋 Hello! I’m SDE - 1 with 2+ years of experience in building
+            👋 Hello! I’m SDE - 1 with 3+ years of experience in building
             high-quality, scalable front-end solutions.
             <br />
             🚀 Currently, I’m focused on developing complex React.js
