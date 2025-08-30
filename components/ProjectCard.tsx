@@ -1,4 +1,5 @@
-import { arrayCheck } from "@/utils/utils";
+import { arrayCheck } from "../utils/utils";
+import { motion } from "framer-motion";
 
 interface ProjectProps {
   title: string;
@@ -32,44 +33,97 @@ const ProjectCard: React.FC<ProjectProps> = ({
     default: "bg-gray-500",
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div className="p-4 bg-primary rounded-lg shadow-lg border border-gray-700 hover:border-gray-600 transition-colors duration-300 flex flex-col justify-between">
+    <motion.div
+      className="p-4 bg-primary rounded-lg shadow-lg border border-gray-700 hover:border-gray-600 transition-colors duration-300 flex flex-col justify-between"
+      whileHover={{
+        y: -8,
+        boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+        borderColor: "#3b82f6",
+      }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="flex justify-between items-center">
-        <a
+        <motion.a
           href={repoLink}
           target="_blank"
           className="text-xl font-bold text-blue-500 hover:underline"
           rel="noopener noreferrer"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.2 }}
         >
           {title}
-        </a>
+        </motion.a>
         {liveLink && (
-          <a
+          <motion.a
             href={liveLink}
             target="_blank"
             className="text-lg font-bold text-blue-500 hover:underline"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
           >
             Live
-          </a>
+          </motion.a>
         )}
       </div>
-      <p className="mt-2 text-white text-sm line-clamp-3">{description}</p>
+      <motion.p
+        className="mt-2 text-white text-sm line-clamp-3"
+        variants={itemVariants}
+      >
+        {description}
+      </motion.p>
 
-      <div className="flex flex-wrap mt-4 space-x-2">
+      <motion.div
+        className="flex flex-wrap mt-4 space-x-2"
+        variants={containerVariants}
+      >
         {arrayCheck(languages) &&
           languages.map((language, index) => (
-            <div key={index} className="flex items-center">
-              <span
+            <motion.div
+              key={index}
+              className="flex items-center"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <motion.span
                 className={`inline-block w-3 h-3 rounded-full mr-2 ${
                   languageColors[language] || languageColors.default
                 }`}
-              ></span>
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.1 + index * 0.1, duration: 0.3 }}
+              ></motion.span>
               <span className="text-sm text-white">{language}</span>
-            </div>
+            </motion.div>
           ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
