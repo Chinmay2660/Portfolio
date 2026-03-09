@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chinmay Bhoir | Portfolio
+
+A personal portfolio site built with **Next.js**, **React**, and **TypeScript**. Showcases experience, projects, skills, and contact information with a responsive, theme-aware UI and smooth animations.
+
+**Live:** [chinmaybhoir.vercel.app](https://chinmaybhoir.vercel.app)
+
+---
+
+## Tech Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org) (App Router)
+- **UI:** [React 19](https://react.dev), [Tailwind CSS 4](https://tailwindcss.com)
+- **Animation:** [Framer Motion](https://www.framer.com/motion/)
+- **Analytics:** [Vercel Analytics](https://vercel.com/analytics)
+- **Icons:** [Font Awesome](https://fontawesome.com)
+- **Fonts:** Geist Sans & Geist Mono (local)
+
+---
+
+## Features
+
+- **Hero** – Intro, role, and social links (GitHub, LinkedIn, LeetCode, etc.)
+- **Projects** – Highlighted work with links and tech stack
+- **Journey** – Career and education timeline
+- **Skills** – Categorized tech skills
+- **Contact** – Get in touch section
+- **Theme** – Light/dark mode with system preference and manual toggle
+- **Offline banner** – Notice when the user is offline
+- **Error boundary** – Graceful error handling and fallback UI
+- **Scroll to top** – Button to return to top on long scroll
+- **SEO** – Metadata, Open Graph, Twitter cards, JSON-LD (Person schema)
+- **Analytics** – Vercel Analytics for usage insights
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- **Node.js** 18.18+ (or 20+)
+- **npm**, **yarn**, **pnpm**, or **bun**
+
+### Install & run
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server (with Turbopack)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Other scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command        | Description              |
+|----------------|--------------------------|
+| `npm run dev`  | Start dev server (Turbopack) |
+| `npm run build`| Production build        |
+| `npm run start`| Start production server  |
+| `npm run lint` | Run ESLint               |
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+├── app/
+│   ├── layout.tsx      # Root layout, metadata, theme script, providers
+│   ├── page.tsx        # Home: Hero, Projects, Contact sections
+│   ├── globals.css     # Global styles
+│   └── fonts/          # Geist Sans & Geist Mono (local)
+├── components/
+│   ├── Hero.tsx
+│   ├── ProjectSection.tsx
+│   ├── ProjectCard.tsx
+│   ├── Journey.tsx
+│   ├── Skills.tsx
+│   ├── Contact.tsx
+│   ├── Navbar/         # Nav + mobile menu + nav links
+│   ├── Footer.tsx
+│   ├── ScrollToTop.tsx
+│   ├── ErrorBoundary.tsx
+│   ├── OfflineBanner.tsx
+│   └── ui/
+│       └── GradientBorder.tsx
+├── context/
+│   └── ThemeContext.tsx
+├── lib/
+│   ├── motion.ts       # Framer Motion presets
+│   └── constants.ts
+├── utils/
+│   ├── data.ts         # Projects, journey, skills, social links
+│   └── icons.tsx
+└── types/              # TypeScript types
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Content (projects, journey, skills, social links) is driven by `utils/data.ts`; update that file to change what appears on the site.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Optional:
+
+- **`NEXT_PUBLIC_SITE_URL`** – Canonical site URL (default: `https://chinmaybhoir.vercel.app`). Used for metadata and Open Graph.
+
+---
+
+## Deploy
+
+The app is set up for [Vercel](https://vercel.com). Push to your repo and connect the project; Vercel will build and deploy on each push.
+
+- [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying)
+- [Deploy on Vercel](https://vercel.com/new)
+
+---
+
+## License
+
+Private / personal use. All rights reserved.
