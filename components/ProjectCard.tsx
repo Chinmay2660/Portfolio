@@ -1,5 +1,8 @@
+"use client";
+
 import { arrayCheck } from "../utils/utils";
 import { motion } from "framer-motion";
+import { spring, cardHover, cardTap } from "@/lib/motion";
 
 interface ProjectProps {
   title: string;
@@ -9,6 +12,39 @@ interface ProjectProps {
   languages: string[];
 }
 
+const languageColors: Record<string, string> = {
+  JavaScript: "bg-amber-400/90",
+  TypeScript: "bg-blue-500/90",
+  HTML: "bg-orange-500/90",
+  CSS: "bg-sky-400/90",
+  Reactjs: "bg-cyan-400/90",
+  Nextjs: "bg-violet-500/90",
+  ChakraUI: "bg-pink-400/90",
+  "Tailwind CSS": "bg-teal-400/90",
+  Redux: "bg-purple-500/90",
+  "Redux Toolkit": "bg-purple-500/90",
+  MaterialUI: "bg-indigo-500/90",
+  Context: "bg-blue-400/90",
+  "Framer Motion": "bg-amber-400/90",
+};
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.025, delayChildren: 0.02 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 8 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: spring.gentle,
+  },
+};
+
 const ProjectCard: React.FC<ProjectProps> = ({
   title,
   description,
@@ -16,110 +52,71 @@ const ProjectCard: React.FC<ProjectProps> = ({
   liveLink,
   languages,
 }) => {
-  const languageColors: { [key: string]: string } = {
-    JavaScript: "bg-yellow-400",
-    TypeScript: "bg-blue-500",
-    HTML: "bg-orange-500",
-    CSS: "bg-blue-300",
-    Reactjs: "bg-cyan-400",
-    Nextjs: "bg-purple-400",
-    ChakraUI: "bg-pink-400",
-    "Tailwind CSS": "bg-teal-400",
-    Redux: "bg-red-400",
-    "Redux Toolkit": "bg-red-400",
-    MaterialUI: "bg-purple-400",
-    Context: "bg-blue-400",
-    "Framer Motion": "bg-yellow-400",
-    default: "bg-gray-500",
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <motion.div
-      className="p-4 bg-primary rounded-lg shadow-lg border border-gray-700 hover:border-gray-600 transition-colors duration-300 flex flex-col justify-between"
-      whileHover={{
-        y: -8,
-        boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-        borderColor: "#3b82f6",
-      }}
-      transition={{ duration: 0.3 }}
+      className="group p-5 rounded-2xl border border-border/60 bg-primary/30 dark:bg-primary/20 flex flex-col justify-between h-full hover:border-accent/40 dark:hover:border-accent/60 hover:bg-accent-soft/30 dark:hover:bg-accent-soft-hover transition-all duration-200 ease-out"
+      whileHover={cardHover}
+      whileTap={cardTap}
     >
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-start gap-3">
         <motion.a
           href={repoLink}
           target="_blank"
-          className="text-xl font-bold text-blue-500 hover:underline"
           rel="noopener noreferrer"
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.2 }}
+          className="text-base font-semibold text-foreground hover:text-accent transition-all duration-200 ease-out line-clamp-1 flex-1 min-w-0"
+          whileTap={{ scale: 0.98, transition: spring.quick }}
         >
           {title}
         </motion.a>
-        {liveLink && (
+        <span className="flex items-center gap-2 shrink-0">
+          {liveLink && (
+            <motion.a
+              href={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-medium text-accent hover:text-accent-hover transition-all duration-200 ease-out"
+              whileTap={{ scale: 0.97, transition: spring.quick }}
+            >
+              Live →
+            </motion.a>
+          )}
           <motion.a
-            href={liveLink}
+            href={repoLink}
             target="_blank"
-            className="text-lg font-bold text-blue-500 hover:underline"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
+            className="text-muted hover:text-accent transition-all duration-200 ease-out"
+            whileTap={{ scale: 0.97 }}
+            aria-label="View code"
           >
-            Live
+            <i className="fab fa-github text-sm" aria-hidden />
           </motion.a>
-        )}
+        </span>
       </div>
       <motion.p
-        className="mt-2 text-white text-sm line-clamp-3"
+        className="mt-2 text-muted text-sm line-clamp-3 leading-relaxed"
         variants={itemVariants}
       >
         {description}
       </motion.p>
 
       <motion.div
-        className="flex flex-wrap mt-4 space-x-2"
+        className="flex flex-wrap gap-2 mt-4"
         variants={containerVariants}
       >
         {arrayCheck(languages) &&
           languages.map((language, index) => (
             <motion.div
               key={index}
-              className="flex items-center"
+              className="flex items-center gap-1.5"
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
+              transition={spring.quick}
             >
-              <motion.span
-                className={`inline-block w-3 h-3 rounded-full mr-2 ${
-                  languageColors[language] || languageColors.default
+              <span
+                className={`inline-block w-2 h-2 rounded-full shrink-0 ${
+                  languageColors[language] ?? "bg-muted"
                 }`}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.1 + index * 0.1, duration: 0.3 }}
-              ></motion.span>
-              <span className="text-sm text-white">{language}</span>
+              />
+              <span className="text-xs text-muted">{language}</span>
             </motion.div>
           ))}
       </motion.div>

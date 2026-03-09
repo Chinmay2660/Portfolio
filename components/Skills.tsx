@@ -1,115 +1,85 @@
 "use client";
-import { useState } from "react";
-import { arrayCheck, techStack, toolStack } from "../utils/utils";
-import { motion, AnimatePresence } from "framer-motion";
+
+import { arrayCheck, skillCategories } from "../utils/utils";
+import { motion } from "framer-motion";
+import { spring, staggerContainer, itemFadeInUp, pillHover, pillTap } from "@/lib/motion";
+
+const SkillPill = ({
+  name,
+  index,
+}: {
+  name: string;
+  index: number;
+}) => (
+  <motion.span
+    className="px-3.5 py-2 rounded-xl text-sm font-medium text-foreground/90 bg-accent-soft/50 dark:bg-accent-soft/30 border border-border/60 hover:border-accent/40 dark:hover:border-accent/60 hover:bg-accent-soft-hover transition-all duration-200 ease-out cursor-default"
+    variants={itemFadeInUp}
+    initial="hidden"
+    animate="visible"
+    transition={{ ...spring.gentle, delay: index * 0.015 }}
+    whileHover={pillHover}
+    whileTap={pillTap}
+  >
+    {name}
+  </motion.span>
+);
+
+const SkillBlock = ({
+  title,
+  items,
+  delay = 0,
+}: {
+  title: string;
+  items: string[];
+  delay?: number;
+}) => (
+  <motion.div
+    className="flex flex-col gap-3"
+    variants={staggerContainer}
+    initial="hidden"
+    animate="visible"
+    transition={{ delayChildren: delay }}
+  >
+    <motion.h3
+      className="text-xs font-semibold text-accent uppercase tracking-wider"
+      variants={itemFadeInUp}
+    >
+      {title}
+    </motion.h3>
+    <motion.div
+      className="flex flex-wrap gap-2"
+      variants={staggerContainer}
+      initial="hidden"
+      animate="visible"
+    >
+      {arrayCheck(items) &&
+        items.map((name, index) => (
+          <SkillPill key={`${title}-${index}`} name={name} index={index} />
+        ))}
+    </motion.div>
+  </motion.div>
+);
 
 const Skills = () => {
-  const [activeTab, setActiveTab] = useState<"tech" | "tools">("tech");
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const tabVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
-    <section className="max-w-7xl mx-auto bg-primary text-gray-200 shadow-lg">
-      <motion.div
-        className="flex justify-start space-x-4 mb-6 border-b border-gray-700"
-        initial="hidden"
-        animate="visible"
-        transition={{ staggerChildren: 0.1 }}
-      >
-        <motion.button
-          onClick={() => setActiveTab("tech")}
-          className={`px-4 py-2 -mb-px border-b-2 transition-colors duration-300 ${
-            activeTab === "tech"
-              ? "border-blue-600 text-blue-600"
-              : "border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-400"
-          }`}
-          variants={tabVariants}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Tech Stack
-        </motion.button>
-        <motion.button
-          onClick={() => setActiveTab("tools")}
-          className={`px-4 py-2 -mb-px border-b-2 transition-colors duration-300 ${
-            activeTab === "tools"
-              ? "border-blue-600 text-blue-600"
-              : "border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-400"
-          }`}
-          variants={tabVariants}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Tool Stack
-        </motion.button>
-      </motion.div>
-
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeTab}
-          className="flex flex-wrap gap-4 justify-start"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
-        >
-          {activeTab === "tech" &&
-            arrayCheck(techStack) &&
-            techStack.map((tech, index) => (
-              <motion.span
-                key={index}
-                className="px-4 py-2 bg-gray-800 rounded-md shadow-md transition-transform duration-300 hover:bg-blue-600 hover:-translate-y-1"
-                variants={itemVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {tech}
-              </motion.span>
-            ))}
-          {activeTab === "tools" &&
-            arrayCheck(toolStack) &&
-            toolStack.map((tool, index) => (
-              <motion.span
-                key={index}
-                className="px-4 py-2 bg-gray-800 rounded-md shadow-md transition-transform duration-300 hover:bg-blue-600 hover:-translate-y-1"
-                variants={itemVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {tool}
-              </motion.span>
-            ))}
-        </motion.div>
-      </AnimatePresence>
-    </section>
+    <motion.section
+      className="mb-10"
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={spring.gentle}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-8">
+        {arrayCheck(skillCategories) &&
+          skillCategories.map((category, i) => (
+            <SkillBlock
+              key={category.title}
+              title={category.title}
+              items={category.items}
+              delay={i * 0.03}
+            />
+          ))}
+      </div>
+    </motion.section>
   );
 };
 

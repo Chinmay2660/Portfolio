@@ -1,89 +1,156 @@
+"use client";
+
 import { arrayCheck, journey } from "../utils/utils";
 import { motion } from "framer-motion";
+import { useRef, useEffect, useCallback } from "react";
+import { spring, slideInLeft, cardHover, cardTap } from "@/lib/motion";
 
 const JourneySection = () => {
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
+  const firstDotRef = useRef<HTMLDivElement>(null);
+  const lastDotRef = useRef<HTMLDivElement>(null);
 
-  const titleVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
-      }
-    }
-  };
+  const updateLinePosition = useCallback(() => {
+    const container = containerRef.current;
+    const line = lineRef.current;
+    const firstDot = firstDotRef.current;
+    const lastDot = lastDotRef.current;
+    if (!container || !line || !firstDot || !lastDot) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const firstRect = firstDot.getBoundingClientRect();
+    const lastRect = lastDot.getBoundingClientRect();
+
+    const top = firstRect.top + firstRect.height / 2 - containerRect.top;
+    const bottom = containerRect.bottom - (lastRect.top + lastRect.height / 2);
+
+    line.style.top = `${top}px`;
+    line.style.bottom = `${bottom}px`;
+  }, []);
+
+  useEffect(() => {
+    const run = () => requestAnimationFrame(() => updateLinePosition());
+    run();
+    const ro = new ResizeObserver(run);
+    if (containerRef.current) ro.observe(containerRef.current);
+    window.addEventListener("resize", run);
+    const t = setTimeout(run, 400);
+    return () => {
+      clearTimeout(t);
+      ro.disconnect();
+      window.removeEventListener("resize", run);
+    };
+  }, [updateLinePosition, journey?.length]);
 
   return (
-    <section className="max-w-7xl mx-auto mt-10 pb-0 bg-primary  text-gray-200 shadow-lg">
+    <section className="pt-2">
       <motion.h2
-        className="text-3xl font-bold mb-6 text-left"
-        initial={{ opacity: 0, y: 20 }}
+        className="text-xl font-bold text-foreground mb-6 tracking-tight"
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={spring.gentle}
       >
         My Journey
       </motion.h2>
       <motion.div
-        className="relative border-l border-gray-700"
+        ref={containerRef}
+        className="relative pl-6 pr-2"
         initial="hidden"
         animate="visible"
-        transition={{ staggerChildren: 0.2 }}
+        transition={{ staggerChildren: 0.03, delayChildren: 0.02 }}
       >
+        <div
+          ref={lineRef}
+          className="absolute left-[19px] w-0.5 bg-accent/50 -translate-x-1/2"
+          style={{ top: 0, bottom: 0 }}
+          aria-hidden
+        />
         {arrayCheck(journey) &&
           journey.map((item, index) => (
             <motion.div
               key={index}
-              className="mb-10 ml-6"
-              variants={itemVariants}
+              className="mb-6 last:mb-0 relative"
+              variants={slideInLeft}
             >
               <motion.div
-                className="absolute w-3 h-3 bg-blue-600 rounded-full mt-1.5 -left-1.5 border border-gray-700"
+                ref={
+                  index === 0
+                    ? firstDotRef
+                    : index === journey.length - 1
+                      ? lastDotRef
+                      : undefined
+                }
+                className="absolute w-3.5 h-3.5 rounded-full mt-1.5 -left-[9px] bg-accent ring-4 ring-card dark:ring-card z-10 shadow-glow-sm"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                transition={{ delay: 0.1 + index * 0.1, duration: 0.3 }}
-              ></motion.div>
+                transition={{ delay: 0.02 + index * 0.04, duration: 0.2 }}
+              />
               <motion.div
-                className="p-6 bg-gray-800 rounded-lg shadow-md"
-                whileHover={{ y: -5, boxShadow: "0 10px 25px rgba(0,0,0,0.3)" }}
-                transition={{ duration: 0.3 }}
+                className="ml-6 pl-5 pr-5 py-3 rounded-2xl border-l-2 border-accent/50 bg-accent-soft/20 dark:bg-accent-soft/10 border border-border/50 hover:border-accent/40 dark:hover:border-accent/60 hover:bg-accent-soft/30 dark:hover:bg-accent-soft-hover transition-all duration-200 ease-out min-w-0 overflow-hidden"
+                whileHover={cardHover}
+                whileTap={cardTap}
               >
-                <h3 className="text-2xl font-semibold">{item.title}</h3>
-                <p className="text-lg text-gray-300">{item.institution}</p>
-                <p className="text-lg text-gray-400">
-                  {item.startDate} - {item.endDate}
-                </p>
-
-                {item.description && (
-                  <ul className="list-disc list-inside text-gray-400 mt-4">
-                    {arrayCheck(item?.description) &&
-                      item?.description.map((point, idx) => (
-                        <motion.li
-                          key={idx}
-                          className="text-lg"
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{
-                            delay: 0.2 + index * 0.1 + idx * 0.05,
-                            duration: 0.3
-                          }}
-                        >
-                          {point}
-                        </motion.li>
-                      ))}
-                  </ul>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1">
+                  <div className="min-w-0">
+                    <h3 className="text-base font-semibold text-foreground">
+                      {item.title}
+                    </h3>
+                    <p className="text-accent font-medium text-sm mt-0.5">
+                      {item.institution}
+                    </p>
+                  </div>
+                  {item.startDate && item.endDate && (
+                    <p className="text-muted text-sm whitespace-nowrap shrink-0 mt-0.5 sm:mt-0">
+                      {item.startDate} — {item.endDate}
+                    </p>
+                  )}
+                </div>
+                {item.projects ? (
+                  <div className="mt-3 space-y-4">
+                    {item.projects.map((project, pIdx) => (
+                      <div key={pIdx}>
+                        <p className="text-foreground/90 font-medium text-sm mb-1.5">
+                          {project.name}
+                        </p>
+                        <ul className="list-disc list-inside text-muted text-sm space-y-1">
+                          {arrayCheck(project.description) &&
+                            project.description.map((point, idx) => (
+                              <motion.li
+                                key={idx}
+                                initial={{ opacity: 0, x: -8 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{
+                                  delay: 0.03 + index * 0.04 + pIdx * 0.02 + idx * 0.01,
+                                  duration: 0.16,
+                                }}
+                              >
+                                {point}
+                              </motion.li>
+                            ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  item.description && (
+                    <ul className="list-disc list-inside text-muted text-sm mt-3 space-y-1">
+                      {arrayCheck(item.description) &&
+                        item.description.map((point, idx) => (
+                          <motion.li
+                            key={idx}
+                            initial={{ opacity: 0, x: -8 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{
+                              delay: 0.03 + index * 0.04 + idx * 0.02,
+                              duration: 0.16,
+                            }}
+                          >
+                            {point}
+                          </motion.li>
+                        ))}
+                    </ul>
+                  )
                 )}
               </motion.div>
             </motion.div>

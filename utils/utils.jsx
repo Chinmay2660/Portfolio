@@ -1,84 +1,99 @@
 export const socialLinks = [
     {
-        name: "Github",
-        link: "https://github.com/chinmay2660",
-        icon: "fa-brands fa-github",
-    },
-    {
         name: "LinkedIn",
         link: "https://www.linkedin.com/in/chinmay2660/",
         icon: "fa-brands fa-linkedin",
     },
     {
-        name: "Twitter",
-        link: "https://twitter.com/ChinmayBhoir14",
-        icon: "fa-brands fa-twitter",
+        name: "GitHub",
+        link: "https://github.com/Chinmay2660",
+        icon: "fa-brands fa-github",
+    },
+    {
+        name: "Portfolio",
+        link: "https://chinmaybhoir.vercel.app/",
+        icon: "fa-solid fa-globe",
     },
 ];
 
 export const leetcodeIcon = (
-    <div className="mr-2">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18px"
-            height="18px"
-            viewBox="0 0 16 16"
-            fill="white"
-        >
-            <path d="M 10.447266 0.265625 A 0.50005 0.50005 0 0 0 10.103516 0.41796875 L 5.65625 4.8671875 L 3.0957031 7.4257812 A 0.50005 0.50005 0 0 0 2.9785156 7.6035156 C 1.769869 8.9739016 1.7865696 11.063913 3.0957031 12.373047 L 5.65625 14.933594 C 7.0176322 16.294976 9.242133 16.294976 10.603516 14.933594 L 12.853516 12.683594 A 0.50063809 0.50063809 0 1 0 12.144531 11.976562 L 9.8945312 14.226562 C 8.9159134 15.20518 7.3418991 15.20518 6.3632812 14.226562 L 3.8027344 11.666016 C 2.8241166 10.687398 2.8241166 9.1114303 3.8027344 8.1328125 L 6.3632812 5.5742188 C 7.3418991 4.5956009 8.9159135 4.5956009 9.8945312 5.5742188 L 12.144531 7.8242188 A 0.50063784 0.50063784 0 1 0 12.853516 7.1171875 L 10.603516 4.8671875 C 9.9106907 4.174363 8.9943718 3.8431189 8.0820312 3.8554688 L 10.8125 1.125 A 0.50005 0.50005 0 0 0 10.447266 0.265625 z M 7.328125 9.4003906 A 0.50005 0.50005 0 1 0 7.328125 10.400391 L 14.228516 10.400391 A 0.50005 0.50005 0 1 0 14.228516 9.4003906 L 7.328125 9.4003906 z"></path>
-        </svg>
-    </div>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        className="shrink-0"
+        aria-hidden
+    >
+        <path d="M 10.447266 0.265625 A 0.50005 0.50005 0 0 0 10.103516 0.41796875 L 5.65625 4.8671875 L 3.0957031 7.4257812 A 0.50005 0.50005 0 0 0 2.9785156 7.6035156 C 1.769869 8.9739016 1.7865696 11.063913 3.0957031 12.373047 L 5.65625 14.933594 C 7.0176322 16.294976 9.242133 16.294976 10.603516 14.933594 L 12.853516 12.683594 A 0.50063809 0.50063809 0 1 0 12.144531 11.976562 L 9.8945312 14.226562 C 8.9159134 15.20518 7.3418991 15.20518 6.3632812 14.226562 L 3.8027344 11.666016 C 2.8241166 10.687398 2.8241166 9.1114303 3.8027344 8.1328125 L 6.3632812 5.5742188 C 7.3418991 4.5956009 8.9159135 4.5956009 9.8945312 5.5742188 L 12.144531 7.8242188 A 0.50063784 0.50063784 0 1 0 12.853516 7.1171875 L 10.603516 4.8671875 C 9.9106907 4.174363 8.9943718 3.8431189 8.0820312 3.8554688 L 10.8125 1.125 A 0.50005 0.50005 0 0 0 10.447266 0.265625 z M 7.328125 9.4003906 A 0.50005 0.50005 0 1 0 7.328125 10.400391 L 14.228516 10.400391 A 0.50005 0.50005 0 1 0 14.228516 9.4003906 L 7.328125 9.4003906 z" />
+    </svg>
 );
 
 export const gfgIcon = (
-    <div className="mr-2">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 48 48"
-            width="24px"
-            height="24px"
-            fill="currentColor"
-        >
-            <path
-                d="M29.035,24C29.014,23.671,29,23.339,29,23c0-6.08,2.86-10,7-10c3.411,0,6.33,2.662,7,7l2,0l0.001-9L43,11
-          c0,0-0.533,1.506-1,1.16c-1.899-1.066-3.723-1.132-6.024-1.132C30.176,11.028,25,16.26,25,22.92c0,0.364,0.021,0.723,0.049,1.08
-          h-2.099C22.979,23.643,23,23.284,23,22.92c0-6.66-5.176-11.892-10.976-11.892c-2.301,0-4.125,0.065-6.024,1.132
-          C5.533,12.506,5,11,5,11l-2.001,0L3,20l2,0c0.67-4.338,3.589-7,7-7c4.14,0,7,3.92,7,10c0,0.339-0.014,0.671-0.035,1H0v2h1.009
-          c1.083,0,1.977,0.861,1.999,1.943C3.046,29.789,3.224,32.006,4,33c1.269,1.625,3,3,8,3c5.022,0,9.92-4.527,11-10h2
-          c1.08,5.473,5.978,10,11,10c5,0,6.731-1.375,8-3c0.776-0.994,0.954-3.211,0.992-5.057C45.014,26.861,45.909,26,46.991,26H48v-2
-          H29.035z M11.477,33.73C9.872,33.73,7.322,33.724,7,32c-0.109-0.583-0.091-2.527-0.057-4.046C6.968,26.867,7.855,26,8.943,26H19
-          C18.206,30.781,15.015,33.73,11.477,33.73z M41,32c-0.322,1.724-2.872,1.73-4.477,1.73c-3.537,0-6.729-2.949-7.523-7.73h10.057
-          c1.088,0,1.975,0.867,2,1.954C41.091,29.473,41.109,31.417,41,32z"
-            ></path>
-        </svg>
-    </div>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 48 48"
+        width="18"
+        height="18"
+        fill="currentColor"
+        className="shrink-0"
+        aria-hidden
+    >
+        <path d="M29.035,24C29.014,23.671,29,23.339,29,23c0-6.08,2.86-10,7-10c3.411,0,6.33,2.662,7,7l2,0l0.001-9L43,11 c0,0-0.533,1.506-1,1.16c-1.899-1.066-3.723-1.132-6.024-1.132C30.176,11.028,25,16.26,25,22.92c0,0.364,0.021,0.723,0.049,1.08 h-2.099C22.979,23.643,23,23.284,23,22.92c0-6.66-5.176-11.892-10.976-11.892c-2.301,0-4.125,0.065-6.024,1.132 C5.533,12.506,5,11,5,11l-2.001,0L3,20l2,0c0.67-4.338,3.589-7,7-7c4.14,0,7,3.92,7,10c0,0.339-0.014,0.671-0.035,1H0v2h1.009 c1.083,0,1.977,0.861,1.999,1.943C3.046,29.789,3.224,32.006,4,33c1.269,1.625,3,3,8,3c5.022,0,9.92-4.527,11-10h2 c1.08,5.473,5.978,10,11,10c5,0,6.731-1.375,8-3c0.776-0.994,0.954-3.211,0.992-5.057C45.014,26.861,45.909,26,46.991,26H48v-2 H29.035z M11.477,33.73C9.872,33.73,7.322,33.724,7,32c-0.109-0.583-0.091-2.527-0.057-4.046C6.968,26.867,7.855,26,8.943,26H19 C18.206,30.781,15.015,33.73,11.477,33.73z M41,32c-0.322,1.724-2.872,1.73-4.477,1.73c-3.537,0-6.729-2.949-7.523-7.73h10.057 c1.088,0,1.975,0.867,2,1.954C41.091,29.473,41.109,31.417,41,32z" />
+    </svg>
 );
 
 export const journey = [
     {
+        title: "Software Engineer",
+        institution: "Coditas",
+        startDate: "November 2025",
+        endDate: "Present",
+        description: [
+            "Working on MetricStream, a B2B e-commerce app using React.js, Redux-Saga and Cordova; contributing to over 50% of the codebase.",
+            "Delivering key features (Cart, Save for Later, Checkout, Payment status) and integrating Jio Payment Gateway, scaling the user base from 150K to 350K.",
+        ],
+    },
+    {
         title: "Software Development Engineer - 1",
         institution: "Jio Platforms Limited",
         startDate: "November 2022",
-        endDate: "Present",
-        description: [
-            "Developed and optimized a B2B e-commerce app using React.js, Redux-Saga and Cordova, contributed to over 50% of the codebase.",
-            "Delivered key features (Cart, Save for Later, Checkout, Payment status) and integrated Jio Payment Gateway, which scaled the user base from 150K to 350K.",
-            "Implemented JWT-based single-device authentication, which enhanced security and prevented unauthorized access.",
-            "Built Refund Approval and Etoptup Reprocess modules to manage refunds for payment failures, order closures, and transaction errors, handling over 1,000 cases monthly",
-            "Automated SIM Card Kit barcode scanning functionality, which reduced errors by 50% and improved operational efficiency by 60%.",
-            "Digitized a paper-based system to handle 20+ million SIM card kits annually, enabling tracking, logging, and quality monitoriNg.",
-            "Created a Reports tab to track logbook statuses and approval stages, improving monitoring and faster decision-making.",
-            "Built an end-to-end Admin dashboard that streamlined backend management with CRUD operations.",
-            "Refactored 3,000+ lines to ES6+ standards and revamped the UI, increased lighthouse scores by 30% through performance optimizations.",
-            "Redesigned a desktop-only UI into a responsive cordova based android app with real-time PDF challan preview and download, cutting technician time by 60% through on-field mobile use.",
-            "Upgraded UI logic to support 4th server across two applications, and redesigned interfaces for server-specific scalability.",
-            "Collaborated with cross-functional teams in an agile environment, contributed to code reviews, ensured code quality and aligned features with business requirements."
+        endDate: "November 2025",
+        projects: [
+            {
+                name: "Jio Customer Associate (B2B E-Commerce Module)",
+                description: [
+                    "Developed and optimized a B2B e-commerce app using React.js, Redux-Saga and Cordova, contributed to over 50% of the codebase.",
+                    "Delivered key features (Cart, Save for Later, Checkout, Payment status) and integrated Jio Payment Gateway, which scaled the user base from 150K to 350K.",
+                    "Implemented JWT-based single-device authentication, which enhanced security and prevented unauthorized access.",
+                    "Built Refund Approval and Etoptup Reprocess modules to manage refunds for payment failures, order closures, and transaction errors, handling over 1,000 cases monthly.",
+                ],
+            },
+            {
+                name: "SIM Kitting Logbook",
+                description: [
+                    "Automated SIM Card Kit barcode scanning functionality, which reduced errors by 50% and improved operational efficiency by 60%.",
+                    "Digitized a paper-based system to handle 20+ million SIM card kits annually, enabling tracking, logging, and quality monitoring.",
+                    "Created a Reports tab to track logbook statuses and approval stages, improving monitoring and faster decision-making.",
+                ],
+            },
+            {
+                name: "Additional Contributions",
+                description: [
+                    "Built an end-to-end Admin dashboard that streamlined backend management with CRUD operations.",
+                    "Refactored 3,000+ lines to ES6+ standards and revamped the UI; increased Lighthouse scores by 30% through performance optimizations.",
+                    "Redesigned a desktop-only UI into a responsive Cordova based Android app with real-time PDF challan preview and download, cutting technician time by 60% through on-field mobile use.",
+                    "Upgraded UI logic to support a 4th server across two applications, and redesigned interfaces for server-specific scalability.",
+                    "Collaborated with cross-functional teams in an agile environment; contributed to code reviews, ensured code quality and aligned features with business requirements.",
+                ],
+            },
         ],
     },
     {
         title: "Bachelor of Engineering in Electronics",
         institution: "Terna Engineering College",
-        startDate: "August 2018",
+        startDate: "September 2018",
         endDate: "May 2022",
     },
     {
@@ -127,35 +142,56 @@ export const projects = [
     },
 ];
 
-export const techStack = [
-    "React.js",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "Redux Toolkit",
-    "Redux Saga",
-    "Redux Thunk",
-    "Material UI",
-    "Tailwind CSS",
-    "Chakra UI",
-    "Bootstrap",
-    "Node.js",
-    "RESTFul API",
-    "Express.js",
-    "MongoDB",
-    "PostgreSQL",
-];
-
-export const toolStack = [
-    "Git",
-    "Github",
-    "Microsoft Azure DevOps",
-    "Postman",
-    "Docker",
-    "Kubernetes",
-    "Netlify",
-    "Vercel",
-    "Drizzle",
+/**
+ * Skills grouped for frontend portfolios (2025/2026 standard).
+ * Categories align with job descriptions and ATS keywords.
+ */
+export const skillCategories = [
+    {
+        title: "Frontend",
+        items: [
+            "React.js",
+            "JavaScript (ES6+)",
+            "TypeScript",
+            "Next.js",
+            "Redux (Toolkit / Saga / Thunk)",
+            "React Hooks",
+            "Context API",
+            "Material UI",
+            "Tailwind CSS",
+            "HTML",
+            "CSS",
+            "Responsive Design",
+        ],
+    },
+    {
+        title: "Tools & workflow",
+        items: [
+            "Webpack",
+            "Vite",
+            "Storybook",
+            "Git",
+            "GitHub",
+            "Jenkins",
+            "Jira",
+            "Azure DevOps",
+            "Jest",
+            "React Testing Library",
+            "Chrome DevTools",
+        ],
+    },
+    {
+        title: "Performance & integration",
+        items: [
+            "Code Splitting",
+            "Lazy Loading",
+            "Performance Optimization",
+            "RESTful APIs",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+        ],
+    },
 ];
 
 export const arrayCheck = (array) => {

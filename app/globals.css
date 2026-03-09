@@ -1,42 +1,69 @@
 @import '@fortawesome/fontawesome-free/css/all.min.css';
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@config "../tailwind.config.ts";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f9fc;
+  --foreground: #0c0c0f;
+  --muted: #5c5e6b;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-soft: rgba(99, 102, 241, 0.12);
+  --accent-soft-hover: rgba(99, 102, 241, 0.18);
+  --card: #ffffff;
+  --border: #e8e9ef;
+  --gradient-start: #6366f1;
+  --gradient-end: #8b5cf6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.dark {
+  --background: #050507;
+  --foreground: #f4f4f5;
+  --muted: #9a9aa8;
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --accent-soft: rgba(129, 140, 248, 0.15);
+  --accent-soft-hover: rgba(129, 140, 248, 0.28);
+  --card: #0c0c0f;
+  --border: #1e1e24;
+  --gradient-start: #818cf8;
+  --gradient-end: #a78bfa;
 }
 
 html {
   scroll-behavior: smooth;
-  /* Ensure no default scroll offset */
   scroll-padding-top: 0;
-  /* Force scroll to top */
   scroll-margin-top: 0;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  /* Improve animation performance */
-  will-change: scroll-position;
-  /* Ensure body starts at top */
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   margin: 0;
   padding: 0;
-  /* Prevent any default scroll offset */
   scroll-margin-top: 0;
-  /* Force initial scroll position */
   overflow-x: hidden;
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+  min-width: 320px;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Subtle gradient mesh background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, var(--accent-soft), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 50%, var(--accent-soft), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, var(--accent-soft), transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Ensure the main content starts at the very top */
@@ -45,16 +72,87 @@ body {
   padding: 0;
 }
 
-/* Custom animations */
+/* Smooth, playful animations (Aceternity / Magic UI style) */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes gradient-border {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Aceternity / Magic UI style effects */
+@keyframes shine-sweep {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+@keyframes border-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient-text-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
   }
 }
 
@@ -108,7 +206,175 @@ body {
 
 /* Animation utility classes */
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ---- Effect: Shine on hover (Magic UI style) ---- */
+.effect-shine-hover {
+  position: relative;
+  overflow: hidden;
+}
+.effect-shine-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 55%,
+    transparent 100%
+  );
+  transform: translateX(-100%) skewX(-12deg);
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.55s ease-out;
+}
+.effect-shine-hover:hover::after {
+  transform: translateX(200%) skewX(-12deg);
+}
+.dark .effect-shine-hover::after {
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 55%,
+    transparent 100%
+  );
+}
+
+/* ---- Effect: Gradient text (Aceternity style) ---- */
+.effect-gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--foreground) 0%,
+    var(--accent) 35%,
+    #a78bfa 50%,
+    var(--accent) 65%,
+    var(--foreground) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text-shift 4s ease-in-out infinite;
+}
+
+/* ---- Effect: Animated gradient border wrapper ---- */
+.effect-gradient-border {
+  position: relative;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    #a78bfa,
+    #6366f1,
+    #818cf8,
+    var(--accent)
+  );
+  background-size: 300% 100%;
+  animation: gradient-border 6s ease infinite;
+}
+.effect-gradient-border-inner {
+  position: relative;
+  border-radius: inherit;
+  background: var(--card);
+  z-index: 0;
+}
+html.dark .effect-gradient-border-inner {
+  background: var(--card);
+}
+
+/* ---- Effect: Spotlight glow on hover ---- */
+.effect-spotlight {
+  position: relative;
+}
+.effect-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(99, 102, 241, 0.08),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.effect-spotlight:hover::before {
+  opacity: 1;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+/* ---- Effect: Card glow (stronger shadow on hover) ---- */
+.effect-card-glow {
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.effect-card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2),
+    0 2px 20px -4px rgba(0, 0, 0, 0.1),
+    0 8px 24px -4px rgba(99, 102, 241, 0.08);
+}
+html.dark .effect-card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.4),
+    0 2px 20px -4px rgba(0, 0, 0, 0.3),
+    0 8px 32px -4px rgba(129, 140, 248, 0.2);
+}
+
+/* Stronger hover glow in dark mode for buttons and interactive elements */
+html.dark .hover\:shadow-glow-sm:hover {
+  box-shadow: 0 0 28px -4px rgba(129, 140, 248, 0.45);
+}
+
+/* ---- Effect: Button shine (subtle sweep on CTA) ---- */
+.effect-btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.effect-btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+.effect-btn-shine:hover::after {
+  transform: translateX(100%);
 }
 
 .animate-fade-in-left {
@@ -127,29 +393,27 @@ body {
   animation: slideInFromTop 0.5s ease-out forwards;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Hide scrollbar while keeping scroll (main page) */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / old Edge */
 }
 
-::-webkit-scrollbar-track {
-  background: #1f2937;
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
-::-webkit-scrollbar-thumb {
-  background: #3b82f6;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
-}
-
-/* Improve animation performance */
 * {
-  backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @layer utilities {
