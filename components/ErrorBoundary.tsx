@@ -23,7 +23,7 @@ export default class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    if (typeof console !== "undefined" && console.error) {
+    if (process.env.NODE_ENV === "development" && typeof console !== "undefined" && console.error) {
       console.error("ErrorBoundary caught an error:", error, errorInfo);
     }
   }
