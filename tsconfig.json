@@ -39,7 +39,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "utils/utils.jsx",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [

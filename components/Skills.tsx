@@ -1,6 +1,6 @@
 "use client";
 
-import { arrayCheck, skillCategories } from "../utils/utils";
+import { arrayCheck, skillCategories } from "@/utils";
 import { motion } from "framer-motion";
 import { spring, staggerContainer, itemFadeInUp, pillHover, pillTap } from "@/lib/motion";
 
@@ -63,18 +63,18 @@ const SkillBlock = ({
 const Skills = () => {
   return (
     <motion.section
-      className="mb-10"
+      className="mb-6"
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={spring.gentle}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {arrayCheck(skillCategories) &&
           skillCategories.map((category, i) => (
             <SkillBlock
               key={category.title}
-              title={category.title}
-              items={category.items}
+              title={category?.title ?? ""}
+              items={category?.items ?? []}
               delay={i * 0.03}
             />
           ))}

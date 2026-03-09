@@ -8,10 +8,6 @@ type GradientBorderProps = {
   innerClassName?: string;
 };
 
-/**
- * Wrapper that adds an animated gradient border (Aceternity UI style).
- * Use for hero card, contact card, etc.
- */
 export default function GradientBorder({
   children,
   className = "",

@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV === "development";
 
-// CSP: allows inline script (theme) and Next.js; img-src includes GitHub/avatars and data URIs
 const cspHeader = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
@@ -21,6 +20,9 @@ const cspHeader = [
   .trim();
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "github.com", pathname: "/**" }],
+  },
   async headers() {
     return [
       {

@@ -1,7 +1,3 @@
-/**
- * Shared motion config — fast, smooth transitions (no slow animations).
- */
-
 export const spring = {
   gentle: { type: "spring" as const, stiffness: 260, damping: 26 },
   snappy: { type: "spring" as const, stiffness: 400, damping: 28 },
@@ -74,16 +70,11 @@ export const staggerContainer = {
   },
 };
 
-/** Consistent button/link hover: slight lift + scale */
 export const buttonHover = { scale: 1.03, y: -2, transition: spring.snappy };
-/** Consistent button tap */
 export const buttonTap = { scale: 0.98, transition: spring.quick };
-/** Icon-only buttons (same as button, slightly subtler scale) */
 export const iconButtonHover = { scale: 1.04, y: -2, transition: spring.snappy };
 export const iconButtonTap = { scale: 0.97, transition: spring.quick };
-/** Cards (lift only, no scale) */
 export const cardHover = { y: -2, transition: spring.snappy };
 export const cardTap = { scale: 0.995, transition: spring.quick };
-/** Small pills/chips */
 export const pillHover = { y: -2, scale: 1.02, transition: spring.snappy };
 export const pillTap = { scale: 0.98, transition: spring.quick };

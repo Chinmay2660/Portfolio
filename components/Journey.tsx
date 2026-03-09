@@ -1,9 +1,38 @@
 "use client";
 
-import { arrayCheck, journey } from "../utils/utils";
+import { arrayCheck, journey } from "@/utils";
+import type { JourneyItem } from "@/types";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useCallback } from "react";
 import { spring, slideInLeft, cardHover, cardTap } from "@/lib/motion";
+
+function JourneyItemDescription({
+  item,
+  index,
+}: {
+  item: JourneyItem;
+  index: number;
+}) {
+  const desc = item.description;
+  if (!arrayCheck(desc)) return null;
+  return (
+    <ul className="list-disc list-inside text-muted text-sm mt-3 space-y-1">
+      {desc.map((point, idx) => (
+        <motion.li
+          key={idx}
+          initial={{ opacity: 0, x: -8 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.03 + index * 0.04 + idx * 0.02,
+            duration: 0.16,
+          }}
+        >
+          {point}
+        </motion.li>
+      ))}
+    </ul>
+  );
+}
 
 const JourneySection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -41,12 +70,12 @@ const JourneySection = () => {
       ro.disconnect();
       window.removeEventListener("resize", run);
     };
-  }, [updateLinePosition, journey?.length]);
+  }, [updateLinePosition, journey?.length ?? 0]);
 
   return (
-    <section className="pt-2">
+    <section className="pt-0">
       <motion.h2
-        className="text-xl font-bold text-foreground mb-6 tracking-tight"
+        className="text-xl font-bold text-foreground mb-5 tracking-tight"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={spring.gentle}
@@ -69,15 +98,15 @@ const JourneySection = () => {
         {arrayCheck(journey) &&
           journey.map((item, index) => (
             <motion.div
-              key={index}
-              className="mb-6 last:mb-0 relative"
+              key={`${item.institution}-${item.title}`}
+              className="mb-4 last:mb-0 relative"
               variants={slideInLeft}
             >
               <motion.div
                 ref={
                   index === 0
                     ? firstDotRef
-                    : index === journey.length - 1
+                    : index === (journey?.length ?? 0) - 1
                       ? lastDotRef
                       : undefined
                 }
@@ -106,12 +135,12 @@ const JourneySection = () => {
                     </p>
                   )}
                 </div>
-                {item.projects ? (
+                {arrayCheck(item.projects) ? (
                   <div className="mt-3 space-y-4">
-                    {item.projects.map((project, pIdx) => (
+                    {(item.projects ?? []).map((project, pIdx) => (
                       <div key={pIdx}>
                         <p className="text-foreground/90 font-medium text-sm mb-1.5">
-                          {project.name}
+                          {project.name ?? "Project"}
                         </p>
                         <ul className="list-disc list-inside text-muted text-sm space-y-1">
                           {arrayCheck(project.description) &&
@@ -133,24 +162,7 @@ const JourneySection = () => {
                     ))}
                   </div>
                 ) : (
-                  item.description && (
-                    <ul className="list-disc list-inside text-muted text-sm mt-3 space-y-1">
-                      {arrayCheck(item.description) &&
-                        item.description.map((point, idx) => (
-                          <motion.li
-                            key={idx}
-                            initial={{ opacity: 0, x: -8 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{
-                              delay: 0.03 + index * 0.04 + idx * 0.02,
-                              duration: 0.16,
-                            }}
-                          >
-                            {point}
-                          </motion.li>
-                        ))}
-                    </ul>
-                  )
+                  <JourneyItemDescription item={item} index={index} />
                 )}
               </motion.div>
             </motion.div>

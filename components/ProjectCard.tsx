@@ -1,6 +1,7 @@
 "use client";
 
-import { arrayCheck } from "../utils/utils";
+import { memo } from "react";
+import { arrayCheck } from "@/utils";
 import { motion } from "framer-motion";
 import { spring, cardHover, cardTap } from "@/lib/motion";
 
@@ -45,13 +46,13 @@ const itemVariants = {
   },
 };
 
-const ProjectCard: React.FC<ProjectProps> = ({
-  title,
-  description,
+const ProjectCard: React.FC<ProjectProps> = memo(function ProjectCard({
+  title = "",
+  description = "",
   repoLink,
   liveLink,
-  languages,
-}) => {
+  languages = [],
+}) {
   return (
     <motion.div
       className="group p-5 rounded-2xl border border-border/60 bg-primary/30 dark:bg-primary/20 flex flex-col justify-between h-full hover:border-accent/40 dark:hover:border-accent/60 hover:bg-accent-soft/30 dark:hover:bg-accent-soft-hover transition-all duration-200 ease-out"
@@ -74,7 +75,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
               href={liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-medium text-accent hover:text-accent-hover transition-all duration-200 ease-out"
+              className="text-sm font-medium text-accent hover:text-accent-hover transition-all duration-200 ease-out"
               whileTap={{ scale: 0.97, transition: spring.quick }}
             >
               Live →
@@ -88,7 +89,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             whileTap={{ scale: 0.97 }}
             aria-label="View code"
           >
-            <i className="fab fa-github text-sm" aria-hidden />
+            <i className="fab fa-github text-base" aria-hidden />
           </motion.a>
         </span>
       </div>
@@ -96,7 +97,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
         className="mt-2 text-muted text-sm line-clamp-3 leading-relaxed"
         variants={itemVariants}
       >
-        {description}
+        {description ?? ""}
       </motion.p>
 
       <motion.div
@@ -104,9 +105,9 @@ const ProjectCard: React.FC<ProjectProps> = ({
         variants={containerVariants}
       >
         {arrayCheck(languages) &&
-          languages.map((language, index) => (
+          languages.map((language) => (
             <motion.div
-              key={index}
+              key={language}
               className="flex items-center gap-1.5"
               variants={itemVariants}
               transition={spring.quick}
@@ -122,6 +123,6 @@ const ProjectCard: React.FC<ProjectProps> = ({
       </motion.div>
     </motion.div>
   );
-};
+});
 
 export default ProjectCard;
