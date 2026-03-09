@@ -47,13 +47,19 @@ export function MobileMenu({
             <NavLinks
               links={links}
               activeHref={activeHref}
-              onNavigate={onNavigate}
+              onNavigate={(e, href) => {
+                onNavigate(e, href);
+                onClose();
+              }}
               variant="mobile"
             />
           )}
           <div className="pt-2">
             <motion.button
-              onClick={onThemeToggle}
+              onClick={() => {
+                onThemeToggle();
+                onClose();
+              }}
               className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-foreground/90 hover:text-accent hover:bg-accent-soft-hover transition-colors touch-manipulation"
               whileTap={buttonTap}
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}

@@ -3,16 +3,15 @@ import type { JourneyItem, Project, SkillCategory, SocialLink } from "@/types";
 export const socialLinks: SocialLink[] = [
   { name: "LinkedIn", link: "https://www.linkedin.com/in/chinmay2660/", icon: "fa-brands fa-linkedin" },
   { name: "GitHub", link: "https://github.com/Chinmay2660", icon: "fa-brands fa-github" },
-  { name: "Portfolio", link: "https://chinmaybhoir.vercel.app/", icon: "fa-solid fa-globe" },
 ];
 
 export const heroSocialLinks: SocialLink[] = [
-  ...socialLinks,
-  { name: "Twitter", link: "https://x.com/ChinmayBhoir14", icon: "fab fa-twitter", label: "Twitter" },
-  { name: "Instagram", link: "https://www.instagram.com/chinmay__bhoir", icon: "fab fa-instagram", label: "Instagram" },
   { name: "LeetCode", link: "https://leetcode.com/u/Chinmay2660/", icon: "fab fa-code", label: "LeetCode" },
+  { name: "GitHub", link: "https://github.com/Chinmay2660", icon: "fa-brands fa-github", label: "GitHub" },
+  { name: "LinkedIn", link: "https://www.linkedin.com/in/chinmay2660/", icon: "fa-brands fa-linkedin", label: "LinkedIn" },
   { name: "GeeksforGeeks", link: "https://www.geeksforgeeks.org/user/chinmay2660/", icon: "fab fa-code", label: "GeeksforGeeks" },
   { name: "HackerRank", link: "https://www.hackerrank.com/profile/Chinmay2660", icon: "fab fa-hackerrank", label: "HackerRank" },
+  { name: "X", link: "https://x.com/ChinmayBhoir14", icon: "fa-brands fa-x-twitter", label: "X" },
 ];
 
 export const journey: JourneyItem[] = [
