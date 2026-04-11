@@ -18,8 +18,9 @@ const languageColors: Record<string, string> = {
   TypeScript: "bg-blue-500/90",
   HTML: "bg-orange-500/90",
   CSS: "bg-sky-400/90",
-  Reactjs: "bg-cyan-400/90",
+  React: "bg-cyan-400/90",
   Nextjs: "bg-violet-500/90",
+  "Next.js": "bg-violet-500/90",
   ChakraUI: "bg-pink-400/90",
   "Tailwind CSS": "bg-teal-400/90",
   Redux: "bg-purple-500/90",
@@ -27,6 +28,10 @@ const languageColors: Record<string, string> = {
   MaterialUI: "bg-indigo-500/90",
   Context: "bg-blue-400/90",
   "Framer Motion": "bg-amber-400/90",
+  Vite: "bg-violet-400/90",
+  "TanStack Query": "bg-orange-500/90",
+  "Express.js": "bg-slate-500/90",
+  MongoDB: "bg-emerald-600/90",
 };
 
 const containerVariants = {

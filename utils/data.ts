@@ -87,32 +87,36 @@ export const journey: JourneyItem[] = [
 
 export const projects: Project[] = [
   {
+    title: "Job Tracker",
+    description:
+      "Full-stack job search workspace with Kanban pipeline, interview calendar, resume uploads, and Google OAuth to manage applications in one place.",
+    repoLink: "https://github.com/Chinmay2660/Tracker",
+    liveLink: "https://ui-tracker.vercel.app/",
+    languages: ["React", "TypeScript", "TanStack Query"],
+  },
+  {
+    title: "ClasherStats",
+    description:
+      "Clash of Clans stats viewer with player and clan lookup by tag, war history, leaderboards, and detailed progression (heroes, donations, achievements)—dark, responsive UI.",
+    repoLink: "https://github.com/Chinmay2660/ui-clashofclans",
+    liveLink: "https://clasherstats.vercel.app/",
+    languages: ["React", "Redux Toolkit", "Tailwind CSS"],
+  },
+  {
     title: "MovieSphere",
-    description: "Platform for browsing and searching movies and TV shows. Users can explore popular films and view detailed information.",
+    description:
+      "TMDB-powered catalog for searching movies and TV shows, browsing curated lists, and opening rich detail views.",
     repoLink: "https://github.com/Chinmay2660/MovieSphere",
     liveLink: "https://moviesphere2660.vercel.app/",
-    languages: ["Reactjs", "Tailwind CSS", "Framer Motion"],
+    languages: ["React", "Tailwind CSS", "Framer Motion"],
   },
   {
     title: "MintMind",
-    description: "An expense tracker that helps users monitor their income and spending. Provides visual insights into financial data and supports expense categorization and budgeting.",
+    description:
+      "Expense tracker that records income and spending, organizes by category, and reviews trends with charts and summaries.",
     repoLink: "https://github.com/Chinmay2660/Mintmind",
     liveLink: "https://mintmind.vercel.app/",
-    languages: ["Nextjs", "Tailwind CSS", "Redux Toolkit"],
-  },
-  {
-    title: "GPT-3",
-    description: "A static app that explains GPT-3, its capabilities, and its potential applications in fields like AI-driven text generation, conversations, and more.",
-    repoLink: "https://github.com/Chinmay2660/gpt",
-    liveLink: "https://chinmay2660-gpt3.netlify.app/",
-    languages: ["Reactjs", "Tailwind CSS"],
-  },
-  {
-    title: "Portfolio",
-    description: "Personal portfolio showcasing skills, projects, and smooth transitions for an engaging user experience.",
-    repoLink: "https://github.com/Chinmay2660/Portfolio",
-    liveLink: "https://chinmaybhoir.vercel.app/",
-    languages: ["TypeScript", "Nextjs", "Tailwind CSS"],
+    languages: ["Next.js", "Tailwind CSS", "Redux Toolkit"],
   },
 ];
 
