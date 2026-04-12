@@ -60,7 +60,7 @@ const ProjectCard: React.FC<ProjectProps> = memo(function ProjectCard({
 }) {
   return (
     <motion.div
-      className="group p-5 rounded-2xl border border-border/60 bg-primary/30 dark:bg-primary/20 flex flex-col justify-between h-full hover:border-accent/40 dark:hover:border-accent/60 hover:bg-accent-soft/30 dark:hover:bg-accent-soft-hover transition-all duration-200 ease-out"
+      className="group p-5 rounded-2xl border border-border/60 bg-primary/30 dark:bg-primary/20 flex flex-col h-full hover:border-accent/40 dark:hover:border-accent/60 hover:bg-accent-soft/30 dark:hover:bg-accent-soft-hover transition-all duration-200 ease-out"
       whileHover={cardHover}
       whileTap={cardTap}
     >
@@ -99,14 +99,14 @@ const ProjectCard: React.FC<ProjectProps> = memo(function ProjectCard({
         </span>
       </div>
       <motion.p
-        className="mt-2 text-muted text-sm line-clamp-3 leading-relaxed"
+        className="mt-2 min-h-[4.3rem] text-muted text-sm line-clamp-3 leading-relaxed"
         variants={itemVariants}
       >
         {description ?? ""}
       </motion.p>
 
       <motion.div
-        className="flex flex-wrap gap-2 mt-4"
+        className="mt-auto flex flex-wrap gap-2 pt-4"
         variants={containerVariants}
       >
         {arrayCheck(languages) &&
